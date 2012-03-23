@@ -4,7 +4,7 @@
  <title>LearnLinuxTheFunWay</title>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-03-23T13:02:52+08:00</updated>
+ <updated>2012-03-23T19:02:23+08:00</updated>
  <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
  <author>
    <name>Zetian Yang</name>
@@ -14,12 +14,12 @@
  
  <entry>
    <title>Linux 小窍门札记</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//2012/03/22/new-post"/>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/22/new-post"/>
    <updated>2012-03-22T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//2012/03/22/new-post</id>
-   <content type="html">&lt;p&gt;这里用来记录Linux过程中得到的一些零碎却非常实用的小技巧。&lt;/p&gt;
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/22/new-post</id>
+   <content type="html">&lt;p&gt;这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。&lt;/p&gt;
 
-&lt;p&gt;Here I record bits of useful tricks for daily working with Linux. They are classified by commands.&lt;/p&gt;
+&lt;p&gt;Here I record bits of useful tricks for daily working with Linux.&lt;/p&gt;
 
 &lt;p&gt;This will be keep updating&amp;#8230;&lt;/p&gt;
 &lt;hr /&gt;
@@ -33,7 +33,25 @@
 
 &lt;p&gt;查找某个包的相关文件：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;rpm -qs libgfortran&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;pre&gt;&lt;code&gt;rpm -qs libgfortran&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h2 id='zip'&gt;zip&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;unzip xxx.zip -d destdir&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='tar'&gt;tar&lt;/h2&gt;
+
+&lt;p&gt;将foo1，foo2打包至目标target&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tar czf dir/to/target.tar.gz foo1 foo2&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将target.tar.gz内容抽取至foo目录&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir foo; tar xzf target.tar.gz --directory=foo&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h2 id='screenshot'&gt;screenshot&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;scrot -s&lt;/code&gt;&lt;/pre&gt;</content>
  </entry>
  
  <entry>
