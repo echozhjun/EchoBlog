@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vim拾遗</title>
+    
+    <meta name="author" content="Zetian Yang">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">LearnLinuxTheFunWay</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+    	
+    	<li><a href="/archive.html">Archive</a></li>
+    	
+    
+  
+    
+    	
+    	<li><a href="/categories.html">Categories</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/pages.html">Pages</a></li>
+    	
+    
+  
+    
+  
+    
+    	
+    	<li><a href="/tags.html">Tags</a></li>
+    	
+    
+  
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Vim拾遗 <small>Vim Memos</small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <h2>索引</h2>
+
+<ul>
+<li><a href="##VimIm">VimIm</a></li>
+<li><a href="##markdown">mkd</a></li>
+</ul>
+
+
+<hr />
+
+<h2>VimIm</h2>
+
+<ol>
+<li>下载 <a href="http://vim.sourceforge.net/scripts/download_script.php?src_id=17150/">vimim.vim</a> 至 <code>/usr/share/vim73/plugin</code> 或 <code>/home/.vim/plugin</code> 中</li>
+<li>下载 <a href="http://vimim-data.googlecode.com/svn/trunk/data/vimim.pinyin.txt/">vimim.pingyin.txt</a>，<a href="http://vimim.googlecode.com/svn/trunk/plugin/vimim.cjk.txt/">vimim.cjk.txt</a> 至相同目录</li>
+<li>两种工作模式：
+
+<ul>
+<li>在插入模式下输入拼音，按 CTRL-^ 直接将拼音转换为汉字。</li>
+<li>在任意模式下按 CTRL-_， 进入动态输入模式，此模式与普通输入法类似</li>
+</ul>
+</li>
+</ol>
+
+
+<p><strong>Note:</strong> vimim.cjk.txt
+是一个数码字库，如果需要拼音输入或五笔输入法需配套相应的其他字库<a href="http://groups.google.com/forum/?fromgroups#!topic/vimim/zWdi6QqKdLk/">[1]</a></p>
+
+<h4>Links</h4>
+
+<ul>
+<li><a href="http://vim.sourceforge.net/scripts/script.php?script_id=2506">sourceforge</a></li>
+<li><a href="http://vimim.googlecode.com/svn/vimim/vimim.big5.html#cloud">google code page</a></li>
+<li><a href="https://groups.google.com/forum/?fromgroups#!topic/vimim/">gogole groups</a></li>
+<li><a href="https://code.google.com/p/vimim-data/">第三方词库</a></li>
+</ul>
+
+
+<hr />
+
+<h2>markdown vim语法高亮</h2>
+
+<ol>
+<li>下载 <a href="http://plasticboy.com/dox/vim-markdown.zip">mkd.vim.tar.gz</a>，解压至 <code>.vim/</code> 中</li>
+<li>里面包含两个文件夹：<code>ftdetect</code> 和 <code>syntax</code>，第一个用于设置 vim
+的文件关联，第二个是真正的 syntax 文件</li>
+<li>如需将某种文件后缀关联为 markdown 类型，需要在 <code>ftdetect/mkd.vim</code> 中添加后缀</li>
+</ol>
+
+
+<h4>Links</h4>
+
+<ul>
+<li><a href="http://plasticboy.com/markdown-vim-mode/">mkd blog</a></li>
+<li><a href="https://github.com/plasticboy/vim-markdown/">mkd github</a></li>
+</ul>
+
+
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/Better Work In Linux/2012/03/22/linux-tricks" title="Linux 小窍门札记">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/Perpectual Nervouseness/2012/03/28/markdown" title="Markdown 中文列表抽风">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>27 March 2012</span></div>
+
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Zetian Yang 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+
