@@ -4,13 +4,77 @@
  <title>LearnLinuxTheFunWay</title>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-03-23T19:02:23+08:00</updated>
+ <updated>2012-03-28T13:43:27+08:00</updated>
  <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Vim拾遗</title>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//2012/03/27/vim"/>
+   <updated>2012-03-27T00:00:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//2012/03/27/vim</id>
+   <content type="html">&lt;h2 id='id293'&gt;索引&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='##VimIm'&gt;VimIm&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='##markdown'&gt;mkd&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2 id='vimim'&gt;VimIm&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载 &lt;a href='http://vim.sourceforge.net/scripts/download_script.php?src_id=17150/'&gt;vimim.vim&lt;/a&gt; 至 &lt;code&gt;/usr/share/vim73/plugin&lt;/code&gt; 或 &lt;code&gt;/home/.vim/plugin&lt;/code&gt; 中&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;下载 &lt;a href='http://vimim-data.googlecode.com/svn/trunk/data/vimim.pinyin.txt/'&gt;vimim.pingyin.txt&lt;/a&gt;，&lt;a href='http://vimim.googlecode.com/svn/trunk/plugin/vimim.cjk.txt/'&gt;vimim.cjk.txt&lt;/a&gt; 至相同目录 3. 两种工作模式：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在插入模式下输入拼音，按 CTRL-^ 直接将拼音转换为汉字。&lt;/li&gt;
+
+&lt;li&gt;在任意模式下按 CTRL-_， 进入动态输入模式，此模式与普通输入法类似&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; vimim.cjk.txt 是一个数码字库，如果需要拼音输入或五笔输入法需配套相应的其他字库&lt;a href='http://groups.google.com/forum/?fromgroups#!topic/vimim/zWdi6QqKdLk/'&gt;[1]&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id='links'&gt;Links&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://vim.sourceforge.net/scripts/script.php?script_id=2506'&gt;sourceforge&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://vimim.googlecode.com/svn/vimim/vimim.big5.html#cloud'&gt;google code page&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://groups.google.com/forum/?fromgroups#!topic/vimim/'&gt;gogole groups&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://code.google.com/p/vimim-data/'&gt;第三方词库&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2 id='markdown_vim'&gt;markdown vim语法高亮&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;下载 &lt;a href='http://plasticboy.com/dox/vim-markdown.zip'&gt;mkd.vim.tar.gz&lt;/a&gt;，解压至 &lt;code&gt;.vim/&lt;/code&gt; 中&lt;/li&gt;
+
+&lt;li&gt;里面包含两个文件夹：&lt;code&gt;ftdetect&lt;/code&gt; 和 &lt;code&gt;syntax&lt;/code&gt;，第一个用于设置 vim 的文件关联，第二个是真正的 syntax 文件&lt;/li&gt;
+
+&lt;li&gt;如需将某种文件后缀关联为 markdown 类型，需要在 &lt;code&gt;ftdetect/mkd.vim&lt;/code&gt; 中添加后缀&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id='links'&gt;Links&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://plasticboy.com/markdown-vim-mode/'&gt;mkd blog&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/plasticboy/vim-markdown/'&gt;mkd github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Linux 小窍门札记</title>
@@ -51,7 +115,14 @@
 &lt;hr /&gt;
 &lt;h2 id='screenshot'&gt;screenshot&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;scrot -s&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;pre&gt;&lt;code&gt;scrot -s&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h2 id='gnome'&gt;Gnome&lt;/h2&gt;
+
+&lt;h3 id='id292'&gt;快捷键&lt;/h3&gt;
+
+&lt;p&gt;* 现在我们可以试试看了 * 也许还是没有用&lt;/p&gt;
+&lt;hr /&gt;</content>
  </entry>
  
  <entry>

@@ -7,5 +7,6 @@ http://yangzetian.github.com/LearnLinuxTheFunWay//index.html
 http://yangzetian.github.com/LearnLinuxTheFunWay//tags.html
 http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml
 
+http://yangzetian.github.com/LearnLinuxTheFunWay//2012/03/27/vim
 http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/22/new-post
 http://yangzetian.github.com/LearnLinuxTheFunWay//lessons/2011/12/29/jekyll-introduction
