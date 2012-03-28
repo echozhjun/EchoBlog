@@ -90,44 +90,68 @@
 
 <p>Here I record bits of useful tricks for daily working with Linux.</p>
 
-<p>This will be keep updating&#8230;</p>
+<p>This will be keep updating...</p>
+
 <hr />
-<h2 id='yum'>yum</h2>
+
+<h2>yum</h2>
 
 <p>查找哪个包提供了<code>makeinfo</code>程序：</p>
 
-<pre><code>yum provides *bin/makeinfo</code></pre>
+<pre><code>yum provides *bin/makeinfo
+</code></pre>
+
 <hr />
-<h2 id='rpm'>rpm</h2>
+
+<h2>rpm</h2>
 
 <p>查找某个包的相关文件：</p>
 
-<pre><code>rpm -qs libgfortran</code></pre>
+<pre><code>rpm -qs libgfortran
+</code></pre>
+
 <hr />
-<h2 id='zip'>zip</h2>
 
-<pre><code>unzip xxx.zip -d destdir</code></pre>
+<h2>zip</h2>
 
-<h2 id='tar'>tar</h2>
+<pre><code>unzip xxx.zip -d destdir
+</code></pre>
+
+<h2>tar</h2>
 
 <p>将foo1，foo2打包至目标target</p>
 
-<pre><code>tar czf dir/to/target.tar.gz foo1 foo2</code></pre>
+<pre><code>tar czf dir/to/target.tar.gz foo1 foo2
+</code></pre>
 
 <p>将target.tar.gz内容抽取至foo目录</p>
 
-<pre><code>mkdir foo; tar xzf target.tar.gz --directory=foo</code></pre>
-<hr />
-<h2 id='screenshot'>screenshot</h2>
+<pre><code>mkdir foo; tar xzf target.tar.gz --directory=foo
+</code></pre>
 
-<pre><code>scrot -s</code></pre>
 <hr />
-<h2 id='gnome'>Gnome</h2>
 
-<h3 id='id292'>快捷键</h3>
+<h2>screenshot</h2>
 
-<p>* 现在我们可以试试看了 * 也许还是没有用</p>
+<pre><code>scrot -s
+</code></pre>
+
 <hr />
+
+<h2>Gnome</h2>
+
+<h3>快捷键</h3>
+
+<ul>
+<li><p>缩放</p>
+
+<pre><code>CRTL-_  || CRTL-+
+</code></pre></li>
+</ul>
+
+
+<hr />
+
     <hr>
     <div class="pagination">
       <ul>
