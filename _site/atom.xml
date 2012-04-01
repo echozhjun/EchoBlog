@@ -4,7 +4,7 @@
  <title>LearnLinuxTheFunWay</title>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-04-01T19:51:31+08:00</updated>
+ <updated>2012-04-01T19:52:45+08:00</updated>
  <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
  <author>
    <name>Zetian Yang</name>
@@ -113,10 +113,10 @@ cabal install pandoc
  </entry>
  
  <entry>
-   <title>Vim拾遗</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work in Linux/2012/03/27/vim"/>
+   <title>Vim 拾遗</title>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/27/vim"/>
    <updated>2012-03-27T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work in Linux/2012/03/27/vim</id>
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/27/vim</id>
    <content type="html">&lt;h2&gt;索引&lt;/h2&gt;
 
 &lt;ul&gt;
