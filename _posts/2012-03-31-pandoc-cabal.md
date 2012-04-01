@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "从源代码安装GHC, Cabal 及 Cabal-install"
-category:"Better Work in Linux"
+title: "安装 GHC, Cabal/Cabal-install 及 Pandoc"
+category: "Better Work in Linux"
 tags: []
 ---
 {% include JB/setup %}
 
 GHC 是 Glasgow Haskell Compiler 的简称，也是 Haskell Platform 的基础。
 最新的版本可以从[这里][ghc]下载。
+
+   [ghc]:http://www.haskell.org/ghc/
 
 进入最新版本的下载页面后有两个选择，一是二进制包，二是纯源码包。
 如果想从纯源码包下载，需要你本机上已装有某个版本的 ghc ，因为这个
@@ -47,6 +49,9 @@ Cabal-install，否则安装时会出现麻烦。
 所以最好的办法就是不安装 Cabal 而直接安装
 Cabal-install，这样永远不会出现冲突问题。
 
+   [hackage]:http://hackage.haskell.org/package/cabal-install
+   [cabal]:http://darcs.haskell.org/cabal-branches/
+   
 我选择的是
 [Cabal-1.14](http://darcs.haskell.org/cabal-branches/cabal-1.14/)
 版本，把这个链接里所有的文件都用 `wget` 下载到本地。命令如下：
@@ -54,3 +59,23 @@ Cabal-install，这样永远不会出现冲突问题。
     wget -c -r -np -k -L -p http://darc.haskell.org/cabal-branches/cabal-1.14
 
 当然这是非常土的方法，正确的方法是使用 `git`。
+
+进入Cabal-install目录后执行`sh bootstrap.sh`，即可完成安装。
+
+安装完成Cabal-install 后，将cabal程序所在目录加入PATH中，再执行：
+
+    cabal update
+    cabal install pandoc
+
+好了，现在可以享受pandoc给我们带来的便利了！
+
+pandoc的使用请参考下面的*Links*。
+
+## Links
+
+* [Pandoc Demos](http://johnmacfarlane.net/pandoc/demos.html)
+
+* [Pandoc User's Guide](http://johnmacfarlane.net/pandoc/README.html)
+
+* [一份中文简介](http://chen.yanping.me/cn/blog/2012/03/13/pandoc/)
+
