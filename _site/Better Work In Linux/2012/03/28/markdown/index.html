@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Linux 小窍门札记</title>
+    <title>Markdown 中文列表抽风</title>
     
     <meta name="author" content="Zetian Yang">
 
@@ -81,86 +81,34 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Linux 小窍门札记 <small>Linux Tricks</small></h1>
+  <h1>Markdown 中文列表抽风 <small></small></h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。</p>
+    <p>用 markdown 写带中文的列表时发现 jeklly 生成的网页中有的可以正常显示，有的则不行。 <br/>
+折腾半天后发现如果列表项中含有英文字母等非中文字符，就可以正确显示，纯中文的那些打死也不行。</p>
 
-<p>Here I record bits of useful tricks for daily working with Linux.</p>
+<p>上网查后发现是 jeklly 默认 markdown 引擎 maruku 的问题，将引擎改为 rdiscount 即可。<br/>
+做法是修改 <code>_config.yml</code> 文件，在 <code>pygments: true</code> 上面添加一行 <code>markdown: rdiscount</code></p>
 
-<p>This will be keep updating...</p>
-
-<hr />
-
-<h2>yum</h2>
-
-<p>查找哪个包提供了<code>makeinfo</code>程序：</p>
-
-<pre><code>yum provides *bin/makeinfo
-</code></pre>
-
-<hr />
-
-<h2>rpm</h2>
-
-<p>查找某个包的相关文件：</p>
-
-<pre><code>rpm -qs libgfortran
-</code></pre>
-
-<hr />
-
-<h2>zip</h2>
-
-<pre><code>unzip xxx.zip -d destdir
-</code></pre>
-
-<h2>tar</h2>
-
-<p>将foo1，foo2打包至目标target</p>
-
-<pre><code>tar czf dir/to/target.tar.gz foo1 foo2
-</code></pre>
-
-<p>将target.tar.gz内容抽取至foo目录</p>
-
-<pre><code>mkdir foo; tar xzf target.tar.gz --directory=foo
-</code></pre>
-
-<hr />
-
-<h2>screenshot</h2>
-
-<pre><code>scrot -s
-</code></pre>
-
-<hr />
-
-<h2>Gnome</h2>
-
-<h3>快捷键</h3>
+<h3>Links</h3>
 
 <ul>
-<li><p>缩放</p>
-
-<pre><code>CRTL-_  || CRTL-+
-</code></pre></li>
+<li><a href="http://www.douban.com/note/147668553/">markdown 渲染引擎折腾记</a></li>
+<li><a href="http://www.v2ex.com/t/28800">中文清单 lists 问题</a></li>
 </ul>
 
-
-<hr />
 
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/lessons/2011/12/29/jekyll-introduction" title="Jekyll Introduction">&larr; Previous</a></li>
+        <li class="prev"><a href="/Better Work in Linux/2012/03/27/vim" title="Vim拾遗">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/Better Work in Linux/2012/03/27/vim" title="Vim拾遗">Next &rarr;</a></li>
+        <li class="next"><a href="/Better Work In Linux/2012/03/31/pandoc-cabal" title="安装 GHC, Cabal/Cabal-install 及 Pandoc">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -190,24 +138,8 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>22 March 2012</span></div>
+    <div class="date"><span>28 March 2012</span></div>
 
-  
-    <h4>Tags</h4>
-    <ul class="tag_box">
-    
-    
-
-
-  
-     
-    	<li><a href="/tags.html#linux-ref">linux <span>1</span></a></li>
-    
-  
-
-
-
-    </ul>
     
   </div>
 </div>

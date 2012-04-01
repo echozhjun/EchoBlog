@@ -4,7 +4,7 @@
  <title>LearnLinuxTheFunWay</title>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-04-01T19:49:34+08:00</updated>
+ <updated>2012-04-01T19:51:31+08:00</updated>
  <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
  <author>
    <name>Zetian Yang</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>安装 GHC, Cabal/Cabal-install 及 Pandoc</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work in Linux/2012/03/31/pandoc-cabal"/>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/31/pandoc-cabal"/>
    <updated>2012-03-31T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work in Linux/2012/03/31/pandoc-cabal</id>
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/31/pandoc-cabal</id>
    <content type="html">&lt;p&gt;GHC 是 Glasgow Haskell Compiler 的简称，也是 Haskell Platform 的基础。
 最新的版本可以从&lt;a href=&quot;http://www.haskell.org/ghc/&quot;&gt;这里&lt;/a&gt;下载。&lt;/p&gt;
 
@@ -93,9 +93,9 @@ cabal install pandoc
  
  <entry>
    <title>Markdown 中文列表抽风</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Perpectual Nervouseness/2012/03/28/markdown"/>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/28/markdown"/>
    <updated>2012-03-28T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Perpectual Nervouseness/2012/03/28/markdown</id>
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/28/markdown</id>
    <content type="html">&lt;p&gt;用 markdown 写带中文的列表时发现 jeklly 生成的网页中有的可以正常显示，有的则不行。 &lt;br/&gt;
 折腾半天后发现如果列表项中含有英文字母等非中文字符，就可以正确显示，纯中文的那些打死也不行。&lt;/p&gt;
 
@@ -114,9 +114,9 @@ cabal install pandoc
  
  <entry>
    <title>Vim拾遗</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//2012/03/27/vim"/>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work in Linux/2012/03/27/vim"/>
    <updated>2012-03-27T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//2012/03/27/vim</id>
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work in Linux/2012/03/27/vim</id>
    <content type="html">&lt;h2&gt;索引&lt;/h2&gt;
 
 &lt;ul&gt;

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "安装 GHC, Cabal/Cabal-install 及 Pandoc"
-category: "Better Work in Linux"
+category: "Better Work In Linux"
 tags: []
 ---
 {% include JB/setup %}

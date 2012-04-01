@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Linux 小窍门札记</title>
+    <title>Vim拾遗</title>
     
     <meta name="author" content="Zetian Yang">
 
@@ -81,72 +81,86 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Linux 小窍门札记 <small>Linux Tricks</small></h1>
+  <h1>Vim拾遗 <small>Vim Memos</small></h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。</p>
-
-<p>Here I record bits of useful tricks for daily working with Linux.</p>
-
-<p>This will be keep updating...</p>
-
-<hr />
-
-<h2>yum</h2>
-
-<p>查找哪个包提供了<code>makeinfo</code>程序：</p>
-
-<pre><code>yum provides *bin/makeinfo
-</code></pre>
-
-<hr />
-
-<h2>rpm</h2>
-
-<p>查找某个包的相关文件：</p>
-
-<pre><code>rpm -qs libgfortran
-</code></pre>
-
-<hr />
-
-<h2>zip</h2>
-
-<pre><code>unzip xxx.zip -d destdir
-</code></pre>
-
-<h2>tar</h2>
-
-<p>将foo1，foo2打包至目标target</p>
-
-<pre><code>tar czf dir/to/target.tar.gz foo1 foo2
-</code></pre>
-
-<p>将target.tar.gz内容抽取至foo目录</p>
-
-<pre><code>mkdir foo; tar xzf target.tar.gz --directory=foo
-</code></pre>
-
-<hr />
-
-<h2>screenshot</h2>
-
-<pre><code>scrot -s
-</code></pre>
-
-<hr />
-
-<h2>Gnome</h2>
-
-<h3>快捷键</h3>
+    <h2>索引</h2>
 
 <ul>
-<li><p>缩放</p>
+<li><a href="#vimim">VimIm</a></li>
+<li><a href="#markdown">markdown syntax</a></li>
+<li><a href="#vimfold">vim fold</a></li>
+</ul>
 
-<pre><code>CRTL-_  || CRTL-+
-</code></pre></li>
+
+<hr />
+
+<h2 id="vimim">VimIm</h2>
+
+
+<ol>
+<li>下载 <a href="http://vim.sourceforge.net/scripts/download_script.php?src_id=17150/">vimim.vim</a> 至 <code>/usr/share/vim73/plugin</code> 或 <code>/home/.vim/plugin</code> 中</li>
+<li>下载 <a href="http://vimim-data.googlecode.com/svn/trunk/data/vimim.pinyin.txt/">vimim.pingyin.txt</a>，<a href="http://vimim.googlecode.com/svn/trunk/plugin/vimim.cjk.txt/">vimim.cjk.txt</a> 至相同目录</li>
+<li>两种工作模式：
+
+<ul>
+<li>在插入模式下输入拼音，按 CTRL-^ 直接将拼音转换为汉字。</li>
+<li>在任意模式下按 CTRL-_， 进入动态输入模式，此模式与普通输入法类似</li>
+</ul>
+</li>
+</ol>
+
+
+<p><strong>Note:</strong> vimim.cjk.txt
+是一个数码字库，如果需要拼音输入或五笔输入法需配套相应的其他字库 <a href="http://groups.google.com/forum/?fromgroups#!topic/vimim/zWdi6QqKdLk/">[1]</a></p>
+
+<h4>Links</h4>
+
+<ul>
+<li><a href="http://vim.sourceforge.net/scripts/script.php?script_id=2506">sourceforge</a></li>
+<li><a href="http://vimim.googlecode.com/svn/vimim/vimim.big5.html#cloud">google code page</a></li>
+<li><a href="https://groups.google.com/forum/?fromgroups#!topic/vimim/">gogole groups</a></li>
+<li><a href="https://code.google.com/p/vimim-data/">第三方词库</a></li>
+</ul>
+
+
+<hr />
+
+<h2 id='markdown'>markdown vim语法高亮</h2>
+
+
+<ol>
+<li>下载 <a href="http://plasticboy.com/dox/vim-markdown.zip">mkd.vim.tar.gz</a>，解压至 <code>.vim/</code> 中</li>
+<li>里面包含两个文件夹：<code>ftdetect</code> 和 <code>syntax</code>，第一个用于设置 vim
+的文件关联，第二个是真正的 syntax 文件</li>
+<li>如需将某种文件后缀关联为 markdown 类型，需要在 <code>ftdetect/mkd.vim</code> 中添加后缀</li>
+</ol>
+
+
+<h4>Links</h4>
+
+<ul>
+<li><a href="http://plasticboy.com/markdown-vim-mode/">mkd blog</a></li>
+<li><a href="https://github.com/plasticboy/vim-markdown/">mkd github</a></li>
+</ul>
+
+
+<hr />
+
+<h2 id='vimfold'>vim 折叠相关命令</h2>
+
+
+<pre><code>set foldenable/nofoldenable 
+set foldmethod=syntax/indent...
+set foldlevel=0/1/2...
+</code></pre>
+
+<h4>Links</h4>
+
+<ul>
+<li><a href="http://man.chinaunix.net/newsoft/vi/doc/fold.html">chinaunix</a></li>
 </ul>
 
 
@@ -156,11 +170,11 @@
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/lessons/2011/12/29/jekyll-introduction" title="Jekyll Introduction">&larr; Previous</a></li>
+        <li class="prev"><a href="/Better Work In Linux/2012/03/22/linux-tricks" title="Linux 小窍门札记">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/Better Work in Linux/2012/03/27/vim" title="Vim拾遗">Next &rarr;</a></li>
+        <li class="next"><a href="/Better Work In Linux/2012/03/28/markdown" title="Markdown 中文列表抽风">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -190,24 +204,8 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>22 March 2012</span></div>
+    <div class="date"><span>27 March 2012</span></div>
 
-  
-    <h4>Tags</h4>
-    <ul class="tag_box">
-    
-    
-
-
-  
-     
-    	<li><a href="/tags.html#linux-ref">linux <span>1</span></a></li>
-    
-  
-
-
-
-    </ul>
     
   </div>
 </div>
