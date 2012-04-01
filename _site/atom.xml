@@ -4,7 +4,7 @@
  <title>LearnLinuxTheFunWay</title>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-04-01T19:45:06+08:00</updated>
+ <updated>2012-04-01T19:49:34+08:00</updated>
  <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
  <author>
    <name>Zetian Yang</name>
@@ -121,7 +121,7 @@ cabal install pandoc
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#vimim&quot;&gt;VimIm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#markdown&quot;&gt;mkd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#markdown&quot;&gt;markdown syntax&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#vimfold&quot;&gt;vim fold&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -183,13 +183,17 @@ cabal install pandoc
 &lt;h2 id='vimfold'&gt;vim 折叠相关命令&lt;/h2&gt;
 
 
-&lt;p&gt;   set foldenable/nofoldenable
-   set foldmethod=syntax/indent...
-   set foldlevel=0/1/2...&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;set foldenable/nofoldenable 
+set foldmethod=syntax/indent...
+set foldlevel=0/1/2...
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4&gt;Links&lt;/h4&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://man.chinaunix.net/newsoft/vi/doc/fold.html&quot;&gt;chinaunix&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://man.chinaunix.net/newsoft/vi/doc/fold.html&quot;&gt;chinaunix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 
 &lt;hr /&gt;
 </content>
