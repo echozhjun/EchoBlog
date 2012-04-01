@@ -4,7 +4,7 @@
  <title>LearnLinuxTheFunWay</title>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-04-01T19:39:17+08:00</updated>
+ <updated>2012-04-01T19:45:06+08:00</updated>
  <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
  <author>
    <name>Zetian Yang</name>
@@ -120,14 +120,16 @@ cabal install pandoc
    <content type="html">&lt;h2&gt;索引&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;##VimIm&quot;&gt;VimIm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;##markdown&quot;&gt;mkd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#vimim&quot;&gt;VimIm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#markdown&quot;&gt;mkd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#vimfold&quot;&gt;vim fold&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
 &lt;hr /&gt;
 
-&lt;h2&gt;VimIm&lt;/h2&gt;
+&lt;h2 id=&quot;vimim&quot;&gt;VimIm&lt;/h2&gt;
+
 
 &lt;ol&gt;
 &lt;li&gt;下载 &lt;a href=&quot;http://vim.sourceforge.net/scripts/download_script.php?src_id=17150/&quot;&gt;vimim.vim&lt;/a&gt; 至 &lt;code&gt;/usr/share/vim73/plugin&lt;/code&gt; 或 &lt;code&gt;/home/.vim/plugin&lt;/code&gt; 中&lt;/li&gt;
@@ -157,7 +159,8 @@ cabal install pandoc
 
 &lt;hr /&gt;
 
-&lt;h2&gt;markdown vim语法高亮&lt;/h2&gt;
+&lt;h2 id='markdown'&gt;markdown vim语法高亮&lt;/h2&gt;
+
 
 &lt;ol&gt;
 &lt;li&gt;下载 &lt;a href=&quot;http://plasticboy.com/dox/vim-markdown.zip&quot;&gt;mkd.vim.tar.gz&lt;/a&gt;，解压至 &lt;code&gt;.vim/&lt;/code&gt; 中&lt;/li&gt;
@@ -177,7 +180,8 @@ cabal install pandoc
 
 &lt;hr /&gt;
 
-&lt;h2&gt;vim 折叠相关命令&lt;/h2&gt;
+&lt;h2 id='vimfold'&gt;vim 折叠相关命令&lt;/h2&gt;
+
 
 &lt;p&gt;   set foldenable/nofoldenable
    set foldmethod=syntax/indent...
