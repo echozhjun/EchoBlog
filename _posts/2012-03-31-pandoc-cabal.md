@@ -2,6 +2,7 @@
 layout: post
 title: "安装 GHC, Cabal/Cabal-install 及 Pandoc"
 category: "Better Work In Linux"
+data: 2012-03-31 19:01:00
 tags: []
 ---
 {% include JB/setup %}
@@ -72,7 +73,7 @@ Cabal-install，这样永远不会出现冲突问题。
 pandoc的使用请参考下面的*Links*。
 
 
-{% highlight py linenos %}
+{% highlight python %}
 import numpy as np
 
 a = np.arange(1, 3)

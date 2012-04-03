@@ -56,7 +56,7 @@ This will be keep updating...
 
 ### 快捷键
 
-*   缩放
+* 缩放
 
         CRTL-_  || CRTL-+
 

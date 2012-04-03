@@ -23,11 +23,10 @@
 				<nav class="nav-global">
 					<ul>
 						<li class="archive"><a href="/archive.html">archive</a></li>
-						<li class="page"><a href="/pages.html">pages</a></li>
+					<!--	<li class="page"><a href="/pages.html">pages</a></li>   -->
 						<li class="category"><a href="/categories.html">categories</a></li>
 						<li class="tag"><a href="/tags.html">tags</a></li>
-						<li class="forkme"><iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=plusjade&repo=jekyll-bootstrap&type=fork&count=true"
-								allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/learnlinuxthefunway">RSS Feed</a></li>
 					</ul>
 				</nav>
 			</div><!-- unit-inner -->
@@ -51,15 +50,15 @@
 
 			<div class="bd">
 				<div class="entry-content">
-					<p>这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。</p>
+					
+<p>这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。</p>
 
 <p>Here I record bits of useful tricks for daily working with Linux.</p>
 
-<p>This will be keep updating...</p>
+<p>This will be keep updating&hellip;</p>
 
 <hr />
-
-<h2>yum</h2>
+<p>## yum</p>
 
 <p>查找哪个包提供了<code>makeinfo</code>程序：</p>
 
@@ -68,7 +67,7 @@
 
 <hr />
 
-<h2>rpm</h2>
+<h2 id="rpm">rpm</h2>
 
 <p>查找某个包的相关文件：</p>
 
@@ -77,12 +76,12 @@
 
 <hr />
 
-<h2>zip</h2>
+<h2 id="zip">zip</h2>
 
 <pre><code>unzip xxx.zip -d destdir
 </code></pre>
 
-<h2>tar</h2>
+<h2 id="tar">tar</h2>
 
 <p>将foo1，foo2打包至目标target</p>
 
@@ -96,24 +95,25 @@
 
 <hr />
 
-<h2>screenshot</h2>
+<h2 id="screenshot">screenshot</h2>
 
 <pre><code>scrot -s
 </code></pre>
 
 <hr />
 
-<h2>Gnome</h2>
+<h2 id="gnome">Gnome</h2>
 
-<h3>快捷键</h3>
+<h3 id="section">快捷键</h3>
 
 <ul>
-<li><p>缩放</p>
+  <li>
+    <p>缩放</p>
 
-<pre><code>CRTL-_  || CRTL-+
-</code></pre></li>
+    <pre><code>  CRTL-_  || CRTL-+
+</code></pre>
+  </li>
 </ul>
-
 
 <hr />
 
@@ -173,7 +173,7 @@
   <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_developer = 1;
-    var disqus_shortname = 'yangzetian'; // required: replace example with your forum shortname
+    var disqus_shortname = 'learnlinuxthefunway'; // required: replace example with your forum shortname
     
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
@@ -196,10 +196,6 @@
 					<nav class="pagination">
 						<ul>
 							
-							<li class="prev"><a class="internal" rel="prev"  href="/lessons/2011/12/29/jekyll-introduction" title="View Jekyll Introduction">&laquo; Jekyll Introduction</a></li>
-							
-							
-							<li class="pipe"> | </li>
 							
 							
 							<li class="next"><a class="internal" rel="next"  href="/Better Work In Linux/2012/03/27/vim" title="View Vim 拾遗">Vim 拾遗 &raquo;</a></li>
@@ -227,10 +223,10 @@
 				<div class="misc vcard">
 					<h4>about</h4>
 					<ul>
-						<li class="contact"><address><span class="author fn n">Zetian Yang</span> - <span class="fn email">zetain.yang@gmail.com</span></address></li>
-						<li class="github"><a href="http://github.com/yangzetian/" rel="me">github.com/yangzetian</a></li>
-						<li class="twitter"><a href="http://twitter.com//" rel="me">twitter.com/</a></li>
-						<li class="rss"><a href="http://feeds.feedburner.com/">Subscribe to RSS Feed</a></li>
+						<li class="contact"><address><span class="author fn n">Zetian Yang</span></address></li>
+                        <li class="douban"><a href="http://douban.com/people/killpain">Douban</a></li>
+						<li class="github"><a href="http://github.com/yangzetian/" rel="me">Github</a></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/learnlinuxthefunway">RSS Feed</a></li>
 					</ul>
 				</div><!-- misc -->
 				<p class="licence">
@@ -241,18 +237,6 @@
 		</div><!-- unit-foot -->
 	</footer>
 </div><!-- page -->
-<script>
-	(function(d, s) {
-		var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
-		if (d.getElementById(id)) {return;}
-		js = d.createElement(s); js.src = url; js.id = id;
-		fjs.parentNode.insertBefore(js, fjs);
-		};
-	load('//platform.twitter.com/widgets.js', 'tweetjs');
-	// load('https://apis.google.com/js/plusone.js', 'gplus1js'); // Checkout http://j.mp/ApDgMr for usage html for this is <div class="g-plusone" data-size="medium"></div>
-	// load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk'); // Checkout http://j.mp/wZw2xR for using open graph protorol html for this is <div class="fb-like" data-href="/Better Work In Linux/2012/03/22/linux-tricks" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
-	}(document, 'script'));
-</script>
 <script>
 /*! A fix for the iOS orientationchange zoom bug.Script by @scottjehl, rebound by @wilto. MIT License.*/
 (function(j){var i=j.document;if(!i.querySelectorAll){return}var l=i.querySelectorAll("meta[name=viewport]")[0],a=l&&l.getAttribute("content"),h=a+", maximum-scale=1.0",d=a+", maximum-scale=10.0",g=true,c=j.orientation,k=0;if(!l){return}function f(){l.setAttribute("content",d);g=true}function b(){l.setAttribute("content",h);g=false}function e(m){c=Math.abs(j.orientation);k=Math.abs(m.gamma);if(k>8&&c===0){if(g){b()}}else{if(!g){f()}}}j.addEventListener("orientationchange",f,false);j.addEventListener("deviceorientation",e,false)})(this);

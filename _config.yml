@@ -4,7 +4,7 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
-markdown: rdiscount
+markdown: kramdown
 pygments: true
 
 # Themes are encouraged to use these universal variables 
@@ -17,7 +17,7 @@ author :
   email : zetain.yang@gmail.com
   github : yangzetian
   twitter : 
-  feedburner : 
+  feedburner : learnlinuxthefunway
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

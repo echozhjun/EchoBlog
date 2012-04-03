@@ -11,4 +11,3 @@ http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/3
 http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/28/markdown
 http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/27/vim
 http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/22/linux-tricks
-http://yangzetian.github.com/LearnLinuxTheFunWay//lessons/2011/12/29/jekyll-introduction
