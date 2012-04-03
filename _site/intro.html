@@ -7,10 +7,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Linux 小窍门札记</title>
+	<title>缘起</title>
 	<meta name="author" content="Zetian Yang">
 	<link href='/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
-	<link href="http://feeds.feedburner.com/" rel="alternate" title="Linux 小窍门札记" type="application/atom+xml">
+	<link href="http://feeds.feedburner.com/" rel="alternate" title="缘起" type="application/atom+xml">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 </head>
 <body>
@@ -38,13 +38,13 @@
 			<div class="unit-inner unit-body-inner">
 				<div class="entry-content">
 					
-<article class="unit-article layout-post">
+<article class="unit-article layout-page">
 	<div class="unit-inner unit-article-inner">
 		<div class="content">
 			<header>
 				<div class="unit-head">
 					<div class="unit-inner unit-head-inner">
-						<h1 class="h2 entry-title">Linux 小窍门札记</h1>
+						<h1 class="h2 entry-title">缘起</h1>
 					</div><!-- unit-inner -->
 				</div><!-- unit-head -->
 			</header>
@@ -52,157 +52,23 @@
 			<div class="bd">
 				<div class="entry-content">
 					
-<p>这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。</p>
+<p>This is a project by Yang Zetian, now a undergraduate in BUAA, Beijing, China.</p>
 
-<p>Here I record bits of useful tricks for daily working with Linux.</p>
-
-<p>This will be keep updating&hellip;</p>
-
-<hr />
-<p>## yum</p>
-
-<p>查找哪个包提供了<code>makeinfo</code>程序：</p>
-
-<pre><code>yum provides *bin/makeinfo
-</code></pre>
-
-<hr />
-
-<h2 id="rpm">rpm</h2>
-
-<p>查找某个包的相关文件：</p>
-
-<pre><code>rpm -qs libgfortran
-</code></pre>
-
-<hr />
-
-<h2 id="zip">zip</h2>
-
-<pre><code>unzip xxx.zip -d destdir
-</code></pre>
-
-<h2 id="tar">tar</h2>
-
-<p>将foo1，foo2打包至目标target</p>
-
-<pre><code>tar czf dir/to/target.tar.gz foo1 foo2
-</code></pre>
-
-<p>将target.tar.gz内容抽取至foo目录</p>
-
-<pre><code>mkdir foo; tar xzf target.tar.gz --directory=foo
-</code></pre>
-
-<hr />
-
-<h2 id="screenshot">screenshot</h2>
-
-<pre><code>scrot -s
-</code></pre>
-
-<hr />
-
-<h2 id="gnome">Gnome</h2>
-
-<h3 id="section">快捷键</h3>
-
-<ul>
-  <li>
-    <p>缩放</p>
-
-    <pre><code>  CRTL-_  || CRTL-+
-</code></pre>
-  </li>
-</ul>
-
-<hr />
-
-					<div class="meta">
-						<p class="date-publish">
-							Published: 
-							<date class="date-pub" title="2012-03-22T00:00:00+08:00" datetime="2012-03-22T00:00:00+08:00" pubdate>
-							<span class="month"><abbr>March</abbr></span>
-							<span class="day">22</span>
-							<span class="year">2012</span>
-							</date>
-						</p>
-						<ul class="list-category list-linear">
-							<li class="list-head">category: </li>
-							
-							
+<p>Since the second half year 2011, I have been working in the <a href="http://psychbrain.bnu.edu.cn/teachcms/liujia.htm">jliulab</a> in BNU.
+That give me a chance to use Linux substantially, and I&rsquo;m more and more
+interested to it.  As a Linux beginner, I have been met with a lot of problems
+while working with it.  Some of them I solved and got a lot of fun, but some
+of them I didn&rsquo;t.  As my memory is not very good, I start to think of making
+records of these problems so that I needn&rsquo;t begin from scratch when coming
+across them again.  Incidentally, I got to know that Github can be used as a
+free blog server.  That&rsquo;s what I need exactly, so everything begins&hellip;</p>
 
 
-  
-     
-    	<li><a href="/categories.html#Better Work In Linux-ref">
-    		Better Work In Linux <span>4</span>
-    	</a></li>
-    
-  
-
-
-						</ul>
-						<ul class="list-tag list-linear">
-							<li class="list-head">tags: </li>
-							
-							
-
-
-  
-     
-    	<li><a href="/tags.html#linux-ref">linux <span>1</span></a></li>
-    
-  
-
-
-
-						</ul>
-					</div><!-- meta -->
 				</div><!-- entry-content -->
-				<div class="misc-content">
-					<div class="social">
-						<ul class="list-linear">
-							<li><div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="" data-lang="en">Tweet</a></div></li>
-							<li><div class="twitter-follow"><a href="https://twitter.com/" class="twitter-follow-button" data-show-count="false" data-lang="en"></a></div></li>
-						</ul>
-					</div>
-					
-					
-
-
-  <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_developer = 1;
-    var disqus_shortname = 'learnlinuxthefunway'; // required: replace example with your forum shortname
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-
-				</div><!-- misc-content -->
-				
 			</div><!-- bd -->
+
 			<footer class="unit-foot">
 				<div class="unit-inner unit-foot-inner">
-					<nav class="pagination">
-						<ul>
-							
-							
-							
-							<li class="next"><a class="internal" rel="next"  href="/Better Work In Linux/2012/03/27/vim" title="View Vim 拾遗">Vim 拾遗 &raquo;</a></li>
-							
-						</ul>
-					</nav>
 					<p class="gotop">
 						<a href="#page">Back to Top</a>
 					</p>

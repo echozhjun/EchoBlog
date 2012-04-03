@@ -5,6 +5,7 @@ http://yangzetian.github.com/LearnLinuxTheFunWay//sitemap.txt
 http://yangzetian.github.com/LearnLinuxTheFunWay//pages.html
 http://yangzetian.github.com/LearnLinuxTheFunWay//index.html
 http://yangzetian.github.com/LearnLinuxTheFunWay//tags.html
+http://yangzetian.github.com/LearnLinuxTheFunWay//intro.html
 http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml
 
 http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/31/pandoc-cabal
