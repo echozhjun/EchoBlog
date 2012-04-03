@@ -15,7 +15,7 @@ GHC 是 Glasgow Haskell Compiler 的简称，也是 Haskell Platform 的基础�
 如果想从纯源码包下载，需要你本机上已装有某个版本的 ghc ，因为这个
 源码的大部分就事用 Haskell 写的。
 
-因为我把之前 yum 安装的 ghc 给删了，所以这里我选择 ghc 的 linux\_x86 
+由于种种缘故我把之前 yum 安装的 ghc 给删了，所以这里我选择 ghc 的 linux\_x86 
 平台二进制包。
 
 下好安装包后即是通用的 make 过程：
@@ -70,6 +70,13 @@ Cabal-install，这样永远不会出现冲突问题。
 好了，现在可以享受pandoc给我们带来的便利了！
 
 pandoc的使用请参考下面的*Links*。
+
+
+{% highlight py linenos %}
+import numpy as np
+
+a = np.arange(1, 3)
+{% endhighlight %}
 
 ## Links
 

@@ -4,7 +4,7 @@
  <title>LearnLinuxTheFunWay</title>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-04-01T19:52:45+08:00</updated>
+ <updated>2012-04-03T16:12:14+08:00</updated>
  <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
  <author>
    <name>Zetian Yang</name>
@@ -24,7 +24,7 @@
 如果想从纯源码包下载，需要你本机上已装有某个版本的 ghc ，因为这个
 源码的大部分就事用 Haskell 写的。&lt;/p&gt;
 
-&lt;p&gt;因为我把之前 yum 安装的 ghc 给删了，所以这里我选择 ghc 的 linux_x86
+&lt;p&gt;由于种种缘故我把之前 yum 安装的 ghc 给删了，所以这里我选择 ghc 的 linux_x86
 平台二进制包。&lt;/p&gt;
 
 &lt;p&gt;下好安装包后即是通用的 make 过程：&lt;/p&gt;
@@ -79,6 +79,13 @@ cabal install pandoc
 &lt;p&gt;好了，现在可以享受pandoc给我们带来的便利了！&lt;/p&gt;
 
 &lt;p&gt;pandoc的使用请参考下面的&lt;em&gt;Links&lt;/em&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;py&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 
 &lt;h2&gt;Links&lt;/h2&gt;
 
