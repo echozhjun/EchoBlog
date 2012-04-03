@@ -81,7 +81,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : yangzetian
+      short_name : learnlinuxthefunway
     livefyre :
       site_id : 123
     intensedebate :
