@@ -3,7 +3,7 @@ layout: post
 title: "安装 GHC, Cabal/Cabal-install 及 Pandoc"
 category: "Better Work In Linux"
 data: 2012-03-31 19:01:00
-tags: []
+tags: [ghc, cabal, cabal-install, pandoc]
 ---
 {% include JB/setup %}
 

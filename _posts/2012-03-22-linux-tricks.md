@@ -44,6 +44,10 @@ This will be keep updating...
  
     mkdir foo; tar xzf target.tar.gz --directory=foo
 
+## 7z
+
+    7z e xxx.7z -o{DIR}
+
 --------------------------------
 
 ## screenshot
@@ -52,12 +56,44 @@ This will be keep updating...
 
 -------------------------------
 
-## Gnome
+## Gnome 快捷键
 
-### 快捷键
-
-* 缩放
+* Terminal缩放
 
         CRTL-_  || CRTL-+
 
+* 插入系统剪切板的内容
+
+        SHIFT-Ins
+
+* 命令行
+
+    * 移动
+
+        CRTL-A || CRTL-E
+
+    * 回删一个词
+
+        Esc+Backspace
+
+    * 回删至句首
+
+        CRTL-U
+
 -------------------------------
+
+## wget
+
+从<URL>下载整个文件夹
+
+    wget -c -r -np -k -L -p <URL>
+
+指定下载目录
+
+    wget -P <dir>
+
+以30秒为间隔不断重新请求下载
+
+    wget -t 0 -w 31 -c <URL>
+
+---------------------------------
