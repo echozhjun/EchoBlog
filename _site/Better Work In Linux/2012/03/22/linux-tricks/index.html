@@ -19,15 +19,17 @@
 	<header class="the-header">
 		<div class="unit-head">
 			<div class="unit-inner unit-head-inner">
-				<p class="logo"><a href="/">LearnLinuxTheFunWay</a></p>
+				<p class="logo"><a href="/">Mind On Mind</a></p>
 				<nav class="nav-global">
 					<ul>
 					<!--	<li class="page"><a href="/pages.html">pages</a></li>   -->
                         <li class="about"><a href="/intro.html">intro</a></li>
-						<li class="category"><a href="/categories.html">categories</a></li>
+				<!--		<li class="category"><a href="/categories.html">categories</a></li>
 						<li class="tag"><a href="/tags.html">tags</a></li>
-						<li class="archive"><a href="/archive.html">archive</a></li>
-						<li class="rss"><a href="http://feeds.feedburner.com/learnlinuxthefunway">RSS Feed</a></li>
+                -->
+						<li class="archive"><a href="/index.html">home</a></li>
+                
+						<li class="rss"><a href="http://feeds.feedburner.com/learnlinuxthefunway">RSS</a></li>
 					</ul>
 				</nav>
 			</div><!-- unit-inner -->
@@ -63,20 +65,11 @@
 <p>这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。</p>
 <p>Here I record bits of useful tricks for daily working with Linux.</p>
 <p>This will be keep updating…</p>
-<table>
-<col width="43%" />
-<tbody>
-<tr class="odd">
-<td align="left">## yum</td>
-</tr>
-<tr class="even">
-<td align="left">查找哪个包提供了<code>makeinfo</code>程序：</td>
-</tr>
-<tr class="odd">
-<td align="left">yum provides *bin/makeinfo</td>
-</tr>
-</tbody>
-</table>
+<hr />
+<h2 id="yum">yum</h2>
+<p>查找哪个包提供了<code>makeinfo</code>程序：</p>
+<pre><code>yum provides *bin/makeinfo</code></pre>
+<hr />
 <h2 id="rpm">rpm</h2>
 <p>查找某个包的相关文件：</p>
 <pre><code>rpm -qs libgfortran</code></pre>
@@ -97,18 +90,24 @@
 <h2 id="gnome-快捷键">Gnome 快捷键</h2>
 <ul>
 <li><p>Terminal缩放</p>
-<pre><code>CRTL-_  || CRTL-+</code></pre></li>
+<pre><code>Crtl-_  || Crtl-+</code></pre></li>
 <li><p>插入系统剪切板的内容</p>
-<pre><code>SHIFT-Ins</code></pre></li>
-<li><p>命令行</p>
+<pre><code>Shift-Ins</code></pre></li>
+</ul>
+<hr />
+<h2 id="bash-快捷键">Bash 快捷键</h2>
+<h3 id="命令行编辑">命令行编辑</h3>
 <ul>
-<li><p>移动</p>
-<p>CRTL-A || CRTL-E</p></li>
-<li><p>回删一个词</p>
-<p>Esc+Backspace</p></li>
-<li><p>回删至句首</p>
-<p>CRTL-U</p></li>
-</ul></li>
+<li>移动至行首或行尾 <code>Crtl-a || Crtl-e</code></li>
+<li>按单词前移或后移 <code>Alt-f || Alt-b</code></li>
+<li>删除至行首或行尾 <code>Ctrl-u || Ctrl-k</code></li>
+<li>回删一个词 <code>Ctrl-w || Alt-Backspace || Esc-Backspace</code></li>
+<li>后删一个词 <code>Alt-d</code></li>
+<li>粘贴至光标后 <code>Ctrl-y</code></li>
+</ul>
+<h3 id="历史命令">历史命令</h3>
+<ul>
+<li>Ctrl-r Ctrl-g Ctrl-p Ctrl-n Alt-.</li>
 </ul>
 <hr />
 <h2 id="wget">wget</h2>
@@ -124,10 +123,11 @@
 					<div class="meta">
 						<p class="date-publish">
 							Published: 
-							<date class="date-pub" title="2012-03-22T00:00:00+08:00" datetime="2012-03-22T00:00:00+08:00" pubdate>
+							<date class="date-pub" title="2012-03-22T20:33:00+08:00" datetime="2012-03-22T20:33:00+08:00" pubdate>
 							<span class="month"><abbr>March</abbr></span>
 							<span class="day">22</span>
-							<span class="year">2012</span>
+							<span class="year">2012 @ </span>
+                            <span class="time">20:33 </span>
 							</date>
 						</p>
 						<ul class="list-category list-linear">

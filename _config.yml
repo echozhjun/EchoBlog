@@ -12,8 +12,7 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : LearnLinuxTheFunWay
-tagline: Be Techex, Don't be Tough
+title : Mind On Mind
 author :
   name : Zetian Yang 
   email : zetain.yang@gmail.com

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>LearnLinuxTheFunWay</title>
+ <title>Mind On Mind</title>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-04-14T18:16:16+08:00</updated>
+ <updated>2012-04-14T19:40:41+08:00</updated>
  <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
  <author>
    <name>Zetian Yang</name>
@@ -48,14 +48,6 @@ make install&lt;/code&gt;&lt;/pre&gt;
 cabal install pandoc&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;好了，现在可以享受pandoc给我们带来的便利了！&lt;/p&gt;
 &lt;p&gt;pandoc的使用请参考下面的&lt;em&gt;Links&lt;/em&gt;。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-
-
 &lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://johnmacfarlane.net/pandoc/demos.html&quot;&gt;Pandoc Demos&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -94,7 +86,7 @@ cabal install pandoc&lt;/code&gt;&lt;/pre&gt;
  <entry>
    <title>Vim 拾遗</title>
    <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/27/vim"/>
-   <updated>2012-03-27T00:00:00+08:00</updated>
+   <updated>2012-03-27T13:04:00+08:00</updated>
    <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/27/vim</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
@@ -168,7 +160,7 @@ set foldlevel=0/1/2...&lt;/code&gt;&lt;/pre&gt;
  <entry>
    <title>Linux 小窍门札记</title>
    <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/22/linux-tricks"/>
-   <updated>2012-03-22T00:00:00+08:00</updated>
+   <updated>2012-03-22T20:33:00+08:00</updated>
    <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/22/linux-tricks</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
@@ -182,20 +174,11 @@ set foldlevel=0/1/2...&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。&lt;/p&gt;
 &lt;p&gt;Here I record bits of useful tricks for daily working with Linux.&lt;/p&gt;
 &lt;p&gt;This will be keep updating…&lt;/p&gt;
-&lt;table&gt;
-&lt;col width=&quot;43%&quot; /&gt;
-&lt;tbody&gt;
-&lt;tr class=&quot;odd&quot;&gt;
-&lt;td align=&quot;left&quot;&gt;## yum&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;even&quot;&gt;
-&lt;td align=&quot;left&quot;&gt;查找哪个包提供了&lt;code&gt;makeinfo&lt;/code&gt;程序：&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;odd&quot;&gt;
-&lt;td align=&quot;left&quot;&gt;yum provides *bin/makeinfo&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;yum&quot;&gt;yum&lt;/h2&gt;
+&lt;p&gt;查找哪个包提供了&lt;code&gt;makeinfo&lt;/code&gt;程序：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum provides *bin/makeinfo&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
 &lt;h2 id=&quot;rpm&quot;&gt;rpm&lt;/h2&gt;
 &lt;p&gt;查找某个包的相关文件：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;rpm -qs libgfortran&lt;/code&gt;&lt;/pre&gt;
@@ -216,18 +199,24 @@ set foldlevel=0/1/2...&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;gnome-快捷键&quot;&gt;Gnome 快捷键&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Terminal缩放&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;CRTL-_  || CRTL-+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;Crtl-_  || Crtl-+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;插入系统剪切板的内容&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;SHIFT-Ins&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;命令行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Shift-Ins&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2 id=&quot;bash-快捷键&quot;&gt;Bash 快捷键&lt;/h2&gt;
+&lt;h3 id=&quot;命令行编辑&quot;&gt;命令行编辑&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;移动&lt;/p&gt;
-&lt;p&gt;CRTL-A || CRTL-E&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;回删一个词&lt;/p&gt;
-&lt;p&gt;Esc+Backspace&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;回删至句首&lt;/p&gt;
-&lt;p&gt;CRTL-U&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;移动至行首或行尾 &lt;code&gt;Crtl-a || Crtl-e&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;按单词前移或后移 &lt;code&gt;Alt-f || Alt-b&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除至行首或行尾 &lt;code&gt;Ctrl-u || Ctrl-k&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;回删一个词 &lt;code&gt;Ctrl-w || Alt-Backspace || Esc-Backspace&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;后删一个词 &lt;code&gt;Alt-d&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;粘贴至光标后 &lt;code&gt;Ctrl-y&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;历史命令&quot;&gt;历史命令&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Ctrl-r Ctrl-g Ctrl-p Ctrl-n Alt-.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;wget&quot;&gt;wget&lt;/h2&gt;

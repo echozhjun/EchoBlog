@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Linux 小窍门札记"
-tagline: "Linux Tricks"
 category: "Better Work In Linux"
 tags: [linux]
+date: 2012-03-22 20:33
 ---
 {% include JB/setup %}
 
@@ -14,6 +14,7 @@ Here I record bits of useful tricks for daily working with Linux.
 This will be keep updating...
 
 -------------------------------
+
 ## yum
 
 查找哪个包提供了`makeinfo`程序：
@@ -60,25 +61,29 @@ This will be keep updating...
 
 * Terminal缩放
 
-        CRTL-_  || CRTL-+
+        Crtl-_  || Crtl-+
 
 * 插入系统剪切板的内容
 
-        SHIFT-Ins
+        Shift-Ins
 
-* 命令行
+-------------------------------
 
-    * 移动
+## Bash 快捷键
 
-        CRTL-A || CRTL-E
+### 命令行编辑
 
-    * 回删一个词
+* 移动至行首或行尾 `Crtl-a || Crtl-e`
+* 按单词前移或后移 `Alt-f || Alt-b`
+* 删除至行首或行尾 `Ctrl-u || Ctrl-k`
+* 回删一个词 `Ctrl-w || Alt-Backspace || Esc-Backspace`
+* 后删一个词 `Alt-d`
+* 粘贴至光标后 `Ctrl-y`
 
-        Esc+Backspace
+### 历史命令
 
-    * 回删至句首
+*    Ctrl-r Ctrl-g Ctrl-p Ctrl-n Alt-.
 
-        CRTL-U
 
 -------------------------------
 

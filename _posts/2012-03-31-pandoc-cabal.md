@@ -73,12 +73,6 @@ Cabal-install，这样永远不会出现冲突问题。
 pandoc的使用请参考下面的*Links*。
 
 
-{% highlight python %}
-import numpy as np
-
-a = np.arange(1, 3)
-{% endhighlight %}
-
 ## Links
 
 * [Pandoc Demos](http://johnmacfarlane.net/pandoc/demos.html)
