@@ -51,73 +51,76 @@
 
 			<div class="bd">
 				<div class="entry-content">
-					
+					<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+</head>
+<body>
 <p>这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。</p>
-
 <p>Here I record bits of useful tricks for daily working with Linux.</p>
-
-<p>This will be keep updating&hellip;</p>
-
-<hr />
-<p>## yum</p>
-
-<p>查找哪个包提供了<code>makeinfo</code>程序：</p>
-
-<pre><code>yum provides *bin/makeinfo
-</code></pre>
-
-<hr />
-
+<p>This will be keep updating…</p>
+<table>
+<col width="43%" />
+<tbody>
+<tr class="odd">
+<td align="left">## yum</td>
+</tr>
+<tr class="even">
+<td align="left">查找哪个包提供了<code>makeinfo</code>程序：</td>
+</tr>
+<tr class="odd">
+<td align="left">yum provides *bin/makeinfo</td>
+</tr>
+</tbody>
+</table>
 <h2 id="rpm">rpm</h2>
-
 <p>查找某个包的相关文件：</p>
-
-<pre><code>rpm -qs libgfortran
-</code></pre>
-
+<pre><code>rpm -qs libgfortran</code></pre>
 <hr />
-
 <h2 id="zip">zip</h2>
-
-<pre><code>unzip xxx.zip -d destdir
-</code></pre>
-
+<pre><code>unzip xxx.zip -d destdir</code></pre>
 <h2 id="tar">tar</h2>
-
 <p>将foo1，foo2打包至目标target</p>
-
-<pre><code>tar czf dir/to/target.tar.gz foo1 foo2
-</code></pre>
-
+<pre><code>tar czf dir/to/target.tar.gz foo1 foo2</code></pre>
 <p>将target.tar.gz内容抽取至foo目录</p>
-
-<pre><code>mkdir foo; tar xzf target.tar.gz --directory=foo
-</code></pre>
-
+<pre><code>mkdir foo; tar xzf target.tar.gz --directory=foo</code></pre>
+<h2 id="z">7z</h2>
+<pre><code>7z e xxx.7z -o{DIR}</code></pre>
 <hr />
-
 <h2 id="screenshot">screenshot</h2>
-
-<pre><code>scrot -s
-</code></pre>
-
+<pre><code>scrot -s</code></pre>
 <hr />
-
-<h2 id="gnome">Gnome</h2>
-
-<h3 id="section">快捷键</h3>
-
+<h2 id="gnome-快捷键">Gnome 快捷键</h2>
 <ul>
-  <li>
-    <p>缩放</p>
-
-    <pre><code>  CRTL-_  || CRTL-+
-</code></pre>
-  </li>
+<li><p>Terminal缩放</p>
+<pre><code>CRTL-_  || CRTL-+</code></pre></li>
+<li><p>插入系统剪切板的内容</p>
+<pre><code>SHIFT-Ins</code></pre></li>
+<li><p>命令行</p>
+<ul>
+<li><p>移动</p>
+<p>CRTL-A || CRTL-E</p></li>
+<li><p>回删一个词</p>
+<p>Esc+Backspace</p></li>
+<li><p>回删至句首</p>
+<p>CRTL-U</p></li>
+</ul></li>
 </ul>
-
 <hr />
-
+<h2 id="wget">wget</h2>
+<p>从<URL>下载整个文件夹</p>
+<pre><code>wget -c -r -np -k -L -p &lt;URL&gt;</code></pre>
+<p>指定下载目录</p>
+<pre><code>wget -P &lt;dir&gt;</code></pre>
+<p>以30秒为间隔不断重新请求下载</p>
+<pre><code>wget -t 0 -w 31 -c &lt;URL&gt;</code></pre>
+<hr />
+</body>
+</html>
 					<div class="meta">
 						<p class="date-publish">
 							Published: 
@@ -199,7 +202,7 @@
 							
 							
 							
-							<li class="next"><a class="internal" rel="next"  href="/Better Work In Linux/2012/03/27/vim" title="View Vim 拾遗">Vim 拾遗 &raquo;</a></li>
+							<li class="next"><a class="internal" rel="next"  href="/Better%20Work%20In%20Linux/2012/03/27/vim" title="View Vim 拾遗">Vim 拾遗 &raquo;</a></li>
 							
 						</ul>
 					</nav>

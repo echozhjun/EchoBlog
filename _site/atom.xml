@@ -4,7 +4,7 @@
  <title>LearnLinuxTheFunWay</title>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-04-03T22:40:34+08:00</updated>
+ <updated>2012-04-14T10:13:51+08:00</updated>
  <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
  <author>
    <name>Zetian Yang</name>
@@ -14,267 +14,232 @@
  
  <entry>
    <title>安装 GHC, Cabal/Cabal-install 及 Pandoc</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/31/pandoc-cabal"/>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal"/>
    <updated>2012-03-31T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/31/pandoc-cabal</id>
-   <content type="html">
-&lt;p&gt;GHC 是 Glasgow Haskell Compiler 的简称，也是 Haskell Platform 的基础。
-最新的版本可以从&lt;a href=&quot;http://www.haskell.org/ghc/&quot;&gt;这里&lt;/a&gt;下载。&lt;/p&gt;
-
-&lt;p&gt;进入最新版本的下载页面后有两个选择，一是二进制包，二是纯源码包。
-如果想从纯源码包下载，需要你本机上已装有某个版本的 ghc ，因为这个
-源码的大部分就事用 Haskell 写的。&lt;/p&gt;
-
-&lt;p&gt;由于种种缘故我把之前 yum 安装的 ghc 给删了，所以这里我选择 ghc 的 linux_x86 
-平台二进制包。&lt;/p&gt;
-
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;GHC 是 Glasgow Haskell Compiler 的简称，也是 Haskell Platform 的基础。 最新的版本可以从&lt;a href=&quot;http://www.haskell.org/ghc/&quot;&gt;这里&lt;/a&gt;下载。&lt;/p&gt;
+&lt;p&gt;进入最新版本的下载页面后有两个选择，一是二进制包，二是纯源码包。 如果想从纯源码包下载，需要你本机上已装有某个版本的 ghc ，因为这个 源码的大部分就事用 Haskell 写的。&lt;/p&gt;
+&lt;p&gt;由于种种缘故我把之前 yum 安装的 ghc 给删了，所以这里我选择 ghc 的 linux_x86 平台二进制包。&lt;/p&gt;
 &lt;p&gt;下好安装包后即是通用的 make 过程：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;tar xjvf ghc-7.x.x-i386-linux-unkown.tar.bz2
 cd ghc-7.x.x
 ./configure
-make install
-&lt;/code&gt;&lt;/pre&gt;
-
+make install&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;现在可以开始安装 Cabal/Cabal-install了。&lt;/p&gt;
-
-&lt;p&gt;Cabal 是 Haskell 的一个 package，提供了一个 Haskell 包安装框架，方便了 Haskell
-包的管理。
-而 Cabal-install 则是另一个 Haskell 包安装库，它提供了 &lt;code&gt;cabal&lt;/code&gt; 命令行
-程序，该程序在安装新包时会自动解决包依赖关系，大大方便了 Haskell 包的安装。&lt;/p&gt;
-
-&lt;p&gt;官方的建议是安装 Haskekll Platform，它整合了 GHC，Cabal，Cabal-install
-等常用工具。
-由于我觉得 fedora repo 中的 HP 版本过老，编译 HP
-又需要其他很多东西，所以就没有选取这个方案，而是自己安装 Cabal。&lt;/p&gt;
-
-&lt;p&gt;其实 Cabal 和 Cabal-install 只要安装后者就可以了，因为安装 Cabal-install
-时用的 &lt;code&gt;bootstrap&lt;/code&gt; 程序会自动下载 Cabal-install 所依赖的包，其中当然包括
-Cabal。但如果你只安装前者那么后者还需要手动安装。&lt;/p&gt;
-
-&lt;p&gt;虽说可以从 &lt;a href=&quot;http://hackage.haskell.org/package/cabal-install&quot;&gt;hackage&lt;/a&gt; 中下载 Cabal-install，但版本实在太老了。
-我选择从&lt;a href=&quot;http://darcs.haskell.org/cabal-branches/&quot;&gt;开发库&lt;/a&gt;中下载最新的稳定版本安装。
-这里有一个需要注意的是一定要保证你所用的 Cabal 版本与 Cabal-install 版本一致，
-也就是说从开发库中同一个版本文件夹中下载 Cabal 和
-Cabal-install，否则安装时会出现麻烦。
-所以最好的办法就是不安装 Cabal 而直接安装
-Cabal-install，这样永远不会出现冲突问题。&lt;/p&gt;
-
-&lt;p&gt;我选择的是
-&lt;a href=&quot;http://darcs.haskell.org/cabal-branches/cabal-1.14/&quot;&gt;Cabal-1.14&lt;/a&gt;
-版本，把这个链接里所有的文件都用 &lt;code&gt;wget&lt;/code&gt; 下载到本地。命令如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;wget -c -r -np -k -L -p http://darc.haskell.org/cabal-branches/cabal-1.14
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;p&gt;Cabal 是 Haskell 的一个 package，提供了一个 Haskell 包安装框架，方便了 Haskell 包的管理。 而 Cabal-install 则是另一个 Haskell 包安装库，它提供了 &lt;code&gt;cabal&lt;/code&gt; 命令行 程序，该程序在安装新包时会自动解决包依赖关系，大大方便了 Haskell 包的安装。&lt;/p&gt;
+&lt;p&gt;官方的建议是安装 Haskekll Platform，它整合了 GHC，Cabal，Cabal-install 等常用工具。 由于我觉得 fedora repo 中的 HP 版本过老，编译 HP 又需要其他很多东西，所以就没有选取这个方案，而是自己安装 Cabal。&lt;/p&gt;
+&lt;p&gt;其实 Cabal 和 Cabal-install 只要安装后者就可以了，因为安装 Cabal-install 时用的 &lt;code&gt;bootstrap&lt;/code&gt; 程序会自动下载 Cabal-install 所依赖的包，其中当然包括 Cabal。但如果你只安装前者那么后者还需要手动安装。&lt;/p&gt;
+&lt;p&gt;虽说可以从 &lt;a href=&quot;http://hackage.haskell.org/package/cabal-install&quot;&gt;hackage&lt;/a&gt; 中下载 Cabal-install，但版本实在太老了。 我选择从&lt;a href=&quot;http://darcs.haskell.org/cabal-branches/&quot;&gt;开发库&lt;/a&gt;中下载最新的稳定版本安装。 这里有一个需要注意的是一定要保证你所用的 Cabal 版本与 Cabal-install 版本一致， 也就是说从开发库中同一个版本文件夹中下载 Cabal 和 Cabal-install，否则安装时会出现麻烦。 所以最好的办法就是不安装 Cabal 而直接安装 Cabal-install，这样永远不会出现冲突问题。&lt;/p&gt;
+&lt;p&gt;我选择的是 &lt;a href=&quot;http://darcs.haskell.org/cabal-branches/cabal-1.14/&quot;&gt;Cabal-1.14&lt;/a&gt; 版本，把这个链接里所有的文件都用 &lt;code&gt;wget&lt;/code&gt; 下载到本地。命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -c -r -np -k -L -p http://darc.haskell.org/cabal-branches/cabal-1.14&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;当然这是非常土的方法，正确的方法是使用 &lt;code&gt;git&lt;/code&gt;。&lt;/p&gt;
-
 &lt;p&gt;进入Cabal-install目录后执行&lt;code&gt;sh bootstrap.sh&lt;/code&gt;，即可完成安装。&lt;/p&gt;
-
 &lt;p&gt;安装完成Cabal-install 后，将cabal程序所在目录加入PATH中，再执行：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;cabal update
-cabal install pandoc
-&lt;/code&gt;&lt;/pre&gt;
-
+cabal install pandoc&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;好了，现在可以享受pandoc给我们带来的便利了！&lt;/p&gt;
-
 &lt;p&gt;pandoc的使用请参考下面的&lt;em&gt;Links&lt;/em&gt;。&lt;/p&gt;
-
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+
+
 &lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://johnmacfarlane.net/pandoc/demos.html&quot;&gt;Pandoc Demos&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://johnmacfarlane.net/pandoc/README.html&quot;&gt;Pandoc User&amp;rsquo;s Guide&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://chen.yanping.me/cn/blog/2012/03/13/pandoc/&quot;&gt;一份中文简介&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://johnmacfarlane.net/pandoc/demos.html&quot;&gt;Pandoc Demos&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://johnmacfarlane.net/pandoc/README.html&quot;&gt;Pandoc User’s Guide&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://chen.yanping.me/cn/blog/2012/03/13/pandoc/&quot;&gt;一份中文简介&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-</content>
+&lt;/body&gt;
+&lt;/html&gt;</content>
  </entry>
  
  <entry>
    <title>Markdown 中文列表抽风</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/28/markdown"/>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/28/markdown"/>
    <updated>2012-03-28T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/28/markdown</id>
-   <content type="html">
-&lt;p&gt;用 markdown 写带中文的列表时发现 jekyll 生成的网页中有的可以正常显示，有的则不行。 &lt;br /&gt;
-折腾半天后发现如果列表项中含有英文字母等非中文字符，就可以正确显示，纯中文的那些打死也不行。&lt;/p&gt;
-
-&lt;p&gt;上网查后发现是 jeklly 默认 markdown 引擎 maruku 的问题，将引擎改为 rdiscount 即可。&lt;br /&gt;
-做法是修改 &lt;code&gt;_config.yml&lt;/code&gt; 文件，在 &lt;code&gt;pygments: true&lt;/code&gt; 上面添加一行 &lt;code&gt;markdown: rdiscount&lt;/code&gt;&lt;/p&gt;
-
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/28/markdown</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;用 markdown 写带中文的列表时发现 jekyll 生成的网页中有的可以正常显示，有的则不行。&lt;br /&gt;折腾半天后发现如果列表项中含有英文字母等非中文字符，就可以正确显示，纯中文的那些打死也不行。&lt;/p&gt;
+&lt;p&gt;上网查后发现是 jeklly 默认 markdown 引擎 maruku 的问题，将引擎改为 rdiscount 即可。&lt;br /&gt;做法是修改 &lt;code&gt;_config.yml&lt;/code&gt; 文件，在 &lt;code&gt;pygments: true&lt;/code&gt; 上面添加一行 &lt;code&gt;markdown: rdiscount&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&quot;links&quot;&gt;Links&lt;/h3&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.douban.com/note/147668553/&quot;&gt;markdown 渲染引擎折腾记&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.v2ex.com/t/28800&quot;&gt;中文清单 lists 问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.douban.com/note/147668553/&quot;&gt;markdown 渲染引擎折腾记&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.v2ex.com/t/28800&quot;&gt;中文清单 lists 问题&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content>
+&lt;/body&gt;
+&lt;/html&gt;</content>
  </entry>
  
  <entry>
    <title>Vim 拾遗</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/27/vim"/>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/27/vim"/>
    <updated>2012-03-27T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/27/vim</id>
-   <content type="html">
-&lt;h2 id=&quot;section&quot;&gt;索引&lt;/h2&gt;
-
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/27/vim</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2 id=&quot;索引&quot;&gt;索引&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#vimim&quot;&gt;VimIm&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#markdown&quot;&gt;markdown syntax&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#vimfold&quot;&gt;vim fold&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#vimim&quot;&gt;VimIm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#markdown&quot;&gt;markdown syntax&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#vimfold&quot;&gt;vim fold&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;hr /&gt;
+&lt;h2 id=&quot;vimim&quot;&gt;
+VimIm
+&lt;/h2&gt;
 
-&lt;h2 id=&quot;vimim&quot;&gt;VimIm&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;下载 &lt;a href=&quot;http://vim.sourceforge.net/scripts/download_script.php?src_id=17150/&quot;&gt;vimim.vim&lt;/a&gt; 至 &lt;code&gt;/usr/share/vim73/plugin&lt;/code&gt; 或 &lt;code&gt;/home/.vim/plugin&lt;/code&gt; 中 &lt;/li&gt;
-  &lt;li&gt;下载 &lt;a href=&quot;http://vimim-data.googlecode.com/svn/trunk/data/vimim.pinyin.txt/&quot;&gt;vimim.pingyin.txt&lt;/a&gt;，&lt;a href=&quot;http://vimim.googlecode.com/svn/trunk/plugin/vimim.cjk.txt/&quot;&gt;vimim.cjk.txt&lt;/a&gt; 至相同目录&lt;/li&gt;
-  &lt;li&gt;两种工作模式：
-    &lt;ul&gt;
-      &lt;li&gt;在插入模式下输入拼音，按 CTRL-^ 直接将拼音转换为汉字。&lt;/li&gt;
-      &lt;li&gt;在任意模式下按 CTRL-_， 进入动态输入模式，此模式与普通输入法类似&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;下载 &lt;a href=&quot;http://vim.sourceforge.net/scripts/download_script.php?src_id=17150/&quot;&gt;vimim.vim&lt;/a&gt; 至 &lt;code&gt;/usr/share/vim73/plugin&lt;/code&gt; 或 &lt;code&gt;/home/.vim/plugin&lt;/code&gt; 中&lt;/li&gt;
+&lt;li&gt;下载 &lt;a href=&quot;http://vimim-data.googlecode.com/svn/trunk/data/vimim.pinyin.txt/&quot;&gt;vimim.pingyin.txt&lt;/a&gt;，&lt;a href=&quot;http://vimim.googlecode.com/svn/trunk/plugin/vimim.cjk.txt/&quot;&gt;vimim.cjk.txt&lt;/a&gt; 至相同目录&lt;/li&gt;
+&lt;li&gt;两种工作模式：
+&lt;ul&gt;
+&lt;li&gt;在插入模式下输入拼音，按 CTRL-^ 直接将拼音转换为汉字。&lt;/li&gt;
+&lt;li&gt;在任意模式下按 CTRL-_， 进入动态输入模式，此模式与普通输入法类似&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; vimim.cjk.txt
-是一个数码字库，如果需要拼音输入或五笔输入法需配套相应的其他字库 &lt;a href=&quot;http://groups.google.com/forum/?fromgroups#!topic/vimim/zWdi6QqKdLk/&quot;&gt;[1]&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; vimim.cjk.txt 是一个数码字库，如果需要拼音输入或五笔输入法需配套相应的其他字库 &lt;a href=&quot;http://groups.google.com/forum/?fromgroups#!topic/vimim/zWdi6QqKdLk/&quot;&gt;[1]&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&quot;links&quot;&gt;Links&lt;/h4&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://vim.sourceforge.net/scripts/script.php?script_id=2506&quot;&gt;sourceforge&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://vimim.googlecode.com/svn/vimim/vimim.big5.html#cloud&quot;&gt;google code page&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://groups.google.com/forum/?fromgroups#!topic/vimim/&quot;&gt;gogole groups&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://code.google.com/p/vimim-data/&quot;&gt;第三方词库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://vim.sourceforge.net/scripts/script.php?script_id=2506&quot;&gt;sourceforge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://vimim.googlecode.com/svn/vimim/vimim.big5.html#cloud&quot;&gt;google code page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://groups.google.com/forum/?fromgroups#!topic/vimim/&quot;&gt;gogole groups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://code.google.com/p/vimim-data/&quot;&gt;第三方词库&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;hr /&gt;
+&lt;h2 id='markdown'&gt;
+markdown vim语法高亮
+&lt;/h2&gt;
 
-&lt;h2 id=&quot;markdown&quot;&gt;markdown vim语法高亮&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;下载 &lt;a href=&quot;http://plasticboy.com/dox/vim-markdown.zip&quot;&gt;mkd.vim.tar.gz&lt;/a&gt;，解压至 &lt;code&gt;.vim/&lt;/code&gt; 中&lt;/li&gt;
-  &lt;li&gt;里面包含两个文件夹：&lt;code&gt;ftdetect&lt;/code&gt; 和 &lt;code&gt;syntax&lt;/code&gt;，第一个用于设置 vim
-的文件关联，第二个是真正的 syntax 文件&lt;/li&gt;
-  &lt;li&gt;如需将某种文件后缀关联为 markdown 类型，需要在 &lt;code&gt;ftdetect/mkd.vim&lt;/code&gt; 中添加后缀&lt;/li&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;下载 &lt;a href=&quot;http://plasticboy.com/dox/vim-markdown.zip&quot;&gt;mkd.vim.tar.gz&lt;/a&gt;，解压至 &lt;code&gt;.vim/&lt;/code&gt; 中&lt;/li&gt;
+&lt;li&gt;里面包含两个文件夹：&lt;code&gt;ftdetect&lt;/code&gt; 和 &lt;code&gt;syntax&lt;/code&gt;，第一个用于设置 vim 的文件关联，第二个是真正的 syntax 文件&lt;/li&gt;
+&lt;li&gt;如需将某种文件后缀关联为 markdown 类型，需要在 &lt;code&gt;ftdetect/mkd.vim&lt;/code&gt; 中添加后缀&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;h4 id=&quot;links-1&quot;&gt;Links&lt;/h4&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://plasticboy.com/markdown-vim-mode/&quot;&gt;mkd blog&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/plasticboy/vim-markdown/&quot;&gt;mkd github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://plasticboy.com/markdown-vim-mode/&quot;&gt;mkd blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/plasticboy/vim-markdown/&quot;&gt;mkd github&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;hr /&gt;
-
-&lt;h2 id=&quot;vimfold&quot;&gt;vim 折叠相关命令&lt;/h2&gt;
+&lt;h2 id='vimfold'&gt;
+vim 折叠相关命令
+&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;set foldenable/nofoldenable 
 set foldmethod=syntax/indent...
-set foldlevel=0/1/2...
-&lt;/code&gt;&lt;/pre&gt;
-
+set foldlevel=0/1/2...&lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&quot;links-2&quot;&gt;Links&lt;/h4&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://man.chinaunix.net/newsoft/vi/doc/fold.html&quot;&gt;chinaunix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://man.chinaunix.net/newsoft/vi/doc/fold.html&quot;&gt;chinaunix&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;hr /&gt;
-</content>
+&lt;/body&gt;
+&lt;/html&gt;</content>
  </entry>
  
  <entry>
    <title>Linux 小窍门札记</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/22/linux-tricks"/>
+   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/22/linux-tricks"/>
    <updated>2012-03-22T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better Work In Linux/2012/03/22/linux-tricks</id>
-   <content type="html">
+   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/22/linux-tricks</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
 &lt;p&gt;这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。&lt;/p&gt;
-
 &lt;p&gt;Here I record bits of useful tricks for daily working with Linux.&lt;/p&gt;
-
-&lt;p&gt;This will be keep updating&amp;hellip;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;## yum&lt;/p&gt;
-
-&lt;p&gt;查找哪个包提供了&lt;code&gt;makeinfo&lt;/code&gt;程序：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;yum provides *bin/makeinfo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;p&gt;This will be keep updating…&lt;/p&gt;
+&lt;table&gt;
+&lt;col width=&quot;43%&quot; /&gt;
+&lt;tbody&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;## yum&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;查找哪个包提供了&lt;code&gt;makeinfo&lt;/code&gt;程序：&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;yum provides *bin/makeinfo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&quot;rpm&quot;&gt;rpm&lt;/h2&gt;
-
 &lt;p&gt;查找某个包的相关文件：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;rpm -qs libgfortran
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;rpm -qs libgfortran&lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-
 &lt;h2 id=&quot;zip&quot;&gt;zip&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;unzip xxx.zip -d destdir
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;unzip xxx.zip -d destdir&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;tar&quot;&gt;tar&lt;/h2&gt;
-
 &lt;p&gt;将foo1，foo2打包至目标target&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tar czf dir/to/target.tar.gz foo1 foo2
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;tar czf dir/to/target.tar.gz foo1 foo2&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;将target.tar.gz内容抽取至foo目录&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mkdir foo; tar xzf target.tar.gz --directory=foo
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;mkdir foo; tar xzf target.tar.gz --directory=foo&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;z&quot;&gt;7z&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;7z e xxx.7z -o{DIR}&lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-
 &lt;h2 id=&quot;screenshot&quot;&gt;screenshot&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;scrot -s
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;scrot -s&lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-
-&lt;h2 id=&quot;gnome&quot;&gt;Gnome&lt;/h2&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;快捷键&lt;/h3&gt;
-
+&lt;h2 id=&quot;gnome-快捷键&quot;&gt;Gnome 快捷键&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;缩放&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code&gt;  CRTL-_  || CRTL-+
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Terminal缩放&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CRTL-_  || CRTL-+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;插入系统剪切板的内容&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SHIFT-Ins&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;命令行&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;移动&lt;/p&gt;
+&lt;p&gt;CRTL-A || CRTL-E&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;回删一个词&lt;/p&gt;
+&lt;p&gt;Esc+Backspace&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;回删至句首&lt;/p&gt;
+&lt;p&gt;CRTL-U&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;hr /&gt;
-</content>
+&lt;h2 id=&quot;wget&quot;&gt;wget&lt;/h2&gt;
+&lt;p&gt;从&lt;URL&gt;下载整个文件夹&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -c -r -np -k -L -p &amp;lt;URL&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;指定下载目录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -P &amp;lt;dir&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以30秒为间隔不断重新请求下载&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -t 0 -w 31 -c &amp;lt;URL&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
  </entry>
  
  
