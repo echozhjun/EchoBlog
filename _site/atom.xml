@@ -4,13 +4,149 @@
  <title>Mind on Mind</title>
  <link href="/atom.xml" rel="self"/>
  <link href=""/>
- <updated>2012-04-15T18:31:03+08:00</updated>
+ <updated>2012-04-16T01:16:24+08:00</updated>
  <id></id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>为 Jekyll 装上瑞士军刀 Pandoc</title>
+   <link href="/Better%20Work%20in%20Linux/2012/04/15/jekyll-pandoc"/>
+   <updated>2012-04-15T01:12:00+08:00</updated>
+   <id>h/Better%20Work%20in%20Linux/2012/04/15/jekyll-pandoc</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code &gt; span.kw { color: #007020; font-weight: bold; }
+code &gt; span.dt { color: #902000; }
+code &gt; span.dv { color: #40a070; }
+code &gt; span.bn { color: #40a070; }
+code &gt; span.fl { color: #40a070; }
+code &gt; span.ch { color: #4070a0; }
+code &gt; span.st { color: #4070a0; }
+code &gt; span.co { color: #60a0b0; font-style: italic; }
+code &gt; span.ot { color: #007020; }
+code &gt; span.al { color: #ff0000; font-weight: bold; }
+code &gt; span.fu { color: #06287e; }
+code &gt; span.er { color: #ff0000; font-weight: bold; }
+  &lt;/style&gt;
+  &lt;script src=&quot;https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Jekyll 原生支持 &lt;code&gt;maruku&lt;/code&gt;，&lt;code&gt;rdiscount&lt;/code&gt;，&lt;code&gt;kramdown&lt;/code&gt;，&lt;code&gt;redcarpet&lt;/code&gt; 等 markdwon 渲染器，它们各有利弊。个人认为 maruku 虽然是 Jekyll 的默认选择，却是最不适合 中文博客的，因为它对中文列表的支持不好。rdiscount 算是中归中举，但对于 &lt;a href=&quot;http://www.mathjax.org&quot;&gt;MathJax&lt;/a&gt; 的用户来说却比较头疼，容易出诡异的问题。github 在后台则选用了 redcarpet 作为其文本渲染器，因为它安全性高且性能卓越，同时它在基本 markdown 语法 的基础上增加了一些自己的特性。kramdown 是这几个当中对基础 markdown 语法拓展最多， 也是最方便使用的，但跟这篇文章的主角 &lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt; 来比，它就相形见绌了。&lt;/p&gt;
+&lt;p&gt;首先介绍一下 &lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt;，它的功能是在多种常见的标记语言进行相互转换， 其中包括 markdown, reStructuredText, textilte, HTML, \(\LaTeX\) 等。 利用它，你可以用简单的 markdown 语法生成与 \(\LaTeX\) 一致的文档，还可以写 beamer 演示文稿。 更强大的是，它还能将以上提到的这些语言所写文件转换成 &lt;em&gt;docx&lt;/em&gt; 文档，这对我们这些体制内码农很是实用。下面这张图展示了 Pandoc 让人吃惊 的功能集，不愧为文件转换中的瑞士军刀：&lt;/p&gt;
+&lt;img src=&quot;http://johnmacfarlane.net/pandoc/diagram.png&quot; alt=&quot;pandoc is awsome!&quot; width=&quot;650&quot;/&gt;
+&lt;p&gt;对于用 Jekyll 写博客的人来说它还有以下优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持在 markdown 文档中直接使用 \(\LaTeX\) 公式，最终生成的网页更是可以选择以图片、MathJax、jsMath 等等方式显示公式&lt;/li&gt;
+&lt;li&gt;支持代码高亮，并自带多种高亮方案可选。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;虽然这两个功能都可以通过设置 Jekyll 实现，但由于我对 Pandoc 已经欲罢不能， 其它的渲染器都再也看不上眼了。下面我就来介绍如何让 Jekyll 使用 Pandoc 作为 markdown 渲染器。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;首先需要说明的是，由于 GithubPages 并不支持 pandoc，所以就不能将包含 markdown 日志等文件的 Jekyll 文件夹直接放到 Github 库上指望 Github 帮我们渲染它们， 而是需要在本地将站点完全生成好后再将它送到某一库里。有人可能觉得麻烦，但对我 来说却是一个优点，因为这样做回使 GithubPages 更新速度大大加快，不会出现今晚提交， 明早才被更新好的情况。&lt;/p&gt;
+&lt;p&gt;先要安装 pandoc，具体过程请参考：&lt;a href=&quot;/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal&quot;&gt;安装 GHC，Cabal/Cabal-install 及 Pandoc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果本机上已安装了 Jekyll 则需要将其删除，因为下面需要使用修改过的 Jekyll。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(sudo) gem uninstall jekyll&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果本机还未安装 Jekyll，大概你也没装 ruby 了，那么请执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(sudo) yum install ruby ruby-devel rubygems
+(sudo) gem install liquid classifier directory_watcher maruku kramdown albino &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载修改过的 jekyll，它已被修改成 Pandoc 友好型 :)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone git@github.com:yangzetian/jekyll&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(&lt;a href=&quot;https://github.com/dsanson/jekyll&quot;&gt;这里&lt;/a&gt; 有 &lt;a href=&quot;http://www.davidsanson.com/&quot;&gt;dsanson&lt;/a&gt; 的版本，作者称可以解决 GithubPages 不支持 Pandoc 的问题，不过我试了一晚愣是没搞定，所以自己写了一个。如果你用这个版本成功了，请告诉我。)&lt;/p&gt;
+&lt;p&gt;安装 pandoc-ruby，一个 pandoc 的 ruby 接口：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(sudo) gem install pandoc-ruby&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装 jekyll：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gem build jekyll.gemspec
+(sudo) gem install -l jekyll-0.11.2.gem&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改 jekyll 配置文件 &lt;code&gt;_config.yml&lt;/code&gt; 如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;markdown: pandoc
+pandoc:
+    extensions: [mathjax, standalone]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面的 &lt;code&gt;extensions&lt;/code&gt; 并不唯一，可以将任何 Pandoc 支持的选项加入其中。&lt;/p&gt;
+&lt;p&gt;好了，现在我们博客中所有的 markdown 文件已经是由 pandoc 渲染的了！&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;下面是 pandoc 演示环节&lt;/p&gt;
+&lt;p&gt;从&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = \lim_{n\rightarrow\infty} (1+x/n)^n$&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;到&lt;/p&gt;
+&lt;p&gt;\(e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = \lim_{n\rightarrow\infty} (1+x/n)^n\)&lt;/p&gt;
+&lt;p&gt;从&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python .numberLines}
+class FSM(object):
+
+&amp;quot;&amp;quot;&amp;quot;This is a Finite State Machine (FSM).
+&amp;quot;&amp;quot;&amp;quot;
+
+def __init__(self, initial_state, memory=None):
+
+    &amp;quot;&amp;quot;&amp;quot;This creates the FSM. You set the initial state here. The &amp;quot;memory&amp;quot;
+    attribute is any object that you want to pass along to the action
+    functions. It is not used by the FSM. For parsing you would
+    typically pass a list to be used as a stack. &amp;quot;&amp;quot;&amp;quot;
+
+    # Map (input_symbol, current_state) --&amp;gt; (action, next_state).
+    self.state_transitions = {}
+    # Map (current_state) --&amp;gt; (action, next_state).
+    self.state_transitions_any = {}
+    self.default_transition = None
+    ...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;到&lt;/p&gt;
+&lt;table class=&quot;sourceCode python numberLines&quot;&gt;&lt;tr class=&quot;sourceCode&quot;&gt;&lt;td class=&quot;lineNumbers&quot;&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;sourceCode&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sourceCode python&quot;&gt;&lt;span class=&quot;kw&quot;&gt;class&lt;/span&gt; FSM(&lt;span class=&quot;dt&quot;&gt;object&lt;/span&gt;):
+
+&lt;span class=&quot;co&quot;&gt;&amp;quot;&amp;quot;&amp;quot;This is a Finite State Machine (FSM).&lt;/span&gt;
+&lt;span class=&quot;co&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;kw&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;__init__&lt;/span&gt;(&lt;span class=&quot;ot&quot;&gt;self&lt;/span&gt;, initial_state, memory=&lt;span class=&quot;ot&quot;&gt;None&lt;/span&gt;):
+
+    &lt;span class=&quot;co&quot;&gt;&amp;quot;&amp;quot;&amp;quot;This creates the FSM. You set the initial state here. The &amp;quot;memory&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;co&quot;&gt;    attribute is any object that you want to pass along to the action&lt;/span&gt;
+&lt;span class=&quot;co&quot;&gt;    functions. It is not used by the FSM. For parsing you would&lt;/span&gt;
+&lt;span class=&quot;co&quot;&gt;    typically pass a list to be used as a stack. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class=&quot;co&quot;&gt;# Map (input_symbol, current_state) --&amp;gt; (action, next_state).&lt;/span&gt;
+    &lt;span class=&quot;ot&quot;&gt;self&lt;/span&gt;.state_transitions = {}
+    &lt;span class=&quot;co&quot;&gt;# Map (current_state) --&amp;gt; (action, next_state).&lt;/span&gt;
+    &lt;span class=&quot;ot&quot;&gt;self&lt;/span&gt;.state_transitions_any = {}
+    &lt;span class=&quot;ot&quot;&gt;self&lt;/span&gt;.default_transition = &lt;span class=&quot;ot&quot;&gt;None&lt;/span&gt;
+    ...&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.davidsanson.com&quot;&gt;dsanson 的博客&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
  
  <entry>
    <title>安装 GHC, Cabal/Cabal-install 及 Pandoc</title>
@@ -40,9 +176,8 @@ make install&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;其实 Cabal 和 Cabal-install 只要安装后者就可以了，因为安装 Cabal-install 时用的 &lt;code&gt;bootstrap&lt;/code&gt; 程序会自动下载 Cabal-install 所依赖的包，其中当然包括 Cabal。但如果你只安装前者那么后者还需要手动安装。&lt;/p&gt;
 &lt;p&gt;虽说可以从 &lt;a href=&quot;http://hackage.haskell.org/package/cabal-install&quot;&gt;hackage&lt;/a&gt; 中下载 Cabal-install，但版本实在太老了。 我选择从&lt;a href=&quot;http://darcs.haskell.org/cabal-branches/&quot;&gt;开发库&lt;/a&gt;中下载最新的稳定版本安装。 这里有一个需要注意的是一定要保证你所用的 Cabal 版本与 Cabal-install 版本一致， 也就是说从开发库中同一个版本文件夹中下载 Cabal 和 Cabal-install，否则安装时会出现麻烦。 所以最好的办法就是不安装 Cabal 而直接安装 Cabal-install，这样永远不会出现冲突问题。&lt;/p&gt;
 &lt;p&gt;我选择的是 &lt;a href=&quot;http://darcs.haskell.org/cabal-branches/cabal-1.14/&quot;&gt;Cabal-1.14&lt;/a&gt; 版本，把这个链接里所有的文件都用 &lt;code&gt;wget&lt;/code&gt; 下载到本地。命令如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget -c -r -np -k -L -p http://darc.haskell.org/cabal-branches/cabal-1.14&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;当然这是非常土的方法，正确的方法是使用 &lt;code&gt;git&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;进入Cabal-install目录后执行&lt;code&gt;sh bootstrap.sh&lt;/code&gt;，即可完成安装。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -r -np -p http://darc.haskell.org/cabal-branches/cabal-1.14/cabal-install&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;进入Cabal-install目录后执行&lt;code&gt;sh bootstrap.sh&lt;/code&gt;，即可完成安装。 如果在安装过程中出现问题，大多是因为系统缺少一些库，比如 &lt;code&gt;gmp-devel&lt;/code&gt;，&lt;code&gt;zlib-devel&lt;/code&gt; 等，需要自行用 &lt;code&gt;yum&lt;/code&gt; 搞定。&lt;/p&gt;
 &lt;p&gt;安装完成Cabal-install 后，将cabal程序所在目录加入PATH中，再执行：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;cabal update
 cabal install pandoc&lt;/code&gt;&lt;/pre&gt;

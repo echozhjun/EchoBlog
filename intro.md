@@ -5,7 +5,7 @@ tagline: "How this begins..."
 ---
 {% include JB/setup %}
 
-This is the blog of of Zetian Yang, a senior undergraduate in [BUAA][buaa], Beijing, China.
+This is a blog by Zetian Yang, a senior undergraduate in [BUAA][buaa], Beijing, China.
 
 Since the second half year 2011, I have been working in the [jliulab][liujia] in BNU.
 That give me a chance to use linux substantially, and I'm more and more

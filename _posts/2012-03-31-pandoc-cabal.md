@@ -57,11 +57,11 @@ Cabal-install，这样永远不会出现冲突问题。
 [Cabal-1.14](http://darcs.haskell.org/cabal-branches/cabal-1.14/)
 版本，把这个链接里所有的文件都用 `wget` 下载到本地。命令如下：
 
-    wget -c -r -np -k -L -p http://darc.haskell.org/cabal-branches/cabal-1.14
-
-当然这是非常土的方法，正确的方法是使用 `git`。
+    wget -r -np -p http://darc.haskell.org/cabal-branches/cabal-1.14/cabal-install
 
 进入Cabal-install目录后执行`sh bootstrap.sh`，即可完成安装。
+如果在安装过程中出现问题，大多是因为系统缺少一些库，比如
+`gmp-devel`，`zlib-devel` 等，需要自行用 `yum` 搞定。
 
 安装完成Cabal-install 后，将cabal程序所在目录加入PATH中，再执行：
 

@@ -74,9 +74,8 @@ make install</code></pre>
 <p>其实 Cabal 和 Cabal-install 只要安装后者就可以了，因为安装 Cabal-install 时用的 <code>bootstrap</code> 程序会自动下载 Cabal-install 所依赖的包，其中当然包括 Cabal。但如果你只安装前者那么后者还需要手动安装。</p>
 <p>虽说可以从 <a href="http://hackage.haskell.org/package/cabal-install">hackage</a> 中下载 Cabal-install，但版本实在太老了。 我选择从<a href="http://darcs.haskell.org/cabal-branches/">开发库</a>中下载最新的稳定版本安装。 这里有一个需要注意的是一定要保证你所用的 Cabal 版本与 Cabal-install 版本一致， 也就是说从开发库中同一个版本文件夹中下载 Cabal 和 Cabal-install，否则安装时会出现麻烦。 所以最好的办法就是不安装 Cabal 而直接安装 Cabal-install，这样永远不会出现冲突问题。</p>
 <p>我选择的是 <a href="http://darcs.haskell.org/cabal-branches/cabal-1.14/">Cabal-1.14</a> 版本，把这个链接里所有的文件都用 <code>wget</code> 下载到本地。命令如下：</p>
-<pre><code>wget -c -r -np -k -L -p http://darc.haskell.org/cabal-branches/cabal-1.14</code></pre>
-<p>当然这是非常土的方法，正确的方法是使用 <code>git</code>。</p>
-<p>进入Cabal-install目录后执行<code>sh bootstrap.sh</code>，即可完成安装。</p>
+<pre><code>wget -r -np -p http://darc.haskell.org/cabal-branches/cabal-1.14/cabal-install</code></pre>
+<p>进入Cabal-install目录后执行<code>sh bootstrap.sh</code>，即可完成安装。 如果在安装过程中出现问题，大多是因为系统缺少一些库，比如 <code>gmp-devel</code>，<code>zlib-devel</code> 等，需要自行用 <code>yum</code> 搞定。</p>
 <p>安装完成Cabal-install 后，将cabal程序所在目录加入PATH中，再执行：</p>
 <pre><code>cabal update
 cabal install pandoc</code></pre>
@@ -130,7 +129,7 @@ cabal install pandoc</code></pre>
      
     	<li><a href="/tags.html#cabal-install-ref">cabal-install <span>1</span></a></li>
      
-    	<li><a href="/tags.html#pandoc-ref">pandoc <span>1</span></a></li>
+    	<li><a href="/tags.html#pandoc-ref">pandoc <span>2</span></a></li>
     
   
 
@@ -179,6 +178,10 @@ cabal install pandoc</code></pre>
 							<li class="prev"><a class="internal" rel="prev"  href="/Better%20Work%20In%20Linux/2012/03/28/markdown" title="View Markdown 中文列表抽风">&laquo; Markdown 中文列表抽风</a></li>
 							
 							
+							<li class="pipe"> | </li>
+							
+							
+							<li class="next"><a class="internal" rel="next"  href="/Better%20Work%20in%20Linux/2012/04/15/jekyll-pandoc" title="View 为 Jekyll 装上瑞士军刀 Pandoc">为 Jekyll 装上瑞士军刀 Pandoc &raquo;</a></li>
 							
 						</ul>
 					</nav>
