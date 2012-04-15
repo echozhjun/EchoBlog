@@ -4,7 +4,7 @@
  <title>Mind on Mind</title>
  <link href="/atom.xml" rel="self"/>
  <link href=""/>
- <updated>2012-04-16T01:16:24+08:00</updated>
+ <updated>2012-04-16T01:18:56+08:00</updated>
  <id></id>
  <author>
    <name>Zetian Yang</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>为 Jekyll 装上瑞士军刀 Pandoc</title>
-   <link href="/Better%20Work%20in%20Linux/2012/04/15/jekyll-pandoc"/>
+   <link href="/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc"/>
    <updated>2012-04-15T01:12:00+08:00</updated>
-   <id>h/Better%20Work%20in%20Linux/2012/04/15/jekyll-pandoc</id>
+   <id>h/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;

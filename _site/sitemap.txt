@@ -9,7 +9,7 @@
 /archive.html
 /sitemap.txt
 
-/Better%20Work%20in%20Linux/2012/04/15/jekyll-pandoc
+/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc
 /Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal
 /Better%20Work%20In%20Linux/2012/03/28/markdown
 /Better%20Work%20In%20Linux/2012/03/27/vim

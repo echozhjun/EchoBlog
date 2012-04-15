@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "为 Jekyll 装上瑞士军刀 Pandoc"
-category: Better Work in Linux
+category: "Better Work In Linux"
 tags: [jekyll, pandoc]
 date: 2012-04-15 01:12
 ---
