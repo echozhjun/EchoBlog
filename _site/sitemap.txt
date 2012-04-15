@@ -1,15 +1,15 @@
 
-http://yangzetian.github.com/LearnLinuxTheFunWay//archive.html
-http://yangzetian.github.com/LearnLinuxTheFunWay//categories.html
-http://yangzetian.github.com/LearnLinuxTheFunWay//sitemap.txt
-http://yangzetian.github.com/LearnLinuxTheFunWay//pages.html
-http://yangzetian.github.com/LearnLinuxTheFunWay//index.html
-http://yangzetian.github.com/LearnLinuxTheFunWay//backup/index.html
-http://yangzetian.github.com/LearnLinuxTheFunWay//tags.html
-http://yangzetian.github.com/LearnLinuxTheFunWay//intro.html
-http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml
+/archive.html
+/categories.html
+/sitemap.txt
+/pages.html
+/index.html
+/backup/index.html
+/tags.html
+/intro.html
+/atom.xml
 
-http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal
-http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/28/markdown
-http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/27/vim
-http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/22/linux-tricks
+/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal
+/Better%20Work%20In%20Linux/2012/03/28/markdown
+/Better%20Work%20In%20Linux/2012/03/27/vim
+/Better%20Work%20In%20Linux/2012/03/22/linux-tricks

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Mind On Mind</title>
- <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//atom.xml" rel="self"/>
- <link href="http://yangzetian.github.com/LearnLinuxTheFunWay/"/>
- <updated>2012-04-14T19:47:01+08:00</updated>
- <id>http://yangzetian.github.com/LearnLinuxTheFunWay/</id>
+ <link href="/atom.xml" rel="self"/>
+ <link href=""/>
+ <updated>2012-04-15T09:50:08+08:00</updated>
+ <id></id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>安装 GHC, Cabal/Cabal-install 及 Pandoc</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal"/>
+   <link href="/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal"/>
    <updated>2012-03-31T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal</id>
+   <id>h/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
@@ -60,9 +60,9 @@ cabal install pandoc&lt;/code&gt;&lt;/pre&gt;
  
  <entry>
    <title>Markdown 中文列表抽风</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/28/markdown"/>
+   <link href="/Better%20Work%20In%20Linux/2012/03/28/markdown"/>
    <updated>2012-03-28T00:00:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/28/markdown</id>
+   <id>h/Better%20Work%20In%20Linux/2012/03/28/markdown</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
@@ -85,9 +85,9 @@ cabal install pandoc&lt;/code&gt;&lt;/pre&gt;
  
  <entry>
    <title>Vim 拾遗</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/27/vim"/>
+   <link href="/Better%20Work%20In%20Linux/2012/03/27/vim"/>
    <updated>2012-03-27T13:04:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/27/vim</id>
+   <id>h/Better%20Work%20In%20Linux/2012/03/27/vim</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
@@ -159,9 +159,9 @@ set foldlevel=0/1/2...&lt;/code&gt;&lt;/pre&gt;
  
  <entry>
    <title>Linux 小窍门札记</title>
-   <link href="http://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/22/linux-tricks"/>
+   <link href="/Better%20Work%20In%20Linux/2012/03/22/linux-tricks"/>
    <updated>2012-03-22T20:33:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/LearnLinuxTheFunWay//Better%20Work%20In%20Linux/2012/03/22/linux-tricks</id>
+   <id>h/Better%20Work%20In%20Linux/2012/03/22/linux-tricks</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
