@@ -9,9 +9,6 @@ date: 2012-03-22 20:33
 
 这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。
 
-Here I record bits of useful tricks for daily working with Linux.
-
-This will be keep updating...
 
 -------------------------------
 
@@ -80,10 +77,12 @@ This will be keep updating...
 * 后删一个词 `Alt-d`
 * 粘贴至光标后 `Ctrl-y`
 
-### 历史命令
+### 命令行历史
 
-*    Ctrl-r Ctrl-g Ctrl-p Ctrl-n Alt-.
-
+* 上一条命令 `!!` | `!!:p`
+* 上条以xx开头的命令 `!xx` || `!xx:p`
+* 参数: `!*` || `!$` || `!*:p`
+* 替换参数 `^foo^fooo` || `^foo^fooo^`
 
 -------------------------------
 

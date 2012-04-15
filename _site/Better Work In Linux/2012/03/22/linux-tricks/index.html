@@ -1,5 +1,6 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "
+http://www.w3.org/TR/html4/strict.dtd">
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9 ie" lang="en"> <![endif]-->
@@ -7,10 +8,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Linux 小窍门札记</title>
+	<title>Linux 小窍门札记 | Mind on Mind</title>
 	<meta name="author" content="Zetian Yang">
 	<link href='/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
-	<link href="http://feeds.feedburner.com/" rel="alternate" title="Linux 小窍门札记" type="application/atom+xml">
+	<link href="http://feeds.feedburner.com/mindonmind" rel="alternate" title="Linux 小窍门札记" type="application/atom+xml">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 </head>
 <body>
@@ -19,17 +20,14 @@
 	<header class="the-header">
 		<div class="unit-head">
 			<div class="unit-inner unit-head-inner">
-				<p class="logo"><a href="/">Mind On Mind</a></p>
+				<p class="logo"><a href="/">Mind on Mind</a></p>
 				<nav class="nav-global">
 					<ul>
-					<!--	<li class="page"><a href="/pages.html">pages</a></li>   -->
                         <li class="about"><a href="/intro.html">intro</a></li>
-				<!--		<li class="category"><a href="/categories.html">categories</a></li>
+						<li class="homepage"><a href="/">home</a></li>
+						<li class="category"><a href="/categories.html">categories</a></li>
 						<li class="tag"><a href="/tags.html">tags</a></li>
-                -->
-						<li class="archive"><a href="/">home</a></li>
-                
-						<li class="rss"><a href="/atom.xml">RSS</a></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/mindonmind">RSS</a></li>
 					</ul>
 				</nav>
 			</div><!-- unit-inner -->
@@ -63,8 +61,6 @@
 </head>
 <body>
 <p>这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。</p>
-<p>Here I record bits of useful tricks for daily working with Linux.</p>
-<p>This will be keep updating…</p>
 <hr />
 <h2 id="yum">yum</h2>
 <p>查找哪个包提供了<code>makeinfo</code>程序：</p>
@@ -105,9 +101,12 @@
 <li>后删一个词 <code>Alt-d</code></li>
 <li>粘贴至光标后 <code>Ctrl-y</code></li>
 </ul>
-<h3 id="历史命令">历史命令</h3>
+<h3 id="命令行历史">命令行历史</h3>
 <ul>
-<li>Ctrl-r Ctrl-g Ctrl-p Ctrl-n Alt-.</li>
+<li>上一条命令 <code>!!</code> | <code>!!:p</code></li>
+<li>上条以xx开头的命令 <code>!xx</code> || <code>!xx:p</code></li>
+<li>参数: <code>!*</code> || <code>!$</code> || <code>!*:p</code></li>
+<li>替换参数 <code>^foo^fooo</code> || <code>^foo^fooo^</code></li>
 </ul>
 <hr />
 <h2 id="wget">wget</h2>
@@ -233,8 +232,7 @@
 					</ul>
 				</div><!-- misc -->
 				<p class="licence">
-					Theme: <a href="http://layouts-the.me">the_minimum</a> based on <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br>
-					Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
+					Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> and <a href="http://johnmacfarlane.net/pandoc">Pandoc</a>.
 				</p>
 			</div><!-- unit-foot-inner -->
 		</div><!-- unit-foot -->

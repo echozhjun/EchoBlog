@@ -6,7 +6,7 @@
 
 @import "helper.css";
 
-@import url(http://fonts.googleapis.com/css?family=Varela);
+@import url(http://fonts.googleapis.com/css?family=junctionregularRegular);
 /*
 Frameless			<http://framelessgrid.com/>
 by Joni Korpi 		<http://jonikorpi.com/>
@@ -53,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Varela', "Frutiger Linotype", "WenQuanYi Zen Hei", "Hiragino Sans GB", "Microsoft YaHei", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "MS PGothic", Osaka, Sans-Serif;
+  font-family: 'junctionregularRegular', "Frutiger Linotype", "WenQuanYi Zen Hei", "Hiragino Sans GB", "Microsoft YaHei", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "MS PGothic", Osaka, Sans-Serif;
   font-weight: bold;
 }
 h1, .h1 {
@@ -219,7 +219,7 @@ pre {
 /* HEADER
 --------------------------------------------------------------------------------- */
 .the-header .logo {
-  font-family: "Varela", "Frutiger Linotype", "WenQuanYi Zen Hei", "Hiragino Sans GB", "Microsoft YaHei", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "MS PGothic", Osaka, Sans-Serif;
+  font-family: "junctionregularRegular", "Frutiger Linotype", "WenQuanYi Zen Hei", "Hiragino Sans GB", "Microsoft YaHei", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "MS PGothic", Osaka, Sans-Serif;
   margin: 0;
 }
 .the-header .logo a:visited {
@@ -724,6 +724,7 @@ pre {
     width: 26.25em;
   }
 }
+
 /*
 	Tablet
 */
