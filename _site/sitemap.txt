@@ -1,16 +1,16 @@
 
-/archive.html
-/categories.html
-/sitemap.txt
-/pages.html
-/index.html
-/backup/index.html
-/tags.html
-/intro.html
-/atom.xml
+http://yangzetian.github.com/archive.html
+http://yangzetian.github.com/categories.html
+http://yangzetian.github.com/sitemap.txt
+http://yangzetian.github.com/pages.html
+http://yangzetian.github.com/index.html
+http://yangzetian.github.com/backup/index.html
+http://yangzetian.github.com/tags.html
+http://yangzetian.github.com/intro.html
+http://yangzetian.github.com/atom.xml
 
-/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc
-/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal
-/Better%20Work%20In%20Linux/2012/03/28/markdown
-/Better%20Work%20In%20Linux/2012/03/27/vim
-/Better%20Work%20In%20Linux/2012/03/22/linux-tricks
+http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc
+http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal
+http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/28/markdown
+http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/27/vim
+http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/22/linux-tricks

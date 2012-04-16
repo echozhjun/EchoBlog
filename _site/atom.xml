@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Mind on Mind</title>
- <link href="/atom.xml" rel="self"/>
- <link href=""/>
- <updated>2012-04-16T21:48:01+08:00</updated>
- <id></id>
+ <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
+ <link href="http://yangzetian.github.com"/>
+ <updated>2012-04-16T22:12:06+08:00</updated>
+ <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>为 Jekyll 装上瑞士军刀 Pandoc</title>
-   <link href="/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc"/>
+   <link href="http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc"/>
    <updated>2012-04-15T01:12:00+08:00</updated>
-   <id>h/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc</id>
+   <id>hhttp://yangzetian.github.com/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
@@ -150,9 +150,9 @@ def __init__(self, initial_state, memory=None):
  
  <entry>
    <title>安装 GHC, Cabal/Cabal-install 及 Pandoc</title>
-   <link href="/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal"/>
+   <link href="http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal"/>
    <updated>2012-03-31T00:00:00+08:00</updated>
-   <id>h/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal</id>
+   <id>hhttp://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
@@ -195,9 +195,9 @@ cabal install pandoc&lt;/code&gt;&lt;/pre&gt;
  
  <entry>
    <title>Markdown 中文列表抽风</title>
-   <link href="/Better%20Work%20In%20Linux/2012/03/28/markdown"/>
+   <link href="http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/28/markdown"/>
    <updated>2012-03-28T16:53:00+08:00</updated>
-   <id>h/Better%20Work%20In%20Linux/2012/03/28/markdown</id>
+   <id>hhttp://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/28/markdown</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
@@ -220,9 +220,9 @@ cabal install pandoc&lt;/code&gt;&lt;/pre&gt;
  
  <entry>
    <title>Vim 拾遗</title>
-   <link href="/Better%20Work%20In%20Linux/2012/03/27/vim"/>
+   <link href="http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/27/vim"/>
    <updated>2012-03-27T13:04:00+08:00</updated>
-   <id>h/Better%20Work%20In%20Linux/2012/03/27/vim</id>
+   <id>hhttp://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/27/vim</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
@@ -294,9 +294,9 @@ set foldlevel=0/1/2...&lt;/code&gt;&lt;/pre&gt;
  
  <entry>
    <title>Linux 小窍门札记</title>
-   <link href="/Better%20Work%20In%20Linux/2012/03/22/linux-tricks"/>
+   <link href="http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/22/linux-tricks"/>
    <updated>2012-03-22T20:33:00+08:00</updated>
-   <id>h/Better%20Work%20In%20Linux/2012/03/22/linux-tricks</id>
+   <id>hhttp://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/22/linux-tricks</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
