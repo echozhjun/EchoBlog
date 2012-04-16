@@ -86,11 +86,11 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>对于用 Jekyll 写博客的人来说它还有以下优点：</p>
 <ul>
 <li>支持在 markdown 文档中直接使用 \(\LaTeX\) 公式，最终生成的网页更是可以选择以图片、MathJax、jsMath 等等方式显示公式</li>
-<li>支持代码高亮，并自带多种高亮方案可选。</li>
+<li>支持代码高亮，并自带多种高亮方案可选</li>
 </ul>
-<p>虽然这两个功能都可以通过设置 Jekyll 实现，但由于我对 Pandoc 已经欲罢不能， 其它的渲染器都再也看不上眼了。下面我就来介绍如何让 Jekyll 使用 Pandoc 作为 markdown 渲染器。</p>
+<p>虽然这两个功能都可以通过设置 Jekyll 实现，但由于我对 Pandoc 已经欲罢不能， 其它的渲染器都再也看不上眼了。 下面我就来介绍如何让 Jekyll 使用 Pandoc 作为 markdown 渲染器。</p>
 <hr />
-<p>首先需要说明的是，由于 GithubPages 并不支持 pandoc，所以就不能将包含 markdown 日志等 Jekyll 文件夹直接放到 Github 库上指望 Github 帮我们渲染它们， 而是需要在本地将站点完全生成好后再将它送到某一库里。 有人可能觉得麻烦，但对我 来说却是一个优点，因为这样做回使 GithubPages 更新速度大大加快， 不会出现今晚提交，明早才被更新好的情况。</p>
+<p>首先需要说明的是，由于 GithubPages 并不支持 pandoc，所以就不能将包含 markdown 日志等文件的 Jekyll 目录直接放到 Github 库上指望 Github 帮我们渲染它们， 而是需要在本地将站点完全生成好后再将它送到某一库里。 有人可能觉得麻烦，但对我 来说却是一个优点，因为这样做回使 GithubPages 更新速度大大加快， 不会出现今晚提交，明早才被更新好的情况。</p>
 <p>先要安装 pandoc，具体过程请参考：<a href="/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal">安装 GHC，Cabal/Cabal-install 及 Pandoc</a></p>
 <p>如果本机上已安装了 Jekyll 则需将其删除，因为下面要使用修改过的 Jekyll。</p>
 <pre><code>(sudo) gem uninstall jekyll</code></pre>
