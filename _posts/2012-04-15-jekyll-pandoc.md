@@ -11,8 +11,9 @@ Jekyll 原生支持 `maruku`，`rdiscount`，`kramdown`，`redcarpet` 等 markdw
 渲染器，它们各有利弊。个人认为 maruku 虽然是 Jekyll 的默认选择，却是最不适合
 中文博客的，因为它对中文列表的支持不好。rdiscount 算是中归中举，但对于
 [MathJax][] 的用户来说却比较头疼，容易出诡异的问题。github 在后台则选用了
-redcarpet 作为其文本渲染器，因为它安全性高且性能卓越，同时它在基本 markdown 语法
-的基础上增加了一些自己的特性。kramdown 是这几个当中对基础 markdown 语法拓展最多，
+redcarpet 作为其文本渲染器，因为它安全性高且性能卓越，
+同时它在基本 markdown 语法 的基础上增加了一些自己的特性。
+kramdown 是这几个当中对基础 markdown 语法拓展最多，
 也是最方便使用的，但跟这篇文章的主角 [Pandoc][] 来比，它就相形见绌了。
 
    [MathJax]: http://www.mathjax.org
@@ -22,8 +23,8 @@ redcarpet 作为其文本渲染器，因为它安全性高且性能卓越，同�
 其中包括 markdown, reStructuredText, textilte, HTML, $\LaTeX$ 等。
 利用它，你可以用简单的 markdown 语法生成与 $\LaTeX$ 一致的文档，还可以写
 beamer 演示文稿。 更强大的是，它还能将以上提到的这些语言所写文件转换成 *docx*
-文档，这对我们这些体制内码农很是实用。下面这张图展示了 Pandoc 让人吃惊
-的功能集，不愧为文件转换中的瑞士军刀：
+文档，这对我们这些体制内码农很是实用。
+下面这张图展示了 Pandoc 让人吃惊 的功能集，不愧为文件转换中的瑞士军刀：
 
 <img src="http://johnmacfarlane.net/pandoc/diagram.png" alt="pandoc is awsome!" width="650"/>
 
@@ -40,17 +41,17 @@ markdown 渲染器。
 ------------------------------------
 
 首先需要说明的是，由于 GithubPages 并不支持 pandoc，所以就不能将包含 markdown
-日志等文件的 Jekyll 文件夹直接放到 Github 库上指望 Github 帮我们渲染它们，
-而是需要在本地将站点完全生成好后再将它送到某一库里。有人可能觉得麻烦，但对我
-来说却是一个优点，因为这样做回使 GithubPages 更新速度大大加快，不会出现今晚提交，
-明早才被更新好的情况。
+日志等 Jekyll 文件夹直接放到 Github 库上指望 Github 帮我们渲染它们，
+而是需要在本地将站点完全生成好后再将它送到某一库里。
+有人可能觉得麻烦，但对我 来说却是一个优点，因为这样做回使 GithubPages 更新速度大大加快，
+不会出现今晚提交，明早才被更新好的情况。
 
 先要安装 pandoc，具体过程请参考：[安装 GHC，Cabal/Cabal-install 及 Pandoc][post]
 
    [post]:/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal
 
 
-如果本机上已安装了 Jekyll 则需要将其删除，因为下面需要使用修改过的 Jekyll。
+如果本机上已安装了 Jekyll 则需将其删除，因为下面要使用修改过的 Jekyll。
 
     (sudo) gem uninstall jekyll
 

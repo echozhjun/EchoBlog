@@ -24,7 +24,7 @@ renderer.
 The theme is based on ["the-minimum"][] by [Yuya Saito][], which I make a
 bunch of modifications on.
 All the source code of this site is availabe at my blog [repo][r1], and if you
-wanna to use [pandoc][] to be the renderer as well, my fork of [jekyll][r2] may help.
+wanna use [pandoc][] to be the renderer as well, my fork of [jekyll][r2] may help.
 
 --------------------------------------
 

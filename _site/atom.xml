@@ -4,7 +4,7 @@
  <title>Mind on Mind</title>
  <link href="/atom.xml" rel="self"/>
  <link href=""/>
- <updated>2012-04-16T01:18:56+08:00</updated>
+ <updated>2012-04-16T21:26:54+08:00</updated>
  <id></id>
  <author>
    <name>Zetian Yang</name>
@@ -46,8 +46,8 @@ code &gt; span.er { color: #ff0000; font-weight: bold; }
   &lt;script src=&quot;https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;p&gt;Jekyll 原生支持 &lt;code&gt;maruku&lt;/code&gt;，&lt;code&gt;rdiscount&lt;/code&gt;，&lt;code&gt;kramdown&lt;/code&gt;，&lt;code&gt;redcarpet&lt;/code&gt; 等 markdwon 渲染器，它们各有利弊。个人认为 maruku 虽然是 Jekyll 的默认选择，却是最不适合 中文博客的，因为它对中文列表的支持不好。rdiscount 算是中归中举，但对于 &lt;a href=&quot;http://www.mathjax.org&quot;&gt;MathJax&lt;/a&gt; 的用户来说却比较头疼，容易出诡异的问题。github 在后台则选用了 redcarpet 作为其文本渲染器，因为它安全性高且性能卓越，同时它在基本 markdown 语法 的基础上增加了一些自己的特性。kramdown 是这几个当中对基础 markdown 语法拓展最多， 也是最方便使用的，但跟这篇文章的主角 &lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt; 来比，它就相形见绌了。&lt;/p&gt;
-&lt;p&gt;首先介绍一下 &lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt;，它的功能是在多种常见的标记语言进行相互转换， 其中包括 markdown, reStructuredText, textilte, HTML, \(\LaTeX\) 等。 利用它，你可以用简单的 markdown 语法生成与 \(\LaTeX\) 一致的文档，还可以写 beamer 演示文稿。 更强大的是，它还能将以上提到的这些语言所写文件转换成 &lt;em&gt;docx&lt;/em&gt; 文档，这对我们这些体制内码农很是实用。下面这张图展示了 Pandoc 让人吃惊 的功能集，不愧为文件转换中的瑞士军刀：&lt;/p&gt;
+&lt;p&gt;Jekyll 原生支持 &lt;code&gt;maruku&lt;/code&gt;，&lt;code&gt;rdiscount&lt;/code&gt;，&lt;code&gt;kramdown&lt;/code&gt;，&lt;code&gt;redcarpet&lt;/code&gt; 等 markdwon 渲染器，它们各有利弊。个人认为 maruku 虽然是 Jekyll 的默认选择，却是最不适合 中文博客的，因为它对中文列表的支持不好。rdiscount 算是中归中举，但对于 &lt;a href=&quot;http://www.mathjax.org&quot;&gt;MathJax&lt;/a&gt; 的用户来说却比较头疼，容易出诡异的问题。github 在后台则选用了 redcarpet 作为其文本渲染器，因为它安全性高且性能卓越， 同时它在基本 markdown 语法 的基础上增加了一些自己的特性。 kramdown 是这几个当中对基础 markdown 语法拓展最多， 也是最方便使用的，但跟这篇文章的主角 &lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt; 来比，它就相形见绌了。&lt;/p&gt;
+&lt;p&gt;首先介绍一下 &lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt;，它的功能是在多种常见的标记语言进行相互转换， 其中包括 markdown, reStructuredText, textilte, HTML, \(\LaTeX\) 等。 利用它，你可以用简单的 markdown 语法生成与 \(\LaTeX\) 一致的文档，还可以写 beamer 演示文稿。 更强大的是，它还能将以上提到的这些语言所写文件转换成 &lt;em&gt;docx&lt;/em&gt; 文档，这对我们这些体制内码农很是实用。 下面这张图展示了 Pandoc 让人吃惊 的功能集，不愧为文件转换中的瑞士军刀：&lt;/p&gt;
 &lt;img src=&quot;http://johnmacfarlane.net/pandoc/diagram.png&quot; alt=&quot;pandoc is awsome!&quot; width=&quot;650&quot;/&gt;
 &lt;p&gt;对于用 Jekyll 写博客的人来说它还有以下优点：&lt;/p&gt;
 &lt;ul&gt;
@@ -56,9 +56,9 @@ code &gt; span.er { color: #ff0000; font-weight: bold; }
 &lt;/ul&gt;
 &lt;p&gt;虽然这两个功能都可以通过设置 Jekyll 实现，但由于我对 Pandoc 已经欲罢不能， 其它的渲染器都再也看不上眼了。下面我就来介绍如何让 Jekyll 使用 Pandoc 作为 markdown 渲染器。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;首先需要说明的是，由于 GithubPages 并不支持 pandoc，所以就不能将包含 markdown 日志等文件的 Jekyll 文件夹直接放到 Github 库上指望 Github 帮我们渲染它们， 而是需要在本地将站点完全生成好后再将它送到某一库里。有人可能觉得麻烦，但对我 来说却是一个优点，因为这样做回使 GithubPages 更新速度大大加快，不会出现今晚提交， 明早才被更新好的情况。&lt;/p&gt;
+&lt;p&gt;首先需要说明的是，由于 GithubPages 并不支持 pandoc，所以就不能将包含 markdown 日志等 Jekyll 文件夹直接放到 Github 库上指望 Github 帮我们渲染它们， 而是需要在本地将站点完全生成好后再将它送到某一库里。 有人可能觉得麻烦，但对我 来说却是一个优点，因为这样做回使 GithubPages 更新速度大大加快， 不会出现今晚提交，明早才被更新好的情况。&lt;/p&gt;
 &lt;p&gt;先要安装 pandoc，具体过程请参考：&lt;a href=&quot;/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal&quot;&gt;安装 GHC，Cabal/Cabal-install 及 Pandoc&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;如果本机上已安装了 Jekyll 则需要将其删除，因为下面需要使用修改过的 Jekyll。&lt;/p&gt;
+&lt;p&gt;如果本机上已安装了 Jekyll 则需将其删除，因为下面要使用修改过的 Jekyll。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;(sudo) gem uninstall jekyll&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如果本机还未安装 Jekyll，大概你也没装 ruby 了，那么请执行：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;(sudo) yum install ruby ruby-devel rubygems

@@ -1,13 +1,13 @@
 
-/tags.html
-/categories.html
-/backup/index.html
-/pages.html
-/atom.xml
-/intro.html
-/index.html
 /archive.html
+/categories.html
 /sitemap.txt
+/pages.html
+/index.html
+/backup/index.html
+/tags.html
+/intro.html
+/atom.xml
 
 /Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc
 /Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal
