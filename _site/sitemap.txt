@@ -9,8 +9,9 @@ http://yangzetian.github.com/tags.html
 http://yangzetian.github.com/intro.html
 http://yangzetian.github.com/atom.xml
 
-http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/04/15/jekyll-pandoc
-http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/31/pandoc-cabal
-http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/28/markdown
-http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/27/vim
-http://yangzetian.github.com/Better%20Work%20In%20Linux/2012/03/22/linux-tricks
+http://yangzetian.github.com/2012/04/19/folk-blog
+http://yangzetian.github.com/2012/04/15/jekyll-pandoc
+http://yangzetian.github.com/2012/03/31/pandoc-cabal
+http://yangzetian.github.com/2012/03/28/markdown
+http://yangzetian.github.com/2012/03/27/vim
+http://yangzetian.github.com/2012/03/22/linux-tricks

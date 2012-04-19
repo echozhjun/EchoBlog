@@ -6,7 +6,8 @@
 
 @import "helper.css";
 
-@import url(http://fonts.googleapis.com/css?family=junctionregularRegular);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
 /*
 Frameless			<http://framelessgrid.com/>
 by Joni Korpi 		<http://jonikorpi.com/>
@@ -26,7 +27,7 @@ Calculation should be done via  http://j.mp/rNg5uA
 No styleguide reference.
 */
 body {
-  font-family: 'Droid Sans', Tahoma, Verdana, Helvetica, Arial, "Arial Unicode MS", "WenQuanYi Zen Hei", "Hiragino Sans GB", "Microsoft YaHei", "MS PGothic", Sans-Serif;
+  font-family: "Droid Sans", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
   font-size: 1em;
   line-height: 1.625em;
 }
@@ -53,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Droid Sans', Tahoma, Verdana, Helvetica, Arial, "Arial Unicode MS", "WenQuanYi Zen Hei", "Hiragino Sans GB", "Microsoft YaHei", "MS PGothic", Sans-Serif;
+  font-family: "Droid Sans", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
 }
 h1, .h1 {
   font-size: 2.0em;
@@ -218,7 +219,7 @@ pre {
 /* HEADER
 --------------------------------------------------------------------------------- */
 .the-header .logo {
-  font-family: 'Droid Sans', Tahoma, Verdana, Helvetica, Arial, "Arial Unicode MS", "WenQuanYi Zen Hei", "Hiragino Sans GB", "Microsoft YaHei", "MS PGothic", Sans-Serif;
+  font-family: "Droid Sans", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
   margin: 0;
 }
 .the-header .logo a:visited {
@@ -347,7 +348,7 @@ pre {
   margin-left: 0;
   margin-right: 0;
 }
-.unit-article p code {
+.unit-article p code, .unit-article li code {
   margin: 0 2px;
   padding: 1px 2px;
   font-size: 5px
@@ -550,10 +551,6 @@ pre {
   margin-left: auto;
   margin-right: auto;
 }
-.the-header .logo a {
-  font-size: 32px;
-  line-height: 42px;
-}
 .unit-article .unit-head-inner,
 .unit-article .entry-content,
 .unit-article .misc-content,
@@ -729,9 +726,10 @@ pre {
 }
 
 .the-header .logo a {
-  font-size: 42px;
+  font-size: 2.5em;
   line-height: 52px;
   letter-spacing: normal;
+  font-weight: bold;
 }
 
 .the-header .nav-global {
