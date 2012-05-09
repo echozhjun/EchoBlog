@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "缘起"
+title: ""
 tagline: "How this begins..."
 ---
 {% include JB/setup %}
@@ -8,23 +8,18 @@ tagline: "How this begins..."
 This is a blog by Zetian Yang, a senior undergraduate in [BUAA][buaa], Beijing, China.
 
 Since the second half year 2011, I have been working in the [jliulab][liujia] in BNU.
-That give me a chance to use linux substantially, and I'm more and more
-interested to it.  As a linux beginner, I have been confronted with a lot of problems
-while working with it.  Some of these problems I solved and got a lot of fun, but some
-of them I didn't. 
+That give me a chance to use linux substantially, and I'm more and more interested to it. 
+As a linux beginner, I have been confronted with a lot of problems while working with it. 
+Some of these problems I solved and got a lot of fun, but some of them I didn't. 
 
-As my memory isn't very good, I start thinking of making
-records of these problems so that I needn't begin from scratch when coming
-across them again.  Besides, I had been longing for a blog to write my minds
-down. Incidentally, I got to know that [Github][] can be used as a
-free blog server.  That's exactly what I need, so everything begins.
+As my memory isn't very good, I start thinking of making records of these problems so that I needn't begin from scratch when coming across them again. 
+Besides, I had been longing for a blog to write my minds down.
+Incidentally, I got to know that [Github][] can be used as a free blog server. 
+That's exactly what I need, so everything begins.
 
-This blog is powered by [Jekyll][], and uses [Pandoc][] as the markdown
-renderer. 
-The theme is based on ["the-minimum"][] by [Yuya Saito][], which I make a
-bunch of modifications on.
-All the source code of this site is availabe at my blog [repo][r1], and if you
-wanna use [Pandoc][] to be the renderer as well, my fork of [Jekyll][r2] may help.
+This blog is powered by [Jekyll][], and uses [Pandoc][] as the markdown renderer.
+The theme is based on ["the-minimum"][] by [Yuya Saito][], which I make a bunch of modifications on.
+All the source code of this site is availabe at my blog [repo][r1], and if you wanna use [Pandoc][] to be the renderer as well, my fork of [Jekyll][r2] may help.
 
 --------------------------------------
 

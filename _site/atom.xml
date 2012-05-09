@@ -4,13 +4,101 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-04-19T23:08:06+08:00</updated>
+ <updated>2012-05-09T19:13:30+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>用 Glossary 学习 Python (1): 名字空间以及作用域</title>
+   <link href="http://yangzetian.github.com/2012/05/09/glossary-python-1-namespace-scope-symtable"/>
+   <updated>2012-05-09T00:00:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/2012/05/09/glossary-python-1-namespace-scope-symtable</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;在《如何阅读一本书》中作者提到，分析型阅读的第一步应该是弄清楚书中每个术语或专业词汇的语义，如果作者提供了一个词汇表(glossary)，那么就应该先好好将它读一读。我认为这条规则不仅对阅读理解书籍来说很有效，对读代码、文档等技术方面的材料来说也十分适用。因此我想到了最近自己一直在使用的 &lt;a href=&quot;http://www.python.org&quot;&gt;Python&lt;/a&gt; 语言，它的&lt;a href=&quot;http://docs.python.org&quot;&gt;官方文档&lt;/a&gt;中就有一个这样的&lt;a href=&quot;http://docs.python.org/glossary.html&quot;&gt;词汇表&lt;/a&gt;。在浏览了里面的条目后，我发现这个词汇表及其有用，对许多概念进行了精短的说明，且覆盖了 Python 语言的方方面面。因此我将其作为自己深入学习 Python 的一个入口，并打算写一系列的文章，每次从中挑选出与某一主题相关的词汇，对它们进行学习研究。&lt;/p&gt;
+&lt;p&gt;这篇文章将主要介绍 Python 的名字空间与作用域的相关知识，在 Glossary 中与之相关的词汇有:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;namespace&lt;/em&gt; : : The place where a variable is stored. Namespces are implemented as dictionaries. There are local, global and built-in namespaces as well as nested namespaces in objectes (in methods). Namespaces support modularity by preventing naming conflicts…&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;nested scope&lt;/em&gt; : The ability to refer to a variable in encolsing definition. For instances, a function defined inside another function can refer to variables in the outer fucntion. Note that nested scopes work only for reference and not for assignment which will always write to the innermost scope. In contrast, local varibles both read and write in the innermost scope. Likewise. global variables read and write to the global namespace.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了理解 Python 的名字空间机制，首先需要明确的是 Python 中的变量 (variable) 与其他语言的不同。在 Python 中并不存在一般意义上的变量，只有&lt;em&gt;名字&lt;/em&gt; (names) 和&lt;em&gt;对象&lt;/em&gt; (objects)。对象是数据及属性实体，而名字是访问对象途径。 名字通过&lt;em&gt;绑定&lt;/em&gt; (binding)&lt;sup&gt;&lt;a href=&quot;#fn1&quot; class=&quot;footnoteRef&quot; id=&quot;fnref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 操作被引入至程序中，而每个被引入的名字都被保存至一个名字空间里。 在任何地方出现的名字都将指向 (refers to) 它在所绑定的对象。 由于一个名字可以在程序的不同地方绑定到不同的对象，所以就需要一个机制来确定当前使用的名字对应的对象。 这里就需要涉及到&lt;em&gt;代码块&lt;/em&gt; (block) 以及&lt;em&gt;作用域&lt;/em&gt; (scope) 这两个概念。 所谓代码块即指一段被当作一个单元执行的程序文本。诸如模块、函数体、类定义都是一个代码块。 至于作用域，[Guido][] 老爹在 [Tutorial][] 中给出的定义是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A &lt;em&gt;scope&lt;/em&gt; is a textual region of a Python program where a namespace is directly accessible.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;[Python 语言参考][name-binding] 中给出的定义则是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A &lt;em&gt;scope&lt;/em&gt; defines the visibility of a name within a block.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以这么理解，每个代码块都有一个属于自己的局部名字空间，而每个名字空间都有一个允许直接访问其内名字的的代码范围，在这个范围内这些名字都是可见的， 而在这个范围外，该名字空间的内的名字则不能直接使用。这个代码范围即是该名字空间（中变量）的作用域。&lt;/p&gt;
+&lt;p&gt;下面这段话来自 [Python 语言参考][name-binding]，它对理解 Python 的变量解析规则十分重要：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当我们在某个代码快内绑定一个名字时，它就是成为该代码块的局部变量 (local variable)。 而当我们在模块级别上绑定一个名字是，它就是一个全局变量 (global variable)。 由于模块也是一个代码快，因此这些变量即是全局的也是局部的。 如果在一个代码块中使用了一个未在该代码快内定义（绑定）的名字，它就被称为&lt;em&gt;自由变量&lt;/em&gt; (free variale)。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在程序一旦写成之后，任何代码块中的任意变量都必定属于上述三种类型之一，这是在生成 字节码之前就确定下来的。因为这与虚拟机使用用哪种语句加载变量相关。 比如下面这段代码：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;用 [dis][] 库查看函数 f 的字节码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;2           0 LOAD_CONST               1 (2)
+            3 STORE_FAST               0 (l)
+
+3           6 LOAD_GLOBAL              0 (g)
+            9 STORE_FAST               1 (ll)
+           12 LOAD_CONST               0 (None)
+           15 RETURN_VALUE        &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看出对于局部变量 &lt;code&gt;f&lt;/code&gt;，Python 使用的是 &lt;code&gt;LOAD_FAST/STORE_FAST&lt;/code&gt; 一类指令，而对于全局变量则使用 &lt;code&gt;LOAD_GLOBAL/STORE_GLOBAL&lt;/code&gt; 一类指令。&lt;/p&gt;
+&lt;p&gt;绑定的作用之一就是确定变量的类型：不论一个变量在当前代码块中的哪里被绑定，它都被认为是局部的，因此 该代码块内所有对其的使用都将指向它绑定的这个对象。这段话听起来十分坳口，我们用下面这个例子来说明：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;函数 &lt;code&gt;f&lt;/code&gt; 对应的字节码为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;2           0 LOAD_FAST                0 (x)
+            3 STORE_FAST               1 (t)
+
+3           6 LOAD_CONST               1 (10)
+            9 STORE_FAST               0 (x)
+           12 LOAD_CONST               0 (None)
+           15 RETURN_VALUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看到，第一句加载变量 &lt;code&gt;x&lt;/code&gt; 时即使用的 &lt;code&gt;LOAD_FAST&lt;/code&gt; 指令，说明 Python 认为它是一个局部变量，而对 &lt;code&gt;x&lt;/code&gt; 的绑定却是在后面一条语句中才发生。 这个例子说明了 Python 的变量类型机制，虽然定义 &lt;code&gt;f&lt;/code&gt; 时不会报错，但 在 &lt;code&gt;f&lt;/code&gt; 运行时会报出 &lt;code&gt;UnboundLocalError&lt;/code&gt; 的异常, 这个异常会在引用一个未绑定的局部变量时抛出。 这就出现一个有点违反直觉的现象，按一般的理解，第一条语句中的 &lt;code&gt;x&lt;/code&gt; 应该是全局的，第二条语句不过是在本地重新生成了一个局部变量而已。 但就像上文所说的，当定义好 &lt;code&gt;f&lt;/code&gt; 后，它里面的每个变量类型都已经确定了， 尽管 &lt;code&gt;x&lt;/code&gt; 在第二条语句中才被绑定，但还是被认为是一个局部变量， 既然是一个局部变量, 任何对其的使用就会访问局部代码块中该名字所绑定的对象, 如果它还没被绑定，当然就应该报错。&lt;/p&gt;
+&lt;p&gt;现在让我们把注意力集中在代码块的局部变量上, [语言参考][name-binding]中说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在一个代码块中定义的局部变量的作用域为这个代码块本身。如果它定义在一个函数代码块中， 它的作用域将延伸至该代码块包含的所有内部代码块中，除非在子代码块里对其重新定义。 类代码块中定义的名字的作用域仅限于该代码块本身，它不会向类中的方法代码块扩展 —— 这包括生成器表达式，因为它们使用了函数作用域来实现。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有了这条规则，&lt;/p&gt;
+&lt;p&gt;这时候 Python 编译器&lt;sup&gt;&lt;a href=&quot;#fn2&quot; class=&quot;footnoteRef&quot; id=&quot;fnref2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;会告诉你一个&lt;em&gt;语法错误&lt;/em&gt;，因为 &lt;code&gt;del&lt;/code&gt; 语句也是一种绑定操作，所以编译器在读到 &lt;code&gt;del x&lt;/code&gt; 时将其认为是一个局部变量，而&lt;/p&gt;
+&lt;p&gt;定义，在这个代码块中所有对它的引用都&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn1&quot;&gt;&lt;p&gt;常见的绑定操作包括函数定义，类定义，赋值语句等，一个特别的绑定操作例是 &lt;code&gt;del&lt;/code&gt; 语句也被当时是一种绑定操作，也就是说出现在 &lt;code&gt;del&lt;/code&gt; 后面的变量讲被认为是局部变量。 关于绑定操作更多的说明请参考: &lt;a href=&quot;http://docs.python.org/reference/executionmodel.html#naming-and-binding&quot;&gt;Naming and binding&lt;/a&gt;&lt;a href=&quot;#fnref1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn2&quot;&gt;&lt;p&gt;虽说 Python 不是一个编译语言，但还是有一个编译器前端的， 它对源文件进行语法分析，生成句法树和符号表，并最终产生字节码供虚拟机执行。这些步骤属于 Python 的静态地带，变量的类型就是在其中确定的。 深入的信息请参考&lt;a href=&quot;http://eli.thegreenplace.net&quot;&gt;Eli&lt;/a&gt; 的系列文章&lt;a href=&quot;http://eli.thegreenplace.net/2010/09/18/python-internals-symbol-tables-part-1/&quot;&gt;Python Internals: Symbol tables&lt;/a&gt;&lt;a href=&quot;#fnref2&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
  
  <entry>
    <title>民谣与博客</title>
@@ -30,7 +118,7 @@
 &lt;p&gt;书中让我印象最深刻的不是那些美国民谣歌手们成功的曲折过程，也不是他们糜烂的个人生活，而是作者在前沿中对本书写作过程的介绍。作者从95年开始撰写本书，直至01年底完成80万字的初稿，最后删去约20万字后于03年出版。按作者自己的说法，这本书花去了他七年间全部的业余时间。这样的恒心和毅力不得不让人肃然起敬。作者这般心血的最终成果，便是展现在我面前的这本由700多页密密麻麻小字讲述的美国20年代民谣史，另外作者得以从此以写字为生，成为文化工作者。&lt;/p&gt;
 &lt;p&gt;这本书绝不仅仅只是一部民谣史，它更像是美国文化史，除了主要讲述的那些民谣歌手，还几乎介绍了美国20年代发生的所有重大政治、经济、文化事件。也只有在这样详细介绍的美国社会大背景下，那些由借音乐之名引发的其他故事才更生动精彩。书中我最喜欢的内容包括60年代的嬉皮运动；所有和毒品、迷幻剂相关的人物事迹；两位被人忽视的民谣歌手：&lt;a href=&quot;http://en.wikipedia.org/wiki/Tim_Buckley&quot;&gt;蒂姆·巴克利&lt;/a&gt;（Tim Buckley）和&lt;a href=&quot;http://music.douban.com/musician/102593/&quot;&gt;尼克·德雷克&lt;/a&gt;（Nick Drake）。其中在介绍德雷克那张『Five Leaves Left』专辑时与欧·亨利那篇『The Last Leaf』的类比让人叫绝，也更加反衬出德雷克的不幸的一生。&lt;/p&gt;
 &lt;p&gt;回想自从上月5号在二层新书架上见到这本书至现在已过去一个半月，这期间我并不是只读了这本书。但有趣的是，这本书将最近读的另外两本书串联了起来，它们分别是&lt;a href=&quot;http://book.douban.com/subject/1223765/&quot;&gt;《请宰了我》&lt;/a&gt;和&lt;a href=&quot;http://book.douban.com/subject/2090728/&quot;&gt;《LSD：我的问题少年》&lt;/a&gt;，前一本同样是介绍美国音乐故事的，但主角换成了60年代末萌芽并在70年代风靡英美的朋克摇滚，后一本则是 LSD 的合成者艾伯特·霍夫曼（Albert Hofmann）亲自书写的 LSD 逸事。我向来着迷于那些不寻常的奇异人物与事件，这几本书充分地满足了我的好奇心。&lt;/p&gt;
-&lt;p&gt;当然除了读书，这四十多天来自己还做了很多事，但大多数都希望自己没有做才好，就比如中期答辩这类事，只是会凭白增加青春之苦闷罢了。但有一件事却是十分有价值的，那便是开了这个博客。虽说大学四年多半过得浑浑噩噩，但偶尔还是会有提笔写点东西的冲动。可惜我这个人比较懒，对折腾网页这类东西更是讨厌，开博客几乎从未进入过我的日常计划中。我基本上每天食堂图书馆自习室，要是有些情绪实在憋不住了就在校内上扔个日志完事。后来注销校内，便转战豆瓣日记，还在上面写了生平第一个技术贴。这两样东西还是挺符合我要求的，因为它们都够简单，不用涉及 HTML。用 HTML 标记写文章对我来说绝对是不可忍受的，那些 &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt; 简直就像是散落在文字里的污渍，毫无美感可言。&lt;/p&gt;
+&lt;p&gt;当然除了读书，这四十多天来自己还做了很多事，但大多数都希望自己没有做才好，就比如中期答辩这类事，只是会凭白增加青春之苦闷罢了。但有一件事却十分有价值，那便是开了这个博客。虽说大学四年多半过得浑浑噩噩，但偶尔还是会有提笔写点东西的冲动。可惜我这个人比较懒，对折腾网页这类东西更是讨厌，开博客几乎从未进入过我的日常计划中。我基本上每天食堂图书馆自习室，要是有些情绪实在憋不住了就在校内上扔个日志完事。后来注销校内，便转战豆瓣日记，还在上面写了生平第一个技术贴。这两样东西还挺符合我的要求，因为它们都够简单，不用涉及 HTML。用 HTML 标记写文章对我来说绝对不可忍受，那些 &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt; 简直就像是散落在文字里的污渍，毫无美感可言。&lt;/p&gt;
 &lt;p&gt;后来我遇到了 &lt;a href=&quot;http://wowubuntu.com/markdown/index.html&quot;&gt;Markdown&lt;/a&gt;、&lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;、&lt;a href=&quot;http://pages.github.com&quot;&gt;Github Pages&lt;/a&gt;、&lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt;，再后来就有了这个博客。一开始我只是把它当作一个笔记本，作用不过就是充当 Linux 下的 &lt;a href=&quot;http://www.evernote.com&quot;&gt;Evernote&lt;/a&gt;。利用 &lt;a href=&quot;http://jekyllbootstrap.com&quot;&gt;Jekyll-Bootstrap&lt;/a&gt; 和一个已有&lt;a href=&quot;http://themes.jekyllbootstrap.com/preview/the-minimum&quot;&gt;主题&lt;/a&gt;迅速搭建出一个博客原型。在熬过了中期答辩的那几天后我急需一个东西来发泄体内堆积过多的荷尔蒙，正好当时这个主题有许多我不满意的地方，因此我好好地荒废了那几天工作日，全心全意扑在了折腾博客上。经过某个彻夜奋战，我完成了一个里程碑式的改动，觉得这个博客终于算是一个可以拿出去给人看的东西了。没想到昨晚到 Windows 下浏览的时候却发现字体完全混乱，而且样式也出了问题。无奈只好再花时间折腾，要是让实验室老师知道花了这么多时间没好好干活，估计会被骂得很惨吧。&lt;/p&gt;
 &lt;p&gt;在调整字体的过程中，这个系列&lt;a href=&quot;http://www.cnblogs.com/ruxpinsp1/archive/2008/04/29/font-in-front-end-development-1.html&quot;&gt;博文&lt;/a&gt;给了我很大帮助，在这里谢谢原作者。此外有个浏览器插件叫 &lt;a href=&quot;http://chengyinliu.com/whatfont.html&quot;&gt;WhatFont&lt;/a&gt;，可以实时查看当前页面中的文字所使用的字体，是个不错的小工具。现在这个博客基本上已经比较符合我对它的期望，我也不想再花时间在其外观的设置上，毕竟方便快捷地记录下自己的思考过程和最终想法才是它最重要的功能。在此列出所有在原主题基础上作出的改动：&lt;/p&gt;
 &lt;ol style=&quot;list-style-type: decimal&quot;&gt;
@@ -51,7 +139,7 @@
 &lt;li&gt;用 &lt;code&gt;git push&lt;/code&gt; 将内容送至 Github 远端&lt;a href=&quot;http://yangzetian.github.com/YangBlog&quot;&gt;库&lt;/a&gt;。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;配置好这个写作系统后，我可以将自己的注意力全部放在文章的内容上，而不被其他因素打扰，简直就跟以前在校内、豆瓣上写日志一样。后来我又推荐了好友&lt;a href=&quot;http://marcieinred.github.com&quot;&gt;萝卜&lt;/a&gt;以这种方式开博，虽然他一开始不怎么乐意，不过后来还是经受不住零成本博客的诱惑，跳进了这个大坑。此外他是个前端高人，喜欢直接写 HTML ，没有采用 Jekyll + Markdown。我想总有一天他会后悔的 :P。&lt;/p&gt;
-&lt;p&gt;读完《叛逆》后本来是想写一篇基调压抑的文章来总结最近低靡的境况，可写着写着心情却变好了起来，这大概就是博客或者说是写作的魅力吧。对我来说它还有一个吸引我的地方，因为我是比较支持&lt;a href=&quot;http://zh.wikipedia.org/zh/%E5%AD%98%E5%9C%A8%E4%B8%BB%E4%B9%89&quot;&gt;存在主义&lt;/a&gt;观点的，可近来却常常无法真切地感受到自己的存在，只有看着这个博客的时候，才能确信自己还有颗自主独立的心灵。&lt;/p&gt;
+&lt;p&gt;读完《叛逆》后本来是想写一篇基调压抑的文章来总结最近低靡的境况，可写着写着心情却变好了起来，这大概就是博客或者说是写作的魅力吧。对我来说它还有一个吸引我的地方，因为我一直比较支持&lt;a href=&quot;http://zh.wikipedia.org/zh/%E5%AD%98%E5%9C%A8%E4%B8%BB%E4%B9%89&quot;&gt;存在主义&lt;/a&gt;的观点，可近来却常常无法真切地感受到自己的存在，只有看着这个博客的时候，才能确信自己还有颗自主独立的心灵。&lt;/p&gt;
 &lt;p&gt;如果说民谣是歌手们对于社会不公的抗议，那这个博客或许就是我对青春成长的叛逆。&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</content>
