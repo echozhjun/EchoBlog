@@ -8,10 +8,10 @@ http://www.w3.org/TR/html4/strict.dtd">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Markdown 中文列表抽风 | Mind on Mind</title>
+	<title>BUAA Story : slides using pandoc and dzslides | Mind on Mind</title>
 	<meta name="author" content="Zetian Yang">
 	<link href='/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
-	<link href="http://feeds.feedburner.com/mindonmind" rel="alternate" title="Markdown 中文列表抽风" type="application/atom+xml">
+	<link href="http://feeds.feedburner.com/mindonmind" rel="alternate" title="BUAA Story : slides using pandoc and dzslides" type="application/atom+xml">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 </head>
 <body>
@@ -44,7 +44,7 @@ http://www.w3.org/TR/html4/strict.dtd">
 			<header>
 				<div class="unit-head">
 					<div class="unit-inner unit-head-inner">
-						<h1 class="h2 entry-title">Markdown 中文列表抽风</h1>
+						<h1 class="h2 entry-title">BUAA Story : slides using pandoc and dzslides</h1>
 					</div><!-- unit-inner -->
 				</div><!-- unit-head -->
 			</header>
@@ -60,23 +60,30 @@ http://www.w3.org/TR/html4/strict.dtd">
   <title></title>
 </head>
 <body>
-<p>用 markdown 写带中文的列表时发现 jekyll 生成的网页中有的可以正常显示，有的则不行。<br />折腾半天，发现如果列表项中含有英文字母等非中文字符，就可以正确显示，纯中文的那些打死也不行。</p>
-<p>上网查后得知原来是 jeklly 默认 markdown 引擎 maruku 的问题，将引擎改为 rdiscount 即可。<br />做法是修改 <code>_config.yml</code> 文件，在 <code>pygments: true</code> 上面添加一行 <code>markdown: rdiscount</code></p>
-<h3 id="links">Links</h3>
+<p>今天下午学校搞德育答辩，要求每个人做三分钟左右的展示。之前在<a href="http://yihui.name/en/2012/04/fancy-html5-slides-with-knitr-and-pandoc/">益辉</a>的博客上看到过非常炫的 html5 <a href="http://inundata.org/R_talks/meetup/">幻灯片</a>，所以趁这个机会自己也尝试了一把。实际证明效果还是不错的，打算以后就放弃 bearmer 转投 html5+css+js 的门下了。</p>
+<p>我的这个展示用 <a href="http://markdown.tw/">Markdown</a> 编写，之后借助 <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> 转换成 <a href="http://paulrouget.com/dzslides/">dzslides</a>。源文件可以从<a href="http://github.com/yangzetian/BUAA-Story">这里</a>获取，也可以<a href="http://yangzetian.github.com/BUAA-Story">在线</a>观看最终效果<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup>。</p>
+<p>这里顺便介绍一下目前我知道的 html 幻灯片制作方法。</p>
 <ul>
-<li><a href="http://www.douban.com/note/147668553/">markdown 渲染引擎折腾记</a></li>
-<li><a href="http://www.v2ex.com/t/28800">中文清单 lists 问题</a></li>
+<li><p>一种就是我使用的 <a href="http://paulrouget.com/dzslides/">dzslides</a>，它其实是一个 html 模板，利用 CSS3 实现了每张展示间的切换，它支持在幻灯片中直接使用 html5 元素。</p></li>
+<li><p>第二种比较方便的方法是使用 Google 提供的 html5 <a href="http://code.google.com/p/html5slides/">模板</a>。用法和 dzslides 类似。</p></li>
+<li><p>第三种是绚丽的 <a href="http://imakewebthings.com/deck.js/">deck.js</a>。这玩意儿真是太炫了，刚才提到的 R 介绍就是用它做的。 可惜目前我还不懂 JavaScript，但有这么漂亮的应用，JavaScript 已经排在我的学习列表里了。</p></li>
 </ul>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>注意一定<em>不要</em>用 IE 观看这个展示，推荐火狐或者 Chrome。另外由于这个展示里有很多图片，而我又是直接把图片放在 <a href="http://github.com/yangzetian/BUAA-Story">Github</a> 上的，所以加载速度会很慢。我比较推荐把源码库克隆到本地后观看，如果你执意在线查看，那好，请打开链接后泡杯茶，待三十分钟后再回来 :-)<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
 </body>
 </html>
 					<div class="meta">
 						<p class="date-publish">
 							Published: 
-							<date class="date-pub" title="2012-03-28T16:53:00+08:00" datetime="2012-03-28T16:53:00+08:00" pubdate>
-							<span class="month"><abbr>March</abbr></span>
-							<span class="day">28</span>
+							<date class="date-pub" title="2012-05-10T22:11:00+08:00" datetime="2012-05-10T22:11:00+08:00" pubdate>
+							<span class="month"><abbr>May</abbr></span>
+							<span class="day">10</span>
 							<span class="year">2012 @ </span>
-                            <span class="time">16:53 </span>
+                            <span class="time">22:11 </span>
 							</date>
 						</p>
 						<ul class="list-category list-linear">
@@ -87,8 +94,8 @@ http://www.w3.org/TR/html4/strict.dtd">
 
   
      
-    	<li><a href="/categories.html#Better Work In Linux-ref">
-    		Better Work In Linux <span>5</span>
+    	<li><a href="/categories.html#Freewheeling Mind-ref">
+    		Freewheeling Mind <span>2</span>
     	</a></li>
     
   
@@ -103,13 +110,9 @@ http://www.w3.org/TR/html4/strict.dtd">
 
   
      
-    	<li><a href="/tags.html#markdown-ref">markdown <span>1</span></a></li>
+    	<li><a href="/tags.html#BUAA-ref">BUAA <span>1</span></a></li>
      
-    	<li><a href="/tags.html#jekyll-ref">jekyll <span>2</span></a></li>
-     
-    	<li><a href="/tags.html#maruku-ref">maruku <span>1</span></a></li>
-     
-    	<li><a href="/tags.html#rdiscount-ref">rdiscount <span>1</span></a></li>
+    	<li><a href="/tags.html#story-ref">story <span>1</span></a></li>
     
   
 
@@ -155,13 +158,9 @@ http://www.w3.org/TR/html4/strict.dtd">
 					<nav class="pagination">
 						<ul>
 							
-							<li class="prev"><a class="internal" rel="prev"  href="/2012/03/27/vim" title="View Vim 拾遗">&laquo; Vim 拾遗</a></li>
+							<li class="prev"><a class="internal" rel="prev"  href="/2012/04/19/folk-blog" title="View 民谣与博客">&laquo; 民谣与博客</a></li>
 							
 							
-							<li class="pipe"> | </li>
-							
-							
-							<li class="next"><a class="internal" rel="next"  href="/2012/03/31/pandoc-cabal" title="View 安装 GHC, Cabal/Cabal-install 及 Pandoc">安装 GHC, Cabal/Cabal-install 及 Pandoc &raquo;</a></li>
 							
 						</ul>
 					</nav>

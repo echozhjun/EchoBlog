@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ""
+title: "缘起"
 tagline: "How this begins..."
 ---
 {% include JB/setup %}
