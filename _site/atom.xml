@@ -4,13 +4,134 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-05-10T22:31:01+08:00</updated>
+ <updated>2012-05-13T15:32:33+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>用 Glossary 学习 Python : 名字空间及作用域</title>
+   <link href="http://yangzetian.github.com/2012/05/13/glossary-python-1-namespace-scope"/>
+   <updated>2012-05-13T15:32:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/2012/05/13/glossary-python-1-namespace-scope</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;在《如何阅读一本书》中作者提到，分析型阅读的第一步应该是弄清楚书中每个术语或专业词汇的语义， 如果作者提供了一个词汇表 (glossary)，那么就应该先好好将它读一读。 我认为这条规则不仅对阅读理解书籍来说很有效，对读代码、文档等技术方面的材料来说也十分适用。 因此我想到了最近自己一直在使用的 &lt;a href=&quot;http://www.python.org&quot;&gt;Python&lt;/a&gt; 语言，它的&lt;a href=&quot;http://docs.python.org&quot;&gt;官方文档&lt;/a&gt;中就有一个这样的&lt;a href=&quot;http://docs.python.org/glossary.html&quot;&gt;词汇表&lt;/a&gt;。 在浏览了里面的条目后，我发现这个词汇表及其有用，对许多概念进行了精短的说明，且覆盖了 Python 语言的方方面面。 因此我将其作为自己深入学习 Python 的一个入口，并打算写一系列的文章， 每次从中挑选出与某一主题相关的词汇，对它们进行学习研究。&lt;/p&gt;
+&lt;p&gt;最近对 Python 的名字空间与作用域机制很感兴趣，读了一些相关的文章，这里对其作一个小结。&lt;/p&gt;
+&lt;p&gt;言归正传，在 Glossary 中与名字空间或作用域相关的词汇有:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;namespace&lt;/em&gt; : The place where a variable is stored. Namespces are implemented as dictionaries. There are local, global and built-in namespaces as well as nested namespaces in objectes (in methods). Namespaces support modularity by preventing naming conflicts…&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;nested scope&lt;/em&gt; : The ability to refer to a variable in encolsing definition. For instances, a function defined inside another function can refer to variables in the outer fucntion. Note that nested scopes work only for reference and not for assignment which will always write to the innermost scope. In contrast, local varibles both read and write in the innermost scope. Likewise. global variables read and write to the global namespace.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了理解 Python 的名字空间机制，首先需要明确的是 Python 中的变量 (variable) 与其他语言的不同。在 Python 中并不存在一般意义上的变量，它只有&lt;em&gt;名字&lt;/em&gt; (names) 和&lt;em&gt;对象&lt;/em&gt; (objects)。对象是数据实体，而名字是访问对象途径。 名字通过&lt;em&gt;绑定&lt;/em&gt; (binding) 操作&lt;sup&gt;&lt;a href=&quot;#fn1&quot; class=&quot;footnoteRef&quot; id=&quot;fnref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;被引入至程序中。此外绑定除了会使某个名字指代某个对象， 还会给这个名字赋予一些额外的性质。 下面这段话来自 &lt;a href=&quot;http://docs.python.org/reference/executionmodel.html#naming-and-binding&quot;&gt;Python 语言参考&lt;/a&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当我们在某个代码快内绑定一个名字时，它就是成为该代码块的局部变量 (local variable)。 而当我们在模块级别上绑定一个名字是，它就是一个全局变量 (global variable)。 由于模块也是一个代码快，因此这些变量即是全局的也是局部的。 如果在一个代码块中使用了一个未在该代码快内定义（绑定）的名字，它就被称为自由变量 (free variale)。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在程序一旦写成之后，任何代码块中的任意变量都必定属于上述三种类型&lt;sup&gt;&lt;a href=&quot;#fn2&quot; class=&quot;footnoteRef&quot; id=&quot;fnref2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;之一， 这是在生成字节码之前就确定下来的。因为这与虚拟机使用用哪种语句加载变量相关。 比如下面这段代码：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ll&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;函数 &lt;code&gt;f&lt;/code&gt; 的字节码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;2           0 LOAD_CONST               1 (2)
+            3 STORE_FAST               0 (l)
+
+3           6 LOAD_GLOBAL              0 (g)
+            9 STORE_FAST               1 (ll)
+           12 LOAD_CONST               0 (None)
+           15 RETURN_VALUE        &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看出对于局部变量 &lt;code&gt;f&lt;/code&gt;，Python 使用的是 &lt;code&gt;LOAD_FAST/STORE_FAST&lt;/code&gt; 一类指令，而对于全局变量则使用 &lt;code&gt;LOAD_GLOBAL/STORE_GLOBAL&lt;/code&gt; 一类指令。&lt;/p&gt;
+&lt;p&gt;绑定的作用之一就是确定变量的类型：不论一个变量在当前代码块中的哪里被绑定，它都被认为是局部的，因此 该代码块内所有对其的使用都将指向它绑定的这个对象。这段话听起来十分坳口，我们用下面这个例子来说明：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;函数 &lt;code&gt;f&lt;/code&gt; 对应的字节码为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;2           0 LOAD_FAST                0 (x)
+            3 STORE_FAST               1 (t)
+
+3           6 LOAD_CONST               1 (10)
+            9 STORE_FAST               0 (x)
+           12 LOAD_CONST               0 (None)
+           15 RETURN_VALUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看到，第一句加载变量 &lt;code&gt;x&lt;/code&gt; 时即使用的 &lt;code&gt;LOAD_FAST&lt;/code&gt; 指令，说明 Python 认为它是一个局部变量，而对 &lt;code&gt;x&lt;/code&gt; 的绑定却是在后面一条语句中才发生。 这个例子说明了 Python 的变量类型机制 —— 变量类型被静态确定。 虽然定义 &lt;code&gt;f&lt;/code&gt; 时不会报错，但在 &lt;code&gt;f&lt;/code&gt; 运行时会报出 &lt;code&gt;UnboundLocalError&lt;/code&gt; 的异常, 这个异常会在引用一个未绑定的局部变量时抛出。 这似乎是个有点违反直觉的现象，按一般的理解，第一条语句中的 &lt;code&gt;x&lt;/code&gt; 应该是全局的，第二条语句不过是在本地重新生成了一个局部变量而已。 但就像上文所说的，当定义好 &lt;code&gt;f&lt;/code&gt; 后，它里面的每个变量类型都已经确定了， 尽管 &lt;code&gt;x&lt;/code&gt; 在第二条语句中才被绑定，但还是被认为是一个局部变量， 既然是一个局部变量, 再运行时任何对这个名字的使用就会访问局部代码块中它所绑定的对象, 如果它还没被绑定，当然就应该报错。&lt;/p&gt;
+&lt;p&gt;每个被引入的名字都被保存在某个名字空间里。 而名字空间是和&lt;em&gt;代码块&lt;/em&gt; (block) 相互关联的。 所谓代码块即指一段被当作一个单元执行的程序文本。诸如模块、函数体、类定义都是一个代码块。 每个代码块都有一个属于自己的独立名字空间，且每个名字空间都有一个允许直接访问其内名字的的代码范围， 在这个范围内这些名字都是可见的， 而在这个范围外，该名字空间的内的名字不能直接使用。 这个代码范围即是该名字空间（中变量）的&lt;em&gt;作用域&lt;/em&gt; (scope)。&lt;/p&gt;
+&lt;p&gt;现在让我们把注意力集中在代码块的局部变量&lt;sup&gt;&lt;a href=&quot;#fn3&quot; class=&quot;footnoteRef&quot; id=&quot;fnref3&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;上, &lt;a href=&quot;http://docs.python.org/reference/executionmodel.html#naming-and-binding&quot;&gt;语言参考&lt;/a&gt;中说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在一个代码块中定义的局部变量的作用域为这个代码块本身。如果它定义在一个函数代码块中， 它的作用域将延伸至该代码块包含的所有内部代码块中，除非在子代码块里对其重新定义。 类代码块中定义的名字的作用域仅限于该代码块本身，它不会向类中的方法代码块扩展 —— 这包括生成器表达式，因为它们使用了函数作用域来实现。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有了这几条规则，我们可以静态地推出在任意一个代码块被哪些名字空间的作用域所覆盖&lt;sup&gt;&lt;a href=&quot;#fn4&quot; class=&quot;footnoteRef&quot; id=&quot;fnref4&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;，有如下几种情况：&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;代码块自身的局部名字空间，该空间包含了在本代码块中绑定的所有名字&lt;/li&gt;
+&lt;li&gt;所有包含该代码块的函数代码块的名字空间，它们的作用域按代码块的分布层层嵌套&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;除了这两种可能的作用域之外，Python 还规定了以下两个所有代码块均可见的名字空间:&lt;/p&gt;
+&lt;ol start=&quot;3&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;代码块所在模块的全局名字空间，它包含了模块中的所有全局变量&lt;/li&gt;
+&lt;li&gt;内建名字空间，它其实是 &lt;code&gt;__builtin__&lt;/code&gt; 模块的名字空间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以把上面的这两个名字空间合称『全局名字空间』，它们的作用域为模块内任何代码块。&lt;/p&gt;
+&lt;p&gt;当 Python 需要对一个变量解析其对应的对象时它会以上面列出的 1， 2， 3， 4 顺序 (即 &lt;code&gt;LEGB&lt;/code&gt;) 依次 尝试，把在最里层名字空间内找到的名字绑定作为当前名字的引用。 有一个例外是如果在代码块中用 &lt;code&gt;global&lt;/code&gt; 语句对一个变量进行了声明，那么在该代码块中所有 对此名字进行解析时将跳过 1, 2 直接从 3 开始。比如下面这段代码：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;将会输出 10。函数 &lt;code&gt;f&lt;/code&gt; 的字节码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;2           0 LOAD_CONST               1 (10)
+            3 STORE_GLOBAL             0 (x)
+...         ...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;从中可以看到，&lt;code&gt;x&lt;/code&gt; 在赋值时即被当作是全局变量。 这说明了两点：&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;&lt;code&gt;global&lt;/code&gt; 语句可以覆盖一个名字在当前代码块中的其他绑定而将其强制设定为全局变量&lt;/li&gt;
+&lt;li&gt;再次表明一个变量的类型是在运行前就被静态地确定&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;事实上，定义上面这个函数时 Python 编译器&lt;sup&gt;&lt;a href=&quot;#fn5&quot; class=&quot;footnoteRef&quot; id=&quot;fnref5&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;会给出一个&lt;em&gt;语法警告&lt;/em&gt;，提醒你 &lt;code&gt;x&lt;/code&gt; 在全局声明前就被赋值。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;现在我们明白了 Python 中的名字、绑定、类型、代码块、名字空间、作用域等概念， 再回顾一下最上面列出的那两个 Glossary 中的定义。 如果你觉得已经完全理解了定义中说的每句话，每个词的含义，那就说明你理解 Python 的名字空间以及作用域了。&lt;/p&gt;
+&lt;p&gt;对于那些想弄懂 CPython 是如何实现这些机制的人，请继续阅读：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://eli.thegreenplace.net/2011/05/15/understanding-unboundlocalerror-in-python/&quot;&gt;Understanding UnboundLocalError in Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eli.thegreenplace.net/2010/09/18/python-internals-symbol-tables-part-1/&quot;&gt;Python internals: Symbol tables, part 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eli.thegreenplace.net/2010/09/20/python-internals-symbol-tables-part-2/&quot;&gt;Python internals: Symbol tables, part 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn1&quot;&gt;&lt;p&gt;常见的绑定操作包括函数定义，类定义，赋值语句等，一个特别的绑定操作是 &lt;code&gt;del&lt;/code&gt; 语句，出现在 &lt;code&gt;del&lt;/code&gt; 后面的变量讲被认为是局部变量。 关于绑定操作更多的说明请参考: &lt;a href=&quot;http://docs.python.org/reference/executionmodel.html#naming-and-binding&quot;&gt;Naming and binding&lt;/a&gt;&lt;a href=&quot;#fnref1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn2&quot;&gt;&lt;p&gt;这里所指的类型并不是变量值的类型 (&lt;code&gt;int&lt;/code&gt;, &lt;code&gt;float&lt;/code&gt; 等)，而是指它是局部、自由还是全局变量。下同。&lt;a href=&quot;#fnref2&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn3&quot;&gt;&lt;p&gt;任何一个变量都必定是某个代码块的局部变量。&lt;a href=&quot;#fnref3&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn4&quot;&gt;&lt;p&gt;注意这里只是说确定被哪些名字空间覆盖，而没有说确定所有可以直接使用的变量， 因为名字空间拥有的变量是动态地确定的。 这也就是为什么 &lt;a href=&quot;http://docs.python.org/tutorial/classes.html#python-scopes-and-namespaces&quot;&gt;Tutorial&lt;/a&gt; 中说&lt;em&gt;作用域被静态地确定，动态地使用&lt;/em&gt;。&lt;a href=&quot;#fnref4&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn5&quot;&gt;&lt;p&gt;虽说 Python 不是一个编译语言，但还是有一个编译器前端的， 它对源文件进行语法分析，生成句法树和符号表，并最终产生字节码供虚拟机执行。这些步骤属于 Python 的静态地带，变量的类型就是在其中确定的。 深入的信息请参考&lt;a href=&quot;http://eli.thegreenplace.net&quot;&gt;Eli&lt;/a&gt; 的文章 &lt;a href=&quot;http://eli.thegreenplace.net/2009/11/28/python-internals-working-with-python-asts/&quot;&gt;Python internals: Working with Python ASTs&lt;/a&gt;&lt;a href=&quot;#fnref5&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
  
  <entry>
    <title>BUAA Story : slides using pandoc and dzslides</title>

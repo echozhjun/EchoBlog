@@ -9,6 +9,7 @@ http://yangzetian.github.com/tags.html
 http://yangzetian.github.com/intro.html
 http://yangzetian.github.com/atom.xml
 
+http://yangzetian.github.com/2012/05/13/glossary-python-1-namespace-scope
 http://yangzetian.github.com/2012/05/10/buaa-story
 http://yangzetian.github.com/2012/04/19/folk-blog
 http://yangzetian.github.com/2012/04/15/jekyll-pandoc
