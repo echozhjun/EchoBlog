@@ -90,15 +90,6 @@ http://www.w3.org/TR/html4/strict.dtd">
            15 RETURN_VALUE        </code></pre>
 <p>可以看出对于局部变量 <code>f</code>，Python 使用的是 <code>LOAD_FAST/STORE_FAST</code> 一类指令，而对于全局变量则使用 <code>LOAD_GLOBAL/STORE_GLOBAL</code> 一类指令。</p>
 <p>绑定的作用之一就是确定变量的类型：不论一个变量在当前代码块中的哪里被绑定，它都被认为是局部的，因此该代码块内所有对其的使用都将指向它绑定的这个对象。这段话听起来十分坳口，我们用下面这个例子来说明：</p>
-<div class="highlight"><pre><code class="python"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-</code></pre>
-</div>
-
-
-
 <p>函数 <code>f</code> 对应的字节码为：</p>
 <pre><code>2           0 LOAD_FAST                0 (x)
             3 STORE_FAST               1 (t)

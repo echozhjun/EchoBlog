@@ -4,13 +4,43 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-06-10T12:19:35+08:00</updated>
+ <updated>2012-07-01T01:09:07+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>在苏州糖里</title>
+   <link href="http://yangzetian.github.com/2012/07/01/suzhou-sugar"/>
+   <updated>2012-07-01T01:07:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/2012/07/01/suzhou-sugar</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.brautigan.net/index.html&quot;&gt;布劳蒂甘&lt;/a&gt;是个奇怪的人。他喜欢钓鳟鱼，不喜欢别人把他称作垮掉派。他还写了一部美丽的小说，由一个又一个的诗构成，它的名字叫&lt;a href=&quot;http://book.douban.com/subject/1012828/&quot;&gt;《在西瓜糖里》&lt;/a&gt;。里面我最喜欢的一篇叫『一次爱，一阵风』：&lt;/p&gt;
+&lt;p&gt;我们久久地、缓缓地做爱。一阵风吹来，窗户轻轻颤动，糖在风中无力地裂开。&lt;/p&gt;
+&lt;p&gt;我喜欢保琳的身体，她说她也喜欢我的，我们不知道该说什么。&lt;/p&gt;
+&lt;p&gt;风突然停了，保琳说：『那是什么？』&lt;/p&gt;
+&lt;p&gt;『是风。』&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;七天前的这个时候，我坐在苏州某个旅社的床上。&lt;/p&gt;
+&lt;p&gt;十梓街早已安静下来，只有风还在吹。在风之前，是蚕丝般的雨在飘。&lt;/p&gt;
+&lt;p&gt;桌上摆着牛奶。在牛奶之前，是便利店阿姨厌恶的脸色。&lt;/p&gt;
+&lt;p&gt;昨天，我第二次来图书馆借书，又看到了那本&lt;a href=&quot;http://book.douban.com/subject/5423547/&quot;&gt;《青春的反证》&lt;/a&gt;，想到21岁真是好年纪。&lt;/p&gt;
+&lt;p&gt;不知道我算不算已经完成了反证：那天我感到无比的真实，真实得就像她问『那是什么?』&lt;/p&gt;
+&lt;p&gt;『是梦』。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
  
  <entry>
    <title>毕业的颜色</title>
@@ -30,7 +60,7 @@
 &lt;p&gt;起因要追溯到去年的这个时候，我决定不以计算机继续作为自己毕业后的职业。这并不是一个莽撞作出的决定，因为从大二起我就尝试在计算机学院内寻找自己感兴趣的方向，但各实验室所作的工作与氛围均不能唤起我的任何激情。我不甘心把自己的青春年华花在沉闷的工程项目上，因此我开始寻求计算机以外的道路。&lt;/p&gt;
 &lt;p&gt;一个偶然的机会，我突然意识到人类视觉的不寻常之处，并和子沛进行了讨论。后来他推荐我去读索尔索的那本&lt;a href=&quot;http://book.douban.com/subject/3171969/&quot;&gt;《认知心理学》&lt;/a&gt;，那是我第一次了解到原来心理学的研究对象是人类的心智。或许是冥冥之中的安排，在我急切的想找到一个人生出口的时候，『认知』这个既酷又神秘的词语打开了我的视野。后来我报名参加了北师大的认知神经科学暑期学校，并幸运地加入了 Liu Lab。从那时起，来自身边家人、朋友、同学的无休止疑问便开始了。&lt;/p&gt;
 &lt;p&gt;我想我们每个人都有自己的思维空间，空间内是我们已了解接受的东西，而空间外则是从未被我们意识到的东西。对于那些从未接触过的事物，有些人的反应是质疑，如果无法质疑就会心生恐惧。还有一些人，他们对这个世界充满了好奇，渴望去接触自己从未考虑过的观念，希望经历那些之前未经历过的人生体验，这些使他们感到兴奋和满足。前一种人的心智是闭塞的，坚决地活在自己习惯的那个思维体系中；后一种人的心智是开放的，他们时刻准备着抛弃已有的思维体系，然后再将其重建。大多数工科生（尤其是工科女）属于前一种人，我却属于后一种。&lt;/p&gt;
-&lt;p&gt;而我毕设答辩失败的根本原因，即在于这两种思维方式的冲突。或许多大多数计算机学院的老师或同学来说，研究大脑是件很&lt;a href=&quot;http://sealhuang.sinaapp.com/?p=191&quot;&gt;可笑&lt;/a&gt;的事情。当然失败并不是指没能通过（不然我就没心情写这篇文章了），而是说诸位老师将我的论文嘲讽了一番，并指出需要进行内容与格式上的较大修改才能符合计算机学院的要求。这时离论文终稿提交的截至时间还剩不到两天。万幸的是，另一位论文不符合『要求』的同学在回答提问时惹毛了诸位大佬，从而替我进了二辩，要不然估计我就真难顺利毕业了。&lt;/p&gt;
+&lt;p&gt;而我毕设答辩失败的根本原因，即在于这两种思维方式的冲突。或许对大多数计算机学院的老师或同学来说，研究大脑是件很&lt;a href=&quot;http://sealhuang.sinaapp.com/?p=191&quot;&gt;可笑&lt;/a&gt;的事情。当然失败并不是指没能通过（不然我就没心情写这篇文章了），而是说诸位老师将我的论文嘲讽了一番，并指出需要进行内容与格式上的较大修改才能符合计算机学院的要求。这时离论文终稿提交的截至时间还剩不到两天。万幸的是，另一位论文不符合『要求』的同学在回答提问时惹毛了诸位大佬，从而替我进了二辩，要不然估计我就真难顺利毕业了。&lt;/p&gt;
 &lt;p&gt;答辩后的下午，我怀着失落与不安坐在实验室的座位上，虽然与实验室老师讨论了大致的修改方案，但还是无法安心地修改论文，就仿佛被人狠狠的揍了一拳，自己不仅没力气还手，还在时刻担心对方的下一记重击。除了对于不能毕业的恐惧，还有一个原因让我没法全心修改论文。那就是我始终认为本科论文没什么意义，根本不会有人真正在乎它的内容，花费如此之多的时间实在是有所不值。&lt;/p&gt;
 &lt;p&gt;但生活总要继续，问题总要解决。吃过晚饭后，我像老板所说的那样『别管有没有意义』下决心跟论文死磕到底。有些事情就是这样，如果你决心达到目标，那你真的就会达到。我想这就是人类心智的强大之处，它不仅能让我们去追求那些美好的东西，也能让我们在枯燥无趣的工作中坚持下来。&lt;/p&gt;
 &lt;p&gt;8号上午9点33分，我将打印好的论文终稿交给了学院的教务老师。我想，这是我对成为一名合格工科生的最后努力。此时校园里已到处飘起了象征着工科的金色绶带，四处可见庆祝毕业的兴奋面孔。我为自己没有放弃感到心满意足。&lt;/p&gt;
@@ -85,15 +115,6 @@
            15 RETURN_VALUE        &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;可以看出对于局部变量 &lt;code&gt;f&lt;/code&gt;，Python 使用的是 &lt;code&gt;LOAD_FAST/STORE_FAST&lt;/code&gt; 一类指令，而对于全局变量则使用 &lt;code&gt;LOAD_GLOBAL/STORE_GLOBAL&lt;/code&gt; 一类指令。&lt;/p&gt;
 &lt;p&gt;绑定的作用之一就是确定变量的类型：不论一个变量在当前代码块中的哪里被绑定，它都被认为是局部的，因此该代码块内所有对其的使用都将指向它绑定的这个对象。这段话听起来十分坳口，我们用下面这个例子来说明：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-
-
 &lt;p&gt;函数 &lt;code&gt;f&lt;/code&gt; 对应的字节码为：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;2           0 LOAD_FAST                0 (x)
             3 STORE_FAST               1 (t)
@@ -361,7 +382,7 @@ def __init__(self, initial_state, memory=None):
 &lt;span class=&quot;co&quot;&gt;    attribute is any object that you want to pass along to the action&lt;/span&gt;
 &lt;span class=&quot;co&quot;&gt;    functions. It is not used by the FSM. For parsing you would&lt;/span&gt;
 &lt;span class=&quot;co&quot;&gt;    typically pass a list to be used as a stack. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
+     
     &lt;span class=&quot;co&quot;&gt;# Map (input_symbol, current_state) --&amp;gt; (action, next_state).&lt;/span&gt;
     &lt;span class=&quot;ot&quot;&gt;self&lt;/span&gt;.state_transitions = {}
     &lt;span class=&quot;co&quot;&gt;# Map (current_state) --&amp;gt; (action, next_state).&lt;/span&gt;
