@@ -5,7 +5,7 @@ tagline: "How this begins..."
 ---
 {% include JB/setup %}
 
-This is a blog by Zetian Yang, a graduate of cognitive neurosciene in [BNU][].
+This is a blog by Zetian Yang, a graduate of cognitive neuroscience in [BNU][].
 
 Since the second half year of 2011, I have been working in the [jliulab][liujia] of BNU.
 That gave me a chance to use linux substantially, and I was more and more interested to it. 

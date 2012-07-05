@@ -9,6 +9,7 @@ http://yangzetian.github.com/tags.html
 http://yangzetian.github.com/intro.html
 http://yangzetian.github.com/atom.xml
 
+http://yangzetian.github.com/2012/07/05/notes-online
 http://yangzetian.github.com/2012/07/01/suzhou-sugar
 http://yangzetian.github.com/2012/06/10/graduate-colors
 http://yangzetian.github.com/2012/05/13/glossary-python-1-namespace-scope

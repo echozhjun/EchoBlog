@@ -8,10 +8,10 @@ http://www.w3.org/TR/html4/strict.dtd">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>BUAA Story : slides using pandoc and dzslides | Mind on Mind</title>
+	<title>我的技术笔记上线啦! | Mind on Mind</title>
 	<meta name="author" content="Zetian Yang">
 	<link href='/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
-	<link href="http://feeds.feedburner.com/mindonmind" rel="alternate" title="BUAA Story : slides using pandoc and dzslides" type="application/atom+xml">
+	<link href="http://feeds.feedburner.com/mindonmind" rel="alternate" title="我的技术笔记上线啦!" type="application/atom+xml">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 </head>
 <body>
@@ -45,7 +45,7 @@ http://www.w3.org/TR/html4/strict.dtd">
 			<header>
 				<div class="unit-head">
 					<div class="unit-inner unit-head-inner">
-						<h1 class="h2 entry-title">BUAA Story : slides using pandoc and dzslides</h1>
+						<h1 class="h2 entry-title">我的技术笔记上线啦!</h1>
 					</div><!-- unit-inner -->
 				</div><!-- unit-head -->
 			</header>
@@ -61,30 +61,22 @@ http://www.w3.org/TR/html4/strict.dtd">
   <title></title>
 </head>
 <body>
-<p>今天下午学校搞德育答辩，要求每个人做三分钟左右的展示。之前在<a href="http://yihui.name/en/2012/04/fancy-html5-slides-with-knitr-and-pandoc/">益辉</a>的博客上看到过非常炫的 html5 <a href="http://inundata.org/R_talks/meetup/">幻灯片</a>，所以趁这个机会自己也尝试了一把。实际证明效果还是不错的，打算以后就放弃 bearmer 转投 html5+css+js 的门下了。</p>
-<p>我的这个展示用 <a href="http://markdown.tw/">markdown</a> 编写，之后借助 <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> 转换成 <a href="http://paulrouget.com/dzslides/">dzslides</a>。源文件可以从<a href="http://github.com/yangzetian/BUAA-Story">这里</a>获取，也可以<a href="http://yangzetian.github.com/BUAA-Story">在线</a>观看最终效果<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup>。</p>
-<p>这里顺便介绍一下目前我知道的 html 幻灯片制作方法。</p>
-<ul>
-<li><p>一种就是我使用的 <a href="http://paulrouget.com/dzslides/">dzslides</a>，它其实是一个 html 模板，利用 CSS3 实现了每张展示间的切换，它支持在幻灯片中直接使用 html5 元素。</p></li>
-<li><p>第二种比较方便的方法是使用 Google 提供的 html5 <a href="http://code.google.com/p/html5slides/">模板</a>。用法和 dzslides 类似。</p></li>
-<li><p>第三种是绚丽的 <a href="http://imakewebthings.com/deck.js/">deck.js</a>。这玩意儿真是太炫了，刚才提到的 R 介绍就是用它做的。可惜目前我还不懂 JavaScript，但有这么漂亮的应用，JavaScript 已经排在我的学习列表里了。</p></li>
-</ul>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>注意一定<em>不要</em>用 IE 观看这个展示，推荐火狐或者 Chrome。另外由于这个展示里有很多图片，而我又是直接把图片放在 <a href="http://github.com/yangzetian/BUAA-Story">Github</a> 上的，所以加载速度会很慢。我比较推荐把源码库克隆到本地后观看，如果你执意在线查看，那好，请打开链接后泡杯茶，待三十分钟后再回来 :-)<a href="#fnref1">↩</a></p></li>
-</ol>
-</div>
+<p>经过几天的酝酿，我采用 <a href="http://sphinx.pocco.org">Sphinx</a> 搭建的 Wiki 式技术<a href="http://yangzetian.github.com/Yang-Tech-Notes">笔记</a>终于上线了 :-)</p>
+<p>很久之前就看到<a href="http://wiki.ktmud.com/index.html">迟丘</a>用<a href="http://code.google.com/p/vimwiki">Vimwiki</a>编写的页面十分漂亮，当时就开始琢磨着想自己哪天也建一个类似的 Wiki 平台。后来又从 <a href="http://beiyuu.com">BeiYuu</a> 的一篇<a href="http://beiyuu.com/why-blog">文章</a>中体会到 Wiki 与博客的差别。按那篇文章的观点，我写博客的初衷（记录自己在使用 linux 过程中遇到的问题和收获）或许采用 Wiki 的形式更加适合。</p>
+<p>当然，现在这个博客早不是一个技术笔记了，而且正与技术渐行渐远。但归根结底来说我还是要靠技术混饭吃的，而技术又需要点点滴滴的持久积累。因此该技术笔记便顺利成章地出现了。它将记录与 linux, python, scientific computing, vim 等技术相关的内容，主要涉及各种工具、技术的配置与使用方法。这些往往属于比较零散的知识点，而那些对相关技术的总结性文章则将继续发表在博客中。</p>
+<p>Wiki 其实有很多方便快捷的搭建方法，比如新兴的 <a href="http://www.tryscribble.com">Scribble</a>，将建 Wiki 变得和用记事本一样简单直接，而且相当美观。但在衡量了易用性与自由性之后，我最终选择了 Sphinx 作为自己的 Wiki 引擎，这里要十分感谢 <a href="http://deep.tw">Daniel Lin</a> 的启发！</p>
+<p>这个笔记完全开源，依然是托管在 Github 上，源文件与编译好的网页均在 <a href="https://github.com/yangzetian/Yang-Tech-Notes">Yang-Tech-Notes</a>。我的第一篇笔记与 <a href="http://www.gnu.org/software/screen">GNU Screen</a> 有关，可以在<a href="http://yangzetian.github.com/Yang-Tech-Notes/linux/screen.html">这儿</a>查看。</p>
+<p>最后，祝此笔记开门大吉，成果多多！</p>
 </body>
 </html>
 					<div class="meta">
 						<p class="date-publish">
 							Published: 
-							<date class="date-pub" title="2012-05-10T22:11:00+08:00" datetime="2012-05-10T22:11:00+08:00" pubdate>
-							<span class="month"><abbr>May</abbr></span>
-							<span class="day">10</span>
+							<date class="date-pub" title="2012-07-05T23:35:00+08:00" datetime="2012-07-05T23:35:00+08:00" pubdate>
+							<span class="month"><abbr>July</abbr></span>
+							<span class="day">05</span>
 							<span class="year">2012 @ </span>
-                            <span class="time">22:11 </span>
+                            <span class="time">23:35 </span>
 							</date>
 						</p>
 						<ul class="list-category list-linear">
@@ -95,8 +87,8 @@ http://www.w3.org/TR/html4/strict.dtd">
 
   
      
-    	<li><a href="/categories.html#Freewheeling Mind-ref">
-    		Freewheeling Mind <span>4</span>
+    	<li><a href="/categories.html#Better Work In Linux-ref">
+    		Better Work In Linux <span>6</span>
     	</a></li>
     
   
@@ -111,9 +103,13 @@ http://www.w3.org/TR/html4/strict.dtd">
 
   
      
-    	<li><a href="/tags.html#BUAA-ref">BUAA <span>2</span></a></li>
+    	<li><a href="/tags.html#Tech-ref">Tech <span>1</span></a></li>
      
-    	<li><a href="/tags.html#story-ref">story <span>1</span></a></li>
+    	<li><a href="/tags.html#notes-ref">notes <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#sphinx-ref">sphinx <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#wiki-ref">wiki <span>1</span></a></li>
     
   
 
@@ -159,13 +155,9 @@ http://www.w3.org/TR/html4/strict.dtd">
 					<nav class="pagination">
 						<ul>
 							
-							<li class="prev"><a class="internal" rel="prev"  href="/2012/04/19/folk-blog" title="View 民谣与博客">&laquo; 民谣与博客</a></li>
+							<li class="prev"><a class="internal" rel="prev"  href="/2012/07/01/suzhou-sugar" title="View 在苏州糖里">&laquo; 在苏州糖里</a></li>
 							
 							
-							<li class="pipe"> | </li>
-							
-							
-							<li class="next"><a class="internal" rel="next"  href="/2012/05/13/glossary-python-1-namespace-scope" title="View 用 Glossary 学习 Python : 名字空间及作用域">用 Glossary 学习 Python : 名字空间及作用域 &raquo;</a></li>
 							
 						</ul>
 					</nav>

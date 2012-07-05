@@ -4,13 +4,37 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-07-01T01:09:07+08:00</updated>
+ <updated>2012-07-06T00:02:11+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>我的技术笔记上线啦!</title>
+   <link href="http://yangzetian.github.com/2012/07/05/notes-online"/>
+   <updated>2012-07-05T23:35:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/2012/07/05/notes-online</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;经过几天的酝酿，我采用 &lt;a href=&quot;http://sphinx.pocco.org&quot;&gt;Sphinx&lt;/a&gt; 搭建的 Wiki 式技术&lt;a href=&quot;http://yangzetian.github.com/Yang-Tech-Notes&quot;&gt;笔记&lt;/a&gt;终于上线了 :-)&lt;/p&gt;
+&lt;p&gt;很久之前就看到&lt;a href=&quot;http://wiki.ktmud.com/index.html&quot;&gt;迟丘&lt;/a&gt;用&lt;a href=&quot;http://code.google.com/p/vimwiki&quot;&gt;Vimwiki&lt;/a&gt;编写的页面十分漂亮，当时就开始琢磨着想自己哪天也建一个类似的 Wiki 平台。后来又从 &lt;a href=&quot;http://beiyuu.com&quot;&gt;BeiYuu&lt;/a&gt; 的一篇&lt;a href=&quot;http://beiyuu.com/why-blog&quot;&gt;文章&lt;/a&gt;中体会到 Wiki 与博客的差别。按那篇文章的观点，我写博客的初衷（记录自己在使用 linux 过程中遇到的问题和收获）或许采用 Wiki 的形式更加适合。&lt;/p&gt;
+&lt;p&gt;当然，现在这个博客早不是一个技术笔记了，而且正与技术渐行渐远。但归根结底来说我还是要靠技术混饭吃的，而技术又需要点点滴滴的持久积累。因此该技术笔记便顺利成章地出现了。它将记录与 linux, python, scientific computing, vim 等技术相关的内容，主要涉及各种工具、技术的配置与使用方法。这些往往属于比较零散的知识点，而那些对相关技术的总结性文章则将继续发表在博客中。&lt;/p&gt;
+&lt;p&gt;Wiki 其实有很多方便快捷的搭建方法，比如新兴的 &lt;a href=&quot;http://www.tryscribble.com&quot;&gt;Scribble&lt;/a&gt;，将建 Wiki 变得和用记事本一样简单直接，而且相当美观。但在衡量了易用性与自由性之后，我最终选择了 Sphinx 作为自己的 Wiki 引擎，这里要十分感谢 &lt;a href=&quot;http://deep.tw&quot;&gt;Daniel Lin&lt;/a&gt; 的启发！&lt;/p&gt;
+&lt;p&gt;这个笔记完全开源，依然是托管在 Github 上，源文件与编译好的网页均在 &lt;a href=&quot;https://github.com/yangzetian/Yang-Tech-Notes&quot;&gt;Yang-Tech-Notes&lt;/a&gt;。我的第一篇笔记与 &lt;a href=&quot;http://www.gnu.org/software/screen&quot;&gt;GNU Screen&lt;/a&gt; 有关，可以在&lt;a href=&quot;http://yangzetian.github.com/Yang-Tech-Notes/linux/screen.html&quot;&gt;这儿&lt;/a&gt;查看。&lt;/p&gt;
+&lt;p&gt;最后，祝此笔记开门大吉，成果多多！&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
  
  <entry>
    <title>在苏州糖里</title>
@@ -115,6 +139,15 @@
            15 RETURN_VALUE        &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;可以看出对于局部变量 &lt;code&gt;f&lt;/code&gt;，Python 使用的是 &lt;code&gt;LOAD_FAST/STORE_FAST&lt;/code&gt; 一类指令，而对于全局变量则使用 &lt;code&gt;LOAD_GLOBAL/STORE_GLOBAL&lt;/code&gt; 一类指令。&lt;/p&gt;
 &lt;p&gt;绑定的作用之一就是确定变量的类型：不论一个变量在当前代码块中的哪里被绑定，它都被认为是局部的，因此该代码块内所有对其的使用都将指向它绑定的这个对象。这段话听起来十分坳口，我们用下面这个例子来说明：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+
 &lt;p&gt;函数 &lt;code&gt;f&lt;/code&gt; 对应的字节码为：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;2           0 LOAD_FAST                0 (x)
             3 STORE_FAST               1 (t)
