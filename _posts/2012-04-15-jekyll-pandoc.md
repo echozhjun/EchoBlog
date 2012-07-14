@@ -12,7 +12,7 @@ Jekyll 原生支持 `maruku`，`rdiscount`，`kramdown`，`redcarpet` 等 markdw
    [MathJax]: http://www.mathjax.org
    [Pandoc]: http://johnmacfarlane.net/pandoc
 
-首先介绍一下 [Pandoc][]，它的功能是在多种常见的标记语言进行相互转换，其中包括 Markdown, reStructuredText, Textilte, HTML, $\LaTeX$ 等。利用它，你可以用简单的 Markdown 语法生成与 $\LaTeX$ 一致的文档，还可以写 Beamer 演示文稿。更强大的是，它还能将以上提到的这些语言所写文件转换成 *docx* 文档，这对我们这些体制内码农很是实用。下面这张图展示了 Pandoc 让人吃惊 的功能集，不愧为文件转换中的瑞士军刀：
+首先介绍一下 [Pandoc][]，它的功能是在多种常见的标记语言进行相互转换，其中包括 Markdown, reStructuredText, Textilte, HTML, $\LaTeX$ 等。利用它，你可以用简单的 Markdown 语法生成与 $\LaTeX$ 一致的文档，还可以写 Beamer 演示文稿。更强大的是，它还能将以上提到的这些语言所写文件转换成 *doc* 文档，这对我们这些体制内码农很是实用。下面这张图展示了 Pandoc 让人吃惊 的功能集，不愧为文件转换中的瑞士军刀：
 
 <img src="http://johnmacfarlane.net/pandoc/diagram.png" alt="pandoc is awsome!" width="650"/>
 

@@ -4,13 +4,41 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-07-06T00:02:11+08:00</updated>
+ <updated>2012-07-14T12:15:05+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>宇宙终极配色方案，适用 Vim, Emacs, TextMate, XTerm, URXVT</title>
+   <link href="http://yangzetian.github.com/2012/07/14/the-ultimate-colorscheme"/>
+   <updated>2012-07-14T11:34:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/2012/07/14/the-ultimate-colorscheme</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;img src=&quot;http://ethanschoonover.com/solarized/img/solarized-yinyang.png&quot; alt=&quot;Solarized&quot;/&gt;
+&lt;p&gt;如果你是一个习惯用文本编辑器写东西（代码，文章）的人，你是否跟我一样为一套满意的配色方案(colorscheme)苦苦寻求了很久？就在昨天，我终于找到了令我折服的配色方案，它叫 &lt;a href=&quot;http://ethanschoonover.com/solarized&quot;&gt;Solarized&lt;/a&gt;。我称它为你需要的最后一个配色方案。&lt;/p&gt;
+&lt;p&gt;这套配色由 &lt;a href=&quot;ethanschoonover.com&quot;&gt;Ethan Schoonover&lt;/a&gt; 精心挑选的十六种颜色组成，前八种为单色(monotones)，后八种为强调色(accent colors)。作者按照一定的亮度关系设计出来的这些颜色，使得文本不仅清晰易读，并且具有优异的对比度，就算长时间阅读眼睛也不觉得难受。&lt;/p&gt;
+&lt;p&gt;这套配色最初只为 Vim 设计，但很快便被移植到了几乎任何可以设置调色板的地方，包括文本编辑器(Emacs, TextMate, Visual Studio)，终端模拟器，Mutt，以及 Photoshop, GIMP 等。我将它应用在了 Gnome-terminal 及 Vim 中，效果非常不错。配置方法可以参考我的笔记：&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;http://yangzetian.github.com/Yang-Tech-Notes/linux/gnome_terminal_solarized.html&quot;&gt;Solarized Gnome-terminal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://yangzetian.github.com/Yang-Tech-Notes/vim/vim_solarized.html#vim-solarized&quot;&gt;Solarized Vim&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;也可以参考&lt;a href=&quot;http://ethanschoonover.com/solarized&quot;&gt;官网&lt;/a&gt;的介绍后自己折腾。&lt;/p&gt;
+&lt;p&gt;如果你也和设计者 Schoonover 一样喜欢在阳光明媚的日子坐在树荫下读书，那就赶快来尝试一下这套配色方案吧！&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
  
  <entry>
    <title>我的技术笔记上线啦!</title>
@@ -328,7 +356,7 @@ code &gt; span.er { color: #ff0000; font-weight: bold; }
 &lt;/head&gt;
 &lt;body&gt;
 &lt;p&gt;Jekyll 原生支持 &lt;code&gt;maruku&lt;/code&gt;，&lt;code&gt;rdiscount&lt;/code&gt;，&lt;code&gt;kramdown&lt;/code&gt;，&lt;code&gt;redcarpet&lt;/code&gt; 等 markdwon 渲染器，它们各有利弊。个人认为 Maruku 虽然是 Jekyll 的默认选择，却是最不适合 中文博客的，因为它对中文列表的支持不好。Rdiscount 算是中归中举，但对于 &lt;a href=&quot;http://www.mathjax.org&quot;&gt;MathJax&lt;/a&gt; 的用户来说却比较头疼，容易出诡异的问题。Github 在后台则选用了 Redcarpet 作为其文本渲染器，因为它安全性高且性能卓越，同时它在基本 Markdown 语法的基础上增加了一些自己的特性。Kramdown 是这几个当中对基础 Markdown 语法拓展最多，也是最方便使用的，但跟这篇文章的主角 &lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt; 来比，它就相形见绌了。&lt;/p&gt;
-&lt;p&gt;首先介绍一下 &lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt;，它的功能是在多种常见的标记语言进行相互转换，其中包括 Markdown, reStructuredText, Textilte, HTML, \(\LaTeX\) 等。利用它，你可以用简单的 Markdown 语法生成与 \(\LaTeX\) 一致的文档，还可以写 Beamer 演示文稿。更强大的是，它还能将以上提到的这些语言所写文件转换成 &lt;em&gt;docx&lt;/em&gt; 文档，这对我们这些体制内码农很是实用。下面这张图展示了 Pandoc 让人吃惊 的功能集，不愧为文件转换中的瑞士军刀：&lt;/p&gt;
+&lt;p&gt;首先介绍一下 &lt;a href=&quot;http://johnmacfarlane.net/pandoc&quot;&gt;Pandoc&lt;/a&gt;，它的功能是在多种常见的标记语言进行相互转换，其中包括 Markdown, reStructuredText, Textilte, HTML, \(\LaTeX\) 等。利用它，你可以用简单的 Markdown 语法生成与 \(\LaTeX\) 一致的文档，还可以写 Beamer 演示文稿。更强大的是，它还能将以上提到的这些语言所写文件转换成 &lt;em&gt;doc&lt;/em&gt; 文档，这对我们这些体制内码农很是实用。下面这张图展示了 Pandoc 让人吃惊 的功能集，不愧为文件转换中的瑞士军刀：&lt;/p&gt;
 &lt;img src=&quot;http://johnmacfarlane.net/pandoc/diagram.png&quot; alt=&quot;pandoc is awsome!&quot; width=&quot;650&quot;/&gt;
 &lt;p&gt;对于用 Jekyll 写博客的人来说它还有以下优点：&lt;/p&gt;
 &lt;ul&gt;

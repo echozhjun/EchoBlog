@@ -10,7 +10,7 @@ This is a blog by Zetian Yang, a graduate of cognitive neuroscience in [BNU][].
 Since the second half year of 2011, I have been working in the [jliulab][liujia] of BNU.
 That gave me a chance to use linux substantially, and I was more and more interested to it. 
 I started to think of making a blog to record tips I got from linux and other fancy open source tools.
-Besides, I had been longing for a place to write my [freewheeling minds][fm] down.
+Besides, I had been longing for a place to write my [minds][fm] down.
 Incidentally, I got to know that [Github][] can be used as a free blog server. 
 That's exactly what I need, so everything begins.
 

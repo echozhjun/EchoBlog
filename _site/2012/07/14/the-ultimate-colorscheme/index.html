@@ -8,10 +8,10 @@ http://www.w3.org/TR/html4/strict.dtd">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Linux 小窍门札记 | Mind on Mind</title>
+	<title>宇宙终极配色方案，适用 Vim, Emacs, TextMate, XTerm, URXVT | Mind on Mind</title>
 	<meta name="author" content="Zetian Yang">
 	<link href='/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
-	<link href="http://feeds.feedburner.com/mindonmind" rel="alternate" title="Linux 小窍门札记" type="application/atom+xml">
+	<link href="http://feeds.feedburner.com/mindonmind" rel="alternate" title="宇宙终极配色方案，适用 Vim, Emacs, TextMate, XTerm, URXVT" type="application/atom+xml">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 </head>
 <body>
@@ -45,7 +45,7 @@ http://www.w3.org/TR/html4/strict.dtd">
 			<header>
 				<div class="unit-head">
 					<div class="unit-inner unit-head-inner">
-						<h1 class="h2 entry-title">Linux 小窍门札记</h1>
+						<h1 class="h2 entry-title">宇宙终极配色方案，适用 Vim, Emacs, TextMate, XTerm, URXVT</h1>
 					</div><!-- unit-inner -->
 				</div><!-- unit-head -->
 			</header>
@@ -61,73 +61,26 @@ http://www.w3.org/TR/html4/strict.dtd">
   <title></title>
 </head>
 <body>
-<p>这里用来记录Linux使用过程中得到的一些零碎却非常实用的小技巧。</p>
-<hr />
-<h2 id="yum">yum</h2>
-<p>查找哪个包提供了<code>makeinfo</code>程序：</p>
-<pre><code>yum provides *bin/makeinfo</code></pre>
-<hr />
-<h2 id="rpm">rpm</h2>
-<p>查找某个包的相关文件：</p>
-<pre><code>rpm -qs libgfortran</code></pre>
-<hr />
-<h2 id="zip">zip</h2>
-<pre><code>unzip xxx.zip -d destdir</code></pre>
-<h2 id="tar">tar</h2>
-<p>将foo1，foo2打包至目标target</p>
-<pre><code>tar czf dir/to/target.tar.gz foo1 foo2</code></pre>
-<p>将target.tar.gz内容抽取至foo目录</p>
-<pre><code>mkdir foo; tar xzf target.tar.gz --directory=foo</code></pre>
-<h2 id="z">7z</h2>
-<pre><code>7z e xxx.7z -o{DIR}</code></pre>
-<hr />
-<h2 id="screenshot">screenshot</h2>
-<pre><code>scrot -s</code></pre>
-<hr />
-<h2 id="gnome-快捷键">Gnome 快捷键</h2>
-<ul>
-<li><p>Terminal缩放</p>
-<pre><code>Crtl-_  || Crtl-+</code></pre></li>
-<li><p>插入系统剪切板的内容</p>
-<pre><code>Shift-Ins</code></pre></li>
-</ul>
-<hr />
-<h2 id="bash-快捷键">Bash 快捷键</h2>
-<h3 id="命令行编辑">命令行编辑</h3>
-<ul>
-<li>移动至行首或行尾 <code>Crtl-a || Crtl-e</code></li>
-<li>按单词前移或后移 <code>Alt-f || Alt-b</code></li>
-<li>删除至行首或行尾 <code>Ctrl-u || Ctrl-k</code></li>
-<li>回删一个词 <code>Ctrl-w || Alt-Backspace || Esc-Backspace</code></li>
-<li>后删一个词 <code>Alt-d</code></li>
-<li>粘贴至光标后 <code>Ctrl-y</code></li>
-</ul>
-<h3 id="命令行历史">命令行历史</h3>
-<ul>
-<li>上一条命令 <code>!!</code> | <code>!!:p</code></li>
-<li>上条以xx开头的命令 <code>!xx</code> || <code>!xx:p</code></li>
-<li>参数: <code>!*</code> || <code>!$</code> || <code>!*:p</code></li>
-<li>替换参数 <code>^foo^fooo</code> || <code>^foo^fooo^</code></li>
-</ul>
-<hr />
-<h2 id="wget">wget</h2>
-<p>从<URL>下载整个文件夹</p>
-<pre><code>wget -c -r -np -k -L -p &lt;URL&gt;</code></pre>
-<p>指定下载目录</p>
-<pre><code>wget -P &lt;dir&gt;</code></pre>
-<p>以30秒为间隔不断重新请求下载</p>
-<pre><code>wget -t 0 -w 31 -c &lt;URL&gt;</code></pre>
-<hr />
+<img src="http://ethanschoonover.com/solarized/img/solarized-yinyang.png" alt="Solarized"/>
+<p>如果你是一个习惯用文本编辑器写东西（代码，文章）的人，你是否跟我一样为一套满意的配色方案(colorscheme)苦苦寻求了很久？就在昨天，我终于找到了令我折服的配色方案，它叫 <a href="http://ethanschoonover.com/solarized">Solarized</a>。我称它为你需要的最后一个配色方案。</p>
+<p>这套配色由 <a href="ethanschoonover.com">Ethan Schoonover</a> 精心挑选的十六种颜色组成，前八种为单色(monotones)，后八种为强调色(accent colors)。作者按照一定的亮度关系设计出来的这些颜色，使得文本不仅清晰易读，并且具有优异的对比度，就算长时间阅读眼睛也不觉得难受。</p>
+<p>这套配色最初只为 Vim 设计，但很快便被移植到了几乎任何可以设置调色板的地方，包括文本编辑器(Emacs, TextMate, Visual Studio)，终端模拟器，Mutt，以及 Photoshop, GIMP 等。我将它应用在了 Gnome-terminal 及 Vim 中，效果非常不错。配置方法可以参考我的笔记：</p>
+<ol style="list-style-type: decimal">
+<li><a href="http://yangzetian.github.com/Yang-Tech-Notes/linux/gnome_terminal_solarized.html">Solarized Gnome-terminal</a></li>
+<li><a href="http://yangzetian.github.com/Yang-Tech-Notes/vim/vim_solarized.html#vim-solarized">Solarized Vim</a></li>
+</ol>
+<p>也可以参考<a href="http://ethanschoonover.com/solarized">官网</a>的介绍后自己折腾。</p>
+<p>如果你也和设计者 Schoonover 一样喜欢在阳光明媚的日子坐在树荫下读书，那就赶快来尝试一下这套配色方案吧！</p>
 </body>
 </html>
 					<div class="meta">
 						<p class="date-publish">
 							Published: 
-							<date class="date-pub" title="2012-03-22T20:33:00+08:00" datetime="2012-03-22T20:33:00+08:00" pubdate>
-							<span class="month"><abbr>March</abbr></span>
-							<span class="day">22</span>
+							<date class="date-pub" title="2012-07-14T11:34:00+08:00" datetime="2012-07-14T11:34:00+08:00" pubdate>
+							<span class="month"><abbr>July</abbr></span>
+							<span class="day">14</span>
 							<span class="year">2012 @ </span>
-                            <span class="time">20:33 </span>
+                            <span class="time">11:34 </span>
 							</date>
 						</p>
 						<ul class="list-category list-linear">
@@ -154,7 +107,11 @@ http://www.w3.org/TR/html4/strict.dtd">
 
   
      
-    	<li><a href="/tags.html#linux-ref">linux <span>1</span></a></li>
+    	<li><a href="/tags.html#solarized-ref">solarized <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#colorscheme-ref">colorscheme <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#vim-ref">vim <span>2</span></a></li>
     
   
 
@@ -200,9 +157,9 @@ http://www.w3.org/TR/html4/strict.dtd">
 					<nav class="pagination">
 						<ul>
 							
+							<li class="prev"><a class="internal" rel="prev"  href="/2012/07/05/notes-online" title="View 我的技术笔记上线啦!">&laquo; 我的技术笔记上线啦!</a></li>
 							
 							
-							<li class="next"><a class="internal" rel="next"  href="/2012/03/27/vim" title="View Vim 拾遗">Vim 拾遗 &raquo;</a></li>
 							
 						</ul>
 					</nav>
