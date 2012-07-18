@@ -11,7 +11,6 @@ http://yangzetian.github.com/atom.xml
 
 http://yangzetian.github.com/2012/07/14/the-ultimate-colorscheme
 http://yangzetian.github.com/2012/07/05/notes-online
-http://yangzetian.github.com/2012/07/01/suzhou-sugar
 http://yangzetian.github.com/2012/06/10/graduate-colors
 http://yangzetian.github.com/2012/05/13/glossary-python-1-namespace-scope
 http://yangzetian.github.com/2012/05/10/buaa-story

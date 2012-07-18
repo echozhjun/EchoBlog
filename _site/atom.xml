@@ -4,7 +4,7 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-07-14T12:28:22+08:00</updated>
+ <updated>2012-07-18T19:13:03+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
@@ -60,36 +60,6 @@
 &lt;p&gt;Wiki 其实有很多方便快捷的搭建方法，比如新兴的 &lt;a href=&quot;http://www.tryscribble.com&quot;&gt;Scribble&lt;/a&gt;，将建 Wiki 变得和用记事本一样简单直接，而且相当美观。但在衡量了易用性与自由性之后，我最终选择了 Sphinx 作为自己的 Wiki 引擎，这里要十分感谢 &lt;a href=&quot;http://deep.tw&quot;&gt;Daniel Lin&lt;/a&gt; 的启发！&lt;/p&gt;
 &lt;p&gt;这个笔记完全开源，依然是托管在 Github 上，源文件与编译好的网页均在 &lt;a href=&quot;https://github.com/yangzetian/Yang-Tech-Notes&quot;&gt;Yang-Tech-Notes&lt;/a&gt;。我的第一篇笔记与 &lt;a href=&quot;http://www.gnu.org/software/screen&quot;&gt;GNU Screen&lt;/a&gt; 有关，可以在&lt;a href=&quot;http://yangzetian.github.com/Yang-Tech-Notes/linux/screen.html&quot;&gt;这儿&lt;/a&gt;查看。&lt;/p&gt;
 &lt;p&gt;最后，祝此笔记开门大吉，成果多多！&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</content>
- </entry>
- 
- <entry>
-   <title>在苏州糖里</title>
-   <link href="http://yangzetian.github.com/2012/07/01/suzhou-sugar"/>
-   <updated>2012-07-01T01:07:00+08:00</updated>
-   <id>hhttp://yangzetian.github.com/2012/07/01/suzhou-sugar</id>
-   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-&lt;head&gt;
-  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
-  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
-  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
-  &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.brautigan.net/index.html&quot;&gt;布劳蒂甘&lt;/a&gt;是个奇怪的人。他喜欢钓鳟鱼，不喜欢别人把他称作垮掉派。他还写了一部美丽的小说，由一个又一个的诗构成，它的名字叫&lt;a href=&quot;http://book.douban.com/subject/1012828/&quot;&gt;《在西瓜糖里》&lt;/a&gt;。里面我最喜欢的一篇叫『一次爱，一阵风』：&lt;/p&gt;
-&lt;p&gt;我们久久地、缓缓地做爱。一阵风吹来，窗户轻轻颤动，糖在风中无力地裂开。&lt;/p&gt;
-&lt;p&gt;我喜欢保琳的身体，她说她也喜欢我的，我们不知道该说什么。&lt;/p&gt;
-&lt;p&gt;风突然停了，保琳说：『那是什么？』&lt;/p&gt;
-&lt;p&gt;『是风。』&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;七天前的这个时候，我坐在苏州某个旅社的床上。&lt;/p&gt;
-&lt;p&gt;十梓街早已安静下来，只有风还在吹。在风之前，是蚕丝般的雨在飘。&lt;/p&gt;
-&lt;p&gt;桌上摆着牛奶。在牛奶之前，是便利店阿姨厌恶的脸色。&lt;/p&gt;
-&lt;p&gt;昨天，我第二次来图书馆借书，又看到了那本&lt;a href=&quot;http://book.douban.com/subject/5423547/&quot;&gt;《青春的反证》&lt;/a&gt;，想到21岁真是好年纪。&lt;/p&gt;
-&lt;p&gt;不知道我算不算已经完成了反证：那天我感到无比的真实，真实得就像她问『那是什么?』&lt;/p&gt;
-&lt;p&gt;『是梦』。&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</content>
  </entry>
