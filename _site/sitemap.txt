@@ -9,6 +9,7 @@ http://yangzetian.github.com/tags.html
 http://yangzetian.github.com/intro.html
 http://yangzetian.github.com/atom.xml
 
+http://yangzetian.github.com/2012/07/24/canada-dream
 http://yangzetian.github.com/2012/07/14/the-ultimate-colorscheme
 http://yangzetian.github.com/2012/07/05/notes-online
 http://yangzetian.github.com/2012/06/10/graduate-colors
