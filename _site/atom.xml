@@ -4,13 +4,99 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-07-28T10:29:00+08:00</updated>
+ <updated>2012-07-28T23:00:44+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>最后一个暑假计划</title>
+   <link href="http://yangzetian.github.com/2012/07/28/the-last-summer-holiday"/>
+   <updated>2012-07-28T00:00:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/2012/07/28/the-last-summer-holiday</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;因为家里发生了一些事情，我回家的日期突然从8月1号提前到7月29号，也就是明天。这会是自己最后一个真正意义上的暑假，或许应该过得难忘一些。记得从大二开始，我每年的暑假都会独自出远门旅行，前年是南京和上海，去年是海南。那种感觉非常棒。我喜欢步行在陌生城市的街道，那看到，听到和闻到的新鲜生活气息，总会将我淹没在无尽的满足中。古人云『读万卷书，行万里路』，实在是有道理。&lt;/p&gt;
+&lt;p&gt;今年暑假可能没法出去远游了，因为要学车。但这无法阻碍我探索世界的脚步，咱不还有互联网么。不过在实验室待了一年后，时间对我显得越来越珍贵。面对这即将到来的大把自由时间，怎能不好好畅想一下？那么，下面就列举一下8月暑期计划，希望自己这最后一个暑假能过得难忘一些。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;阅读&quot;&gt;阅读&lt;/h3&gt;
+&lt;h4 id=&quot;文学类&quot;&gt;文学类&lt;/h4&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;色彩缤纷的鸟&lt;/li&gt;
+&lt;li&gt;白雪公主&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;实用类&quot;&gt;实用类&lt;/h4&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;敏感的人&lt;/li&gt;
+&lt;li&gt;内向者优势&lt;/li&gt;
+&lt;li&gt;盔甲骑士&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;学术类&quot;&gt;学术类&lt;/h4&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;Object Recognition Network Paper Mining&lt;/li&gt;
+&lt;li&gt;Josh’s Mind Theory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;在线资料&quot;&gt;在线资料&lt;/h4&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;New York Times&lt;/li&gt;
+&lt;li&gt;Brain Pickings&lt;/li&gt;
+&lt;li&gt;Paul Graham&lt;/li&gt;
+&lt;li&gt;Larry Wasserman&lt;/li&gt;
+&lt;li&gt;Bayesian Resources&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;技术&quot;&gt;技术&lt;/h3&gt;
+&lt;h4 id=&quot;科学计算&quot;&gt;科学计算&lt;/h4&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;iPython (Notebook)&lt;/li&gt;
+&lt;li&gt;matplotlib&lt;/li&gt;
+&lt;li&gt;scikits&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;折腾&quot;&gt;折腾&lt;/h4&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;vim&lt;/li&gt;
+&lt;li&gt;vimperator&lt;/li&gt;
+&lt;li&gt;zsh&lt;/li&gt;
+&lt;li&gt;urxvt，如果有余力的话&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;p&gt;最后，还有一条及其重要，那就是向柳比歇夫同志学习！&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>加拿大之梦</title>
+   <link href="http://yangzetian.github.com/2012/07/24/canada-dream"/>
+   <updated>2012-07-24T22:13:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/2012/07/24/canada-dream</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;偶然发现一个朋友在加拿大求学时写下的一些文字，读了后觉得有什么东西在胸腔里温暖地颤动，久久无法平静。仿佛自己正追随着作者的脚步，将那些美妙的经历逐一上演。&lt;/p&gt;
+&lt;p&gt;多伦多初冬的夜晚，走在没有雨滴的街道上感受着这个城市的美丽。在魁北克向老天祈祷，期待着自己人生中的第一次天空滑行。当身体终于在12000英尺的云层穿过，才知道飞的感觉竟这样难忘。从惠斯勒耀眼的雪山一路滑向伊丽莎白公园，研究每条长椅上那些语句的故事。望着白石镇上一条或许从未有火车开过的铁轨，静静地躺在海边，等着人们在梦里把它唤醒。而脚踝上磨出的水泡，又见证了白色、灰色与彩色马路上踏过的每一小步。还有圣诞节飘起的雪，驾着驯鹿的老人悄悄走进那个终于实现了的梦里……&lt;/p&gt;
+&lt;p&gt;或许是因为这些文字给我的共鸣过于强烈，最近总在凌晨4点的时候睁眼，然后脑袋发热一整天。我太想把自己的感动表达出来：那些冲击着我心脏的情绪，像温哥华汹涌的海浪，一波一波地，将我推向漩涡的中心。斑斓绚丽的幻想，不断从我的血脉里喷薄出来，争夺着每一条早已过载的神经中枢。而它们的每一次成功占领，都会引发我难以解释的怪异举动。然后，我只能像蒙特利尔赌场上最无可救药的赌徒，一边懊恼，一边妄想用下次的赌注挽回所有过错。直至自己终于身无分文，才突然发觉温哥华海水刺骨的温度。&lt;/p&gt;
+&lt;p&gt;我已不记得这是第几次把事情搞砸，只记得自己好像从未成功过。一个人难过的时候，就回学校走走。路旁杨树那若无其事的老样子，总让我觉得，明天或许并不会有想象的那么糟。但明天又是那么远，远得好像多伦多的日出。&lt;/p&gt;
+&lt;p&gt;至于那些难以消除的误解，只愿时间能将它们减轻一些。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
  
  <entry>
    <title>宇宙终极配色方案，适用 Vim, Emacs, TextMate, XTerm, URXVT</title>
