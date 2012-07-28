@@ -4,7 +4,7 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-07-28T23:00:44+08:00</updated>
+ <updated>2012-07-29T07:30:10+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>最后一个暑假计划</title>
    <link href="http://yangzetian.github.com/2012/07/28/the-last-summer-holiday"/>
-   <updated>2012-07-28T00:00:00+08:00</updated>
+   <updated>2012-07-28T23:00:00+08:00</updated>
    <id>hhttp://yangzetian.github.com/2012/07/28/the-last-summer-holiday</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
@@ -27,7 +27,7 @@
 &lt;/head&gt;
 &lt;body&gt;
 &lt;p&gt;因为家里发生了一些事情，我回家的日期突然从8月1号提前到7月29号，也就是明天。这会是自己最后一个真正意义上的暑假，或许应该过得难忘一些。记得从大二开始，我每年的暑假都会独自出远门旅行，前年是南京和上海，去年是海南。那种感觉非常棒。我喜欢步行在陌生城市的街道，那看到，听到和闻到的新鲜生活气息，总会将我淹没在无尽的满足中。古人云『读万卷书，行万里路』，实在是有道理。&lt;/p&gt;
-&lt;p&gt;今年暑假可能没法出去远游了，因为要学车。但这无法阻碍我探索世界的脚步，咱不还有互联网么。不过在实验室待了一年后，时间对我显得越来越珍贵。面对这即将到来的大把自由时间，怎能不好好畅想一下？那么，下面就列举一下8月暑期计划，希望自己这最后一个暑假能过得难忘一些。&lt;/p&gt;
+&lt;p&gt;今年暑假可能没法出去远游了，因为要学车。但这无法阻碍我探索世界的脚步，咱不还有互联网么。不过在实验室待了一年后，时间对我显得越来越珍贵。面对这即将到来的大把自由时间，怎能不好好畅想一下？那么，下面就列举一下8月暑期计划，希望自己这最后一个暑假能过得开心一些 :-)&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3 id=&quot;阅读&quot;&gt;阅读&lt;/h3&gt;
 &lt;h4 id=&quot;文学类&quot;&gt;文学类&lt;/h4&gt;
@@ -60,7 +60,6 @@
 &lt;ol style=&quot;list-style-type: decimal&quot;&gt;
 &lt;li&gt;iPython (Notebook)&lt;/li&gt;
 &lt;li&gt;matplotlib&lt;/li&gt;
-&lt;li&gt;scikits&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&quot;折腾&quot;&gt;折腾&lt;/h4&gt;
 &lt;ol style=&quot;list-style-type: decimal&quot;&gt;

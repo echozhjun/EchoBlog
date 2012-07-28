@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "最后一个暑假计划"
+date: 2012-07-28 23:00
 category: "Freewheeling Mind"
 tags: [summer, holiday, plan]
 ---
@@ -17,7 +18,7 @@ tags: [summer, holiday, plan]
 但这无法阻碍我探索世界的脚步，咱不还有互联网么。
 不过在实验室待了一年后，时间对我显得越来越珍贵。
 面对这即将到来的大把自由时间，怎能不好好畅想一下？
-那么，下面就列举一下8月暑期计划，希望自己这最后一个暑假能过得难忘一些。
+那么，下面就列举一下8月暑期计划，希望自己这最后一个暑假能过得开心一些 :-)
 
 -----------------
 
@@ -55,7 +56,6 @@ tags: [summer, holiday, plan]
 
 1. iPython (Notebook)
 2. matplotlib
-3. scikits
 
 #### 折腾
 
