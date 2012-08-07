@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "宇宙终极配色方案，适用 Vim, Emacs, TextMate, XTerm, URXVT"
+title: "宇宙终极配色方案"
 category: "Better Work In Linux"
 date: 2012-07-14 11:34
 tags: [solarized, colorscheme, vim]
