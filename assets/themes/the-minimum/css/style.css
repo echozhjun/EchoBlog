@@ -28,7 +28,7 @@ Calculation should be done via  http://j.mp/rNg5uA
 No styleguide reference.
 */
 body {
-  font-family: "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+  font-family: "Calibri", "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
   font-size: 1em;
   line-height: 1.625em;
 }
@@ -55,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+  font-family: "Calibri", "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
   font-weight:normal;
 }
 h1, .h1 {
