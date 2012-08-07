@@ -6,7 +6,8 @@
 
 @import "helper.css";
 
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+@import url(http://fonts.googleapis.com/css?family=Asap:400,400italic,700,700italic);
 
 /*
 Frameless			<http://framelessgrid.com/>
@@ -27,7 +28,7 @@ Calculation should be done via  http://j.mp/rNg5uA
 No styleguide reference.
 */
 body {
-  font-family: "Droid Sans", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+  font-family: "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
   font-size: 1em;
   line-height: 1.625em;
 }
@@ -54,7 +55,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Droid Sans", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+  font-family: "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+  font-weight:normal;
 }
 h1, .h1 {
   font-size: 2.0em;
@@ -219,7 +221,7 @@ pre {
 /* HEADER
 --------------------------------------------------------------------------------- */
 .the-header .logo {
-  font-family: "Droid Sans", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+  font-family: "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
   margin: 0;
 }
 .the-header .logo a:visited {
@@ -247,6 +249,7 @@ pre {
   color: #2d2d2d;
   margin-top: 0;
   margin-bottom: 0;
+  font-weight: bold;
 }
 .unit-article .entry-content h2,
 .unit-article .entry-content h3,
@@ -296,8 +299,8 @@ pre {
   border-bottom: 1px dotted #bbddbb;
 }
 .unit-article blockquote {
-  border-left: 1em solid rgba(21, 25, 25, 0.8);
-  padding-left: 1em;
+  border-left: 0.5em solid rgba(21, 25, 25, 0.8);
+  padding-left: 2em;
 }
 .unit-article blockquote p {
   margin-left: 0;
@@ -726,14 +729,15 @@ pre {
 }
 
 .the-header .logo a {
-  font-size: 2.5em;
+  font-size: 2.6em;
   line-height: 52px;
   letter-spacing: normal;
-  font-weight: bold;
+  font-weight: normal;
+  font-style: italic;
 }
 
 .the-header .nav-global {
-  margin-top: 1.625em;
+  margin-top: 0.8em;
   letter-spacing: -0.31em;
   *letter-spacing: normal;
   word-spacing: -0.43em;
@@ -750,6 +754,7 @@ pre {
   margin-right: 16px;
   word-spacing: normal;
   vertical-align: middle;
+  font-size: 18px;
 }
 
 .the-header .nav-global li:last-child {
@@ -887,3 +892,8 @@ pre {
 #    margin-right: 360px;
 #  }
 #}
+
+#portrait {
+    float: right;
+    margin-right: 20px;
+}
