@@ -27,7 +27,7 @@ Calculation should be done via  http://j.mp/rNg5uA
 No styleguide reference.
 */
 body {
-  font-family:"Marmelad", "WenQuanYi ZenHei", 文泉驿正黑, "Hiragino Sans GB", "STHeiti", "Heiti", 黑体, "Microsoft YaHei", 微软雅黑, Helvetica, Arial, Sans-Serif;
+  font-family:"Marmelad", "WenQuanYi ZenHei", 文泉驿正黑, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", 微软雅黑, Helvetica, Arial, Sans-Serif;
   font-size: 1em;
   line-height: 1.625em;
 }
@@ -54,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family:"Marmelad", "WenQuanYi ZenHei", 文泉驿正黑, "Hiragino Sans GB", "STHeiti", "Heiti", 黑体, "Microsoft YaHei", 微软雅黑, Helvetica, Arial, Sans-Serif;
+  font-family:"Marmelad", "WenQuanYi ZenHei", 文泉驿正黑, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", 微软雅黑, Helvetica, Arial, Sans-Serif;
   font-weight:normal;
 }
 h1, .h1 {
@@ -640,7 +640,7 @@ pre {
 }
 .ie .unit-article .unit-head-inner .meta {
   width: 20.625em;
-  float: right;
+  float: left;
 }
 .ie .layout-page .unit-body .unit-body-inner {
   width: 43.125em;
