@@ -6,8 +6,7 @@
 
 @import "helper.css";
 
-
-@import url(http://fonts.googleapis.com/css?family=Asap:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Marmelad:400);
 
 /*
 Frameless			<http://framelessgrid.com/>
@@ -28,7 +27,7 @@ Calculation should be done via  http://j.mp/rNg5uA
 No styleguide reference.
 */
 body {
-  font-family: "Calibri", "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+  font-family:"Marmelad", "WenQuanYi ZenHei", 文泉驿正黑, "Hiragino Sans GB", "STHeiti", "Heiti", 黑体, "Microsoft YaHei", 微软雅黑, Helvetica, Arial, Sans-Serif;
   font-size: 1em;
   line-height: 1.625em;
 }
@@ -55,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Calibri", "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+  font-family:"Marmelad", "WenQuanYi ZenHei", 文泉驿正黑, "Hiragino Sans GB", "STHeiti", "Heiti", 黑体, "Microsoft YaHei", 微软雅黑, Helvetica, Arial, Sans-Serif;
   font-weight:normal;
 }
 h1, .h1 {
@@ -221,7 +220,7 @@ pre {
 /* HEADER
 --------------------------------------------------------------------------------- */
 .the-header .logo {
-  font-family: "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+  font-family: "Marmelad", Helvetica, Arial, Sans-Serif;
   margin: 0;
 }
 .the-header .logo a:visited {
@@ -249,7 +248,7 @@ pre {
   color: #2d2d2d;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Asap", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", "Hiragino Sans GB", Helvetica, Arial, Sans-Serif;
+ /* font-family: "Marmelad", Helvetica, Arial, Sans-Serif;*/
   font-weight: bold;
 }
 .unit-article .entry-content h2,
@@ -595,9 +594,9 @@ pre {
 }
 .ie .the-header .nav-global {
   margin-top: 50px;
-  text-align: right;
+  text-align: left;
   width: 26.25em;
-  float: right;
+  float: left;
 }
 .ie .unit-article .unit-head-inner,
 .ie .unit-article .entry-content,
@@ -734,7 +733,7 @@ pre {
   line-height: 52px;
   letter-spacing: normal;
   font-weight: normal;
-  font-style: italic;
+  font-style: normal;
 }
 
 .the-header .nav-global {
@@ -897,4 +896,72 @@ pre {
 #portrait {
     float: right;
     margin-right: 20px;
+}
+
+.thumbnails:after {
+    clear: both;
+}
+.thumbnails:before, .thumbnails:after {
+    content: "";
+        display: table;
+    }
+.thumbnails:before, .thumbnails:after {
+    content: "";
+    display: table;
+}
+.thumbnails {
+    list-style: none outside none;
+    margin-left: -10px;
+}
+
+.thumbnails > li {
+    float: left;
+    margin-bottom: 21px;
+    margin-left: 10px;
+}
+
+.thumbnail {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    display: block;
+    line-height: 1;
+    padding: 4px;
+}
+
+/* An example 
+
+<ul class="thumbnails">
+    <li class="span6">
+        <div class="thumbnail">
+            <img src="">
+            <div class="caption">
+                <h5>jklj</h5>
+            </div>
+        </div>
+    </li>
+    <li class="span4">
+    </li>
+</ul>
+
+*/
+
+.floating-left {
+    float: left;
+}
+
+.floating-right {
+    float: right;
+}
+
+.span4 {
+    width: 230px;
+}
+
+.span6 {
+    width: 350px;
+}
+
+.span8 {
+    width: 470px;
 }

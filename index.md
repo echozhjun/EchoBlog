@@ -14,7 +14,7 @@ I'm Zetian Yang , a
 * Piscean with curious mind
 * Novel fanatic
 
-I love *beautiful things*,
+I love **beautiful things**,
 
 My dream is to create them.
 
@@ -22,7 +22,7 @@ My dream is to create them.
 
 Please mail
 
-> *zeitan.yang (at) gmail.com*
+> zeitan.yang (at) gmail.com
 
 for contacting.
 
