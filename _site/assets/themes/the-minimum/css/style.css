@@ -652,7 +652,7 @@ pre {
 }
 .ie .layout-page .unit-body .article-list .meta {
   width: 20.625em;
-  float: right;
+  float: left;
 }
 .ie .the-footer .unit-foot {
   width: 60em;
