@@ -11,9 +11,9 @@ tags: [Maya Angelou, grow up]
 <img class="span4" src="http://mayaangelou.com/images/bio7.jpg"/>
 </div>
 
-玛雅·安格鲁 ([Maya Angelou](http://www.mayaangelou.com))，美国黑人传记作家，诗人。她曾当过皮条客，舞女，也当过记者，演员，制作人。1970年的《我知道囚禁的鸟儿为何歌唱》让她一举成名，其中她用独特的风格讲述了自己17岁之前的经历。
+玛雅·安格鲁 ([Maya Angelou](http://www.mayaangelou.com))，美国黑人传记作家，诗人。她曾当过皮条客，舞女，也当过记者，演员，制作人。1970年的《我知道囚禁的鸟儿为何歌唱》让她一举成名，她在其中用独特的风格讲述了自己17岁之前的生活经历。
 
-2008年，她出版了《给女儿的信》，献给自己从未出生的女儿。关于长大，安格鲁说[^1]：
+2008年，安格鲁出版了《给女儿的信》，献给自己从未出生的女儿。关于长大，她说[^1]：
 
 > I am convinced that most people do not grow up.
 > We find parking spaces and honor our credit cards.
