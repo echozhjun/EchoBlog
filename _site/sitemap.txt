@@ -1,16 +1,17 @@
 
-http://yangzetian.github.com/tags.html
-http://yangzetian.github.com/categories.html
-http://yangzetian.github.com/backup/index.html
+http://yangzetian.github.com/archive.html
 http://yangzetian.github.com/blog.html
+http://yangzetian.github.com/categories.html
+http://yangzetian.github.com/sitemap.txt
+http://yangzetian.github.com/links.html
 http://yangzetian.github.com/pages.html
 http://yangzetian.github.com/index.html
-http://yangzetian.github.com/atom.xml
+http://yangzetian.github.com/backup/index.html
+http://yangzetian.github.com/tags.html
 http://yangzetian.github.com/intro.html
-http://yangzetian.github.com/archive.html
-http://yangzetian.github.com/links.html
-http://yangzetian.github.com/sitemap.txt
+http://yangzetian.github.com/atom.xml
 
+http://yangzetian.github.com/2012/09/07/new-term-starts
 http://yangzetian.github.com/2012/08/23/love-to-be-moved
 http://yangzetian.github.com/2012/08/21/grow-old-or-up
 http://yangzetian.github.com/2012/08/09/purpose-and-love
