@@ -4,13 +4,171 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-09-20T21:40:30+08:00</updated>
+ <updated>2012-09-21T00:05:28+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Arch Linux 折腾记</title>
+   <link href="http://yangzetian.github.com/2012/09/21/arch-notes"/>
+   <updated>2012-09-21T00:02:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/2012/09/21/arch-notes</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code &gt; span.kw { color: #007020; font-weight: bold; }
+code &gt; span.dt { color: #902000; }
+code &gt; span.dv { color: #40a070; }
+code &gt; span.bn { color: #40a070; }
+code &gt; span.fl { color: #40a070; }
+code &gt; span.ch { color: #4070a0; }
+code &gt; span.st { color: #4070a0; }
+code &gt; span.co { color: #60a0b0; font-style: italic; }
+code &gt; span.ot { color: #007020; }
+code &gt; span.al { color: #ff0000; font-weight: bold; }
+code &gt; span.fu { color: #06287e; }
+code &gt; span.er { color: #ff0000; font-weight: bold; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;还记得不久前看到一个博主说自己在某天「破天荒」地写了两篇日志，没想到这事这么快就临到了自己头上。&lt;/p&gt;
+&lt;p&gt;时间宝贵，不容浪费，所以还是直接切入主题吧。&lt;/p&gt;
+&lt;p&gt;趁着老板给大家升级机器的良机，本人终于尝了一口火到爆的 Arch 之滋味。 其中真是有苦有甜有刺激，为了下次再尝时少走几步弯路，也为给那些怀揣 Arch 夙愿的 Linux 同仁做点心理准备，特将此次的折腾全过程记录如下。&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;&lt;p&gt;老老实实地按着 &lt;a href=&quot;https://wiki.archlinux.org/index.php/Beginners%27_Guide&quot;&gt;Beginner’s Guide&lt;/a&gt; 一步步配好基本系统&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装配置 Awesome 桌面管理器。直接利用 .xinitrc 脚本启动，此外设置自动登录&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;.bash_profile:
+--------------
+&lt;span class=&quot;ot&quot;&gt;vt=$(&lt;/span&gt;&lt;span class=&quot;kw&quot;&gt;fgconsole&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;2&amp;gt;&lt;/span&gt;/dev/null&lt;span class=&quot;ot&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kw&quot;&gt;((&lt;/span&gt; vt == 1 &lt;span class=&quot;kw&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; startx -- vt7 &lt;span class=&quot;kw&quot;&gt;&amp;amp;&amp;gt;&lt;/span&gt; ~/.xlog
+&lt;span class=&quot;kw&quot;&gt;unset&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;vt&lt;/span&gt;
+
+/etc/inittab:
+-------------
+id:5:initdefault
+c1:2345:respawn:/sbin/agetty -a user -o &lt;span class=&quot;st&quot;&gt;&amp;quot;-- \u&amp;quot;&lt;/span&gt; -8 -s 38400 tty1 linux
+
+.xinitrc
+--------
+&lt;span class=&quot;co&quot;&gt;# 关闭系统鸣叫&lt;/span&gt;
+&lt;span class=&quot;kw&quot;&gt;xset&lt;/span&gt; -b
+&lt;span class=&quot;co&quot;&gt;# 运行 awesome&lt;/span&gt;
+&lt;span class=&quot;kw&quot;&gt;exec&lt;/span&gt; awesome&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;3&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;&lt;p&gt;安装 Firefox, 配置好账户同步，Vimpertor 与 Tab Utilities&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装字体：Dejavu, wqy_zenhei, wqy_microhei, bitstream vera. 之后利用文泉驿字体&lt;a href=&quot;http://wenq.org/cloud/fcdesigner.html&quot;&gt;设置工具&lt;/a&gt;配置 ~/.fonts.conf&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装 pkgfile (提供包文件查询)，yaourt (方便安装AUR 内的包)，net-tools (提供 ifconfig 等网络设置命令)，wget&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;pacman -S pkgfile, net-tools, &lt;span class=&quot;kw&quot;&gt;wget&lt;/span&gt;
+
+/etc/pacman.conf
+---------------
+&lt;span class=&quot;co&quot;&gt;# 添加 yaourt 源&lt;/span&gt;
+[archlinuxfr]
+Server = http://repo.archlinux.fr/&lt;span class=&quot;ot&quot;&gt;$arch&lt;/span&gt;
+
+pacman -S yaourt&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中 pkgfile 的常用方法为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pkgfile -r &amp;#39;.*ifconfig.*&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;6&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;安装小企鹅输入法 fcitx&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;yaourt -S fcitx-git
+
+.xinitrc
+--------
+&lt;span class=&quot;kw&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;XMODIFIERS=&lt;/span&gt;@&lt;span class=&quot;ot&quot;&gt;im=&lt;/span&gt;fcitx
+&lt;span class=&quot;kw&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;GTK_IM_MODULE=&lt;/span&gt;fcitx
+&lt;span class=&quot;kw&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;QT_IM_MODULE=&lt;/span&gt;fcitx&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里遇到一个恶心的问题，即当 yaourt 调用 wget 从 googlecode 上下载 fcitx 的 table 文件时，由于众所周知的原因始终没法正常下载，导致编译失败。 解决方案在编译失败的间隙想办法手工下好 table 文件，并放入 /tmp 里对应当前 yaourt 的目录中，然后重新编译即可。&lt;/p&gt;
+&lt;p&gt;之后将 dbus 添加至系统 Daemons 中&lt;/p&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;/etc/rc.conf
+&lt;span class=&quot;ot&quot;&gt;DAEMONS=(&lt;/span&gt;... dbus @network ...&lt;span class=&quot;ot&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;7&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;&lt;p&gt;安装配置 Urxvt, Vim, Vimperator&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;添加常用命令别名&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;.bashrc
+-------
+&lt;span class=&quot;kw&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;ls=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;#39;ls --color=auto&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;kw&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;grep=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;#39;grep --color=auto&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;kw&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;ll=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;#39;ls -l&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;kw&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;vi=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;#39;vim&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;9&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;设置 ls 命令的输出颜色&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;.bashrc
+-------
+&lt;span class=&quot;kw&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;`dircolors`&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;10&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;安装 openssh 与自动添加 ssh key&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;pacman -S openssh keychain
+
+.bashrc
+-------
+&lt;span class=&quot;kw&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;ssh=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;#39;eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) &amp;amp;&amp;amp; ssh&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;11&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;为用户添加关机、重启权限&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;visudo
+------
+user &lt;span class=&quot;kw&quot;&gt;hostname&lt;/span&gt; =NOPASSWD: /sbin/shutdown -h now,/sbin/halt,/sbin/poweroff,/sbin/reboot
+
+.bashrc
+------
+&lt;span class=&quot;kw&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;poweroff=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;#39;sudo poweroff&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;kw&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;reboot=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;#39;sudo reboot&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;kw&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;ot&quot;&gt;halt=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;#39;sudo halt&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;12&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;安装 ntfs-3g ，并设置 ntfs 设备的加载操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;pacman -S ntfs-3g
+
+/etc/fstab
+----------
+&lt;span class=&quot;co&quot;&gt;# SATA 盘设置&lt;/span&gt;
+/dev/sda2       /home/yang/ntfs     ntfs-3g     &lt;span class=&quot;ot&quot;&gt;guid=&lt;/span&gt;users,uid=xxx,umask=0022   0 0
+
+&lt;span class=&quot;co&quot;&gt;# 移动硬盘设置&lt;/span&gt;
+/dev/disk/by-id/ata-Hitachi_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-part1  /media/Hitachi  ntfs-3g     noauto,&lt;span class=&quot;ot&quot;&gt;gid=&lt;/span&gt;users,uid=xxxx,umask=0022,   0 0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置好后，接入移动硬盘时直接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# mount /media/Hitachi&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;即可加载移动硬盘。 此外，涉及用户信息时可通过 id 命令查看。&lt;/p&gt;
+&lt;ol start=&quot;13&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;安装应用程序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;pacman -S xscreensaver&lt;span class=&quot;kw&quot;&gt;(&lt;/span&gt;锁屏&lt;span class=&quot;kw&quot;&gt;)&lt;/span&gt; scrot&lt;span class=&quot;kw&quot;&gt;(&lt;/span&gt;截屏&lt;span class=&quot;kw&quot;&gt;)&lt;/span&gt; pidgin&lt;span class=&quot;kw&quot;&gt;(&lt;/span&gt;即时通讯&lt;span class=&quot;kw&quot;&gt;)&lt;/span&gt; stardict&lt;span class=&quot;kw&quot;&gt;(&lt;/span&gt;字典&lt;span class=&quot;kw&quot;&gt;)&lt;/span&gt; nautilus&lt;span class=&quot;kw&quot;&gt;(&lt;/span&gt;文件管理&lt;span class=&quot;kw&quot;&gt;)&lt;/span&gt; flash libreoffice-writer&lt;span class=&quot;kw&quot;&gt;(&lt;/span&gt;字处理&lt;span class=&quot;kw&quot;&gt;)&lt;/span&gt; libreoffice-calc&lt;span class=&quot;kw&quot;&gt;(&lt;/span&gt;表格&lt;span class=&quot;kw&quot;&gt;)&lt;/span&gt; gwenview&lt;span class=&quot;kw&quot;&gt;(&lt;/span&gt;图片浏览&lt;span class=&quot;kw&quot;&gt;)&lt;/span&gt;
+yaourt -S dropbox dropbox-cli dropbox-nautilus&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;14&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;修正双系统&lt;a href=&quot;http://yangzetian.github.com/Yang-Tech-Notes/linux/arch_time.html&quot;&gt;时间问题&lt;/a&gt;与&lt;a href=&quot;http://yangzetian.github.com/Yang-Tech-Notes/linux/arch_sending_sigterm.html&quot;&gt;关机慢问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;p&gt;下面是待折腾项目，估计近期不会去碰&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;安装配置 AMD Catalyst 显卡驱动&lt;/li&gt;
+&lt;li&gt;选一个好看的 Gtk 与 Awesome 主题&lt;/li&gt;
+&lt;li&gt;zsh&lt;/li&gt;
+&lt;li&gt;mpd&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
  
  <entry>
    <title>他们的蓝色时期</title>
@@ -413,7 +571,7 @@
 &lt;p&gt;忘了在哪儿看到过这么一句话，它说：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;上天真的会眷顾那些勇敢选择自己的生活并坚持努力地走下去的孩子们。&lt;/code&gt;&lt;/pre&gt;
 &lt;a href=&quot;http://www.flickr.com/photos/80118139@N06/7170890781/&quot; title=&quot;The Graduate by yangzetian, on Flickr&quot;&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8149/7170890781_8d845e1d03.jpg&quot; width=&quot;375&quot; height=&quot;500&quot; alt=&quot;The Graduate&quot;&gt;&lt;/a&gt;
-&lt;p&gt;无论将来会怎样，我都会不停地去寻找下一个出口。&lt;/p&gt;
+&lt;p&gt;无论将来怎样，我都会不停地去寻找下一个出口。&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</content>
  </entry>
