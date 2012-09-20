@@ -83,7 +83,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <body>
 <p>还记得不久前看到一个博主说自己在某天「破天荒」地写了两篇日志，没想到这事这么快就临到了自己头上。</p>
 <p>时间宝贵，不容浪费，所以还是直接切入主题吧。</p>
-<p>趁着老板给大家升级机器的良机，本人终于尝了一口火到爆的 Arch 之滋味。 其中真是有苦有甜有刺激，为了下次再尝时少走几步弯路，也为给那些怀揣 Arch 夙愿的 Linux 同仁做点心理准备，特将此次的折腾全过程记录如下。</p>
+<p>趁着老板给大家升级机器的良机，本人终于尝了一口火到爆的 Arch 之滋味。其中真是有苦有甜有刺激，为了下次再尝时少走几步弯路，也为给那些怀揣 Arch 夙愿的 Linux 同仁做点心理准备，特将此次的折腾全过程记录如下。</p>
 <ol style="list-style-type: decimal">
 <li><p>老老实实地按着 <a href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">Beginner’s Guide</a> 一步步配好基本系统</p></li>
 <li><p>安装配置 Awesome 桌面管理器。直接利用 .xinitrc 脚本启动，此外设置自动登录</p></li>
@@ -131,7 +131,7 @@ pacman -S yaourt</code></pre>
 <span class="kw">export</span> <span class="ot">XMODIFIERS=</span>@<span class="ot">im=</span>fcitx
 <span class="kw">export</span> <span class="ot">GTK_IM_MODULE=</span>fcitx
 <span class="kw">export</span> <span class="ot">QT_IM_MODULE=</span>fcitx</code></pre>
-<p>这里遇到一个恶心的问题，即当 yaourt 调用 wget 从 googlecode 上下载 fcitx 的 table 文件时，由于众所周知的原因始终没法正常下载，导致编译失败。 解决方案在编译失败的间隙想办法手工下好 table 文件，并放入 /tmp 里对应当前 yaourt 的目录中，然后重新编译即可。</p>
+<p>这里遇到一个恶心的问题，即当 yaourt 调用 wget 从 googlecode 上下载 fcitx 的 table 文件时，由于众所周知的原因始终没法正常下载，导致编译失败。解决方案在编译失败的间隙想办法手工下好 table 文件，并放入 /tmp 里对应当前 yaourt 的目录中，然后重新编译即可。</p>
 <p>之后将 dbus 添加至系统 Daemons 中</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">/etc/rc.conf
 <span class="ot">DAEMONS=(</span>... dbus @network ...<span class="ot">)</span></code></pre>
@@ -185,7 +185,7 @@ user <span class="kw">hostname</span> =NOPASSWD: /sbin/shutdown -h now,/sbin/hal
 /dev/disk/by-id/ata-Hitachi_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-part1  /media/Hitachi  ntfs-3g     noauto,<span class="ot">gid=</span>users,uid=xxxx,umask=0022,   0 0</code></pre>
 <p>配置好后，接入移动硬盘时直接</p>
 <pre><code># mount /media/Hitachi</code></pre>
-<p>即可加载移动硬盘。 此外，涉及用户信息时可通过 id 命令查看。</p>
+<p>即可加载移动硬盘。此外，涉及用户信息时可通过 id 命令查看。</p>
 <ol start="13" style="list-style-type: decimal">
 <li>安装应用程序</li>
 </ol>
@@ -264,7 +264,7 @@ yaourt -S dropbox dropbox-cli dropbox-nautilus</code></pre>
 
   <div id="disqus_thread"></div>
 <script type="text/javascript">
-    
+    var disqus_developer = 1;
     var disqus_shortname = 'yangzetian'; // required: replace example with your forum shortname
     
     /* * * DON'T EDIT BELOW THIS LINE * * */
