@@ -948,10 +948,12 @@ pre {
 
 .floating-left {
     float: left;
+    margin: 0 9px 3px 15px;
 }
 
 .floating-right {
     float: right;
+    margin: 9px 0 3px 15px;
 }
 
 .span2 {

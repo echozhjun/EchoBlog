@@ -64,3 +64,7 @@ tags: [BUAA, graduate]
 
     上天真的会眷顾那些勇敢选择自己的生活并坚持努力地走下去的孩子们。
 
+
+<a href="http://www.flickr.com/photos/80118139@N06/7170890781/" title="The Graduate by yangzetian, on Flickr"><img src="http://farm9.staticflickr.com/8149/7170890781_8d845e1d03.jpg" width="375" height="500" alt="The Graduate"></a>
+
+无论将来会怎样，我都会不停地去寻找下一个出口。
