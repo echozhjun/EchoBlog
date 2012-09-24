@@ -24,6 +24,6 @@ title: "Links"
 
 # Music
 
-* [Literally Jukebox](http://literaryjukebox.brainpickings.org/)
+* [Literary Jukebox](http://literaryjukebox.brainpickings.org/)
 * [Mixest](http://www.mixest.com)
 
