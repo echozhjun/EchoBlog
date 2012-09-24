@@ -9,7 +9,7 @@ tags: [anxiety, NYT]
 
 9月9号，纽约时报焦虑专栏发表了一篇名为「On Being Nothins」的散文。
 文中，作者 [Brian Jay Stanley](http://www.brianjaystanley.com/aphorisms/) 夹叙夹议，讲述了自己从渴望得到关注，到无法得到关注而导致压抑与痛苦，再到接受现实，成为这个世界的关注者的艰难历程。
-文章极具启发性，下面文章的最后两段，也是个人认为最精彩的部分。
+文章极具启发性，下面为其最后两段，也是个人认为最精彩的部分。
 
 <div class="floating-right">
 <img src="http://www.brianjaystanley.com/about/author-photo.jpg"/>

@@ -4,7 +4,7 @@ title: "Links"
 ---
 {% include JB/setup %}
 
-# Blog
+# Friends
 
 * [FYZ](http://puff.sinaapp.com/page/1)
 * [Matrix Plus](http://sealhuang.sinaapp.com)
@@ -17,3 +17,13 @@ title: "Links"
 * [The Paris Review](http://theparisreview.org)
 * [The Believer](http://believermag.com)
 * [Brick](http://www.brickmag.com)
+
+# Writers
+
+* [Brian Jay Stanley](http://www.brianjaystanley.com/)
+
+# Music
+
+* [Literally Jukebox](http://literaryjukebox.brainpickings.org/)
+* [Mixest](http://www.mixest.com)
+
