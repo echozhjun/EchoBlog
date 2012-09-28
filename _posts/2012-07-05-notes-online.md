@@ -29,7 +29,7 @@ Wiki 其实有很多方便快捷的搭建方法，比如新兴的 [Scribble][]�
 
 最后，祝此笔记开门大吉，成果多多！
 
-[Sphinx]: http://sphinx.pocco.org
+[Sphinx]: http://sphinx.pocoo.org
 [notes]: http://yangzetian.github.com/Yang-Tech-Notes
 [chiqiu]: http://wiki.ktmud.com/index.html
 [Vimwiki]: http://code.google.com/p/vimwiki
