@@ -8,10 +8,10 @@ http://www.w3.org/TR/html4/strict.dtd">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>宇宙终极配色方案 | Mind on Mind</title>
+	<title>Arch Linux 折腾后记：双屏显示器 | Mind on Mind</title>
 	<meta name="author" content="Zetian Yang">
 	<link href='/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
-	<link href="http://feeds.feedburner.com/mindonmind" rel="alternate" title="宇宙终极配色方案" type="application/atom+xml">
+	<link href="http://feeds.feedburner.com/mindonmind" rel="alternate" title="Arch Linux 折腾后记：双屏显示器" type="application/atom+xml">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 </head>
 <body>
@@ -46,7 +46,7 @@ http://www.w3.org/TR/html4/strict.dtd">
 			<header>
 				<div class="unit-head">
 					<div class="unit-inner unit-head-inner">
-						<h1 class="h2 entry-title">宇宙终极配色方案</h1>
+						<h1 class="h2 entry-title">Arch Linux 折腾后记：双屏显示器</h1>
 					</div><!-- unit-inner -->
 				</div><!-- unit-head -->
 			</header>
@@ -60,28 +60,76 @@ http://www.w3.org/TR/html4/strict.dtd">
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <title></title>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
 </head>
 <body>
-<img src="http://ethanschoonover.com/solarized/img/solarized-yinyang.png" alt="Solarized"/>
-<p>如果你是一个习惯用文本编辑器写东西（代码，文章）的人，你是否跟我一样为一套满意的配色方案(colorscheme)苦苦追寻了很久？就在昨天，我终于找到了令我折服的配色方案：<a href="http://ethanschoonover.com/solarized">Solarized</a>。我称它为你需要的最后一个配色方案。</p>
-<p>这套配色由 <a href="ethanschoonover.com">Ethan Schoonover</a> 精心挑选的十六种颜色组成，前八种为单色(monotones)，后八种为强调色(accent colors)。作者按照一定的亮度关系设计出来的这些颜色，使得文本不仅清晰易读，并且具有优异的对比度，就算长时间阅读眼睛也不觉得难受。</p>
-<p>作者最初将它设计为 Vim 的插件，但很快便被移植到了几乎任何可以设置调色板的地方，包括文本编辑器(Emacs, TextMate, Visual Studio)，终端模拟器，Mutt，以及 Photoshop, GIMP 等。我将它应用在了 Gnome-terminal 及 Vim 中，效果非常不错。配置方法可以参考我的笔记：</p>
+<p>几天前，实验室来了一批新显示器，这样，我的显示空间在原先的 593mm x 371mm 基础上又增加了 376mm x 301mm。按理说，这是一件好事，因为可以在新增的小号显示器上做一些隐秘的事情。只是 Linux 总会抓住一切可能的机会考验你一把，这种幸福的烦恼更是不容错过了。</p>
+<p>整个风波的始终如下：</p>
+<p>新机器的 ATI 显卡配置了两个输出端口，一个为 DisplayPort， 一个为 DVI。而现有的两台显示器，一个有 HDMI 输入口，另一个有 VGA 输入口。这样，利用一条 DisplayPort 转 HDMI 的转接线及一个 DVI 转 VGA 转接口，两台显示器便应该可以正常工作了。可实际情况是，接受 DisplayPort 输出的大屏显示器工作得很好，而 DVI 的那个却不停地闪屏。</p>
+<p>因为双屏在安装了 ATI 私有驱动 Catalyst 的 Windows 下可以正常工作，所以觉得在 Arch 下安好 Catalyst 驱动应该就能解决问题。根据官方的 <a href="https://wiki.archlinux.org/index.php/ATI_Catalyst">Wiki</a> ，摸索出来的驱动过程安装如下。</p>
 <ol style="list-style-type: decimal">
-<li><a href="http://yangzetian.github.com/Yang-Tech-Notes/linux/gnome_terminal_solarized.html">Solarized Gnome-terminal</a></li>
-<li><a href="http://yangzetian.github.com/Yang-Tech-Notes/vim/vim_solarized.html#vim-solarized">Solarized Vim</a></li>
+<li>添加非官方 Catalyst 源。将下面的几行添加至 <code>/etc/pacman.conf</code> 里面位于 [core] 和 [extra] 之前。</li>
 </ol>
-<p>也可以参考<a href="http://ethanschoonover.com/solarized">官网</a>的介绍后自己折腾。</p>
-<p>如果你也和设计者 Schoonover 一样喜欢在阳光明媚的日子坐在树荫下读书，那就赶快来尝试一下这套配色方案吧！</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">[catalyst]
+Server = http://catalyst.apocalypsus.net/repo/catalyst/<span class="ot">$arch</span></code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>更新整个系统。这一步非常重要！不然后面编译驱动模块时会很麻烦。</li>
+</ol>
+<pre class="sourceCode bash"><code class="sourceCode bash">pacman -Syu</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>安装 catalyst 相关软件包。</li>
+</ol>
+<pre class="sourceCode bash"><code class="sourceCode bash">pacman -S catalyst-generator catalyst-util lib32-catalyst-utils</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>编译内核模块。</li>
+</ol>
+<pre class="sourceCode bash"><code class="sourceCode bash">catalyst_build_module</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>这个时候千万不能重启系统，还需生成初 Xorg 的配置文件。</li>
+</ol>
+<pre class="sourceCode bash"><code class="sourceCode bash">aticonfig --initial or aticonfig --initial=dual-head</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>修改内核启动参数。</li>
+</ol>
+<pre class="sourceCode bash"><code class="sourceCode bash">/etc/default/grub
+-----------------
+<span class="ot">GRUB_CMDLINE_LINUX=</span><span class="st">&quot;nomodeset&quot;</span>
+grub-mkconfig -o /boot/grub/grub.cfg</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>重启吧，剩下的交给 amdcccle 来处理。最后需要注意的就是 amdcccle 生成的 Xorg.conf 文件放在 /etc/X11 里，最好将其重命名为 20-monitor.conf 后放置 /etc/X11/Xorg.conf.d/ 中。</li>
+</ol>
+<p>配置完后，双屏果然可以正常显示。就这样，我打开 xscreenvasor，痛痛快快地游泳去了。结果游了一小时回来后，就发现悲剧了。屏幕僵在了一个画面上，鼠标键盘全无反应，最后只好硬关机，重启，看着那台新 Optiplex 受此委屈，真让人心疼啊。</p>
+<p>上网查了查，发现是 Xorg 挂了，据传是 ATI Catalyst 固有的一个问题。试了一个解决方案，发现还是会死机。最后忍无可忍，下狠心删了 Catalyst 重新安装开源驱动，决定再难也要跨过 Xorg.conf 配置这一关。</p>
+<p>查了一些 Xorg 的设置资料，但不管是利用 Xorg.conf 还是 xrandr，都没法解决闪屏的问题。期间试了无数屏幕刷新率，均于事无补。实在没办法，另找一个显示器插上，发现还是会闪屏。之前一直觉得问题出在 Xorg 的配置，最后突然想到，会不会是两个接口出了问题。上网一搜，果然有人提到说 DisplayPort 接口加 DVI 转 VGA 接口会导致 VGA 显示器闪屏，而这个问题也没有什么好的解决方案。卸下转接头，直接用 DVI 接口接 DVI 显示器后，屏幕立刻就不闪了。之后只要在 .xinitrc 中加入以下命令就能顺利双屏啦：</p>
+<pre><code>xrandr --output DVI-0 --auto --pos 0x0 --output DisplayPort-0 --auto --right-of DVI-0</code></pre>
 </body>
 </html>
 					<div class="meta">
 						<p class="date-publish">
 							Published: 
-							<date class="date-pub" title="2012-07-14T11:34:00+08:00" datetime="2012-07-14T11:34:00+08:00" pubdate>
-							<span class="month"><abbr>July</abbr></span>
-							<span class="day">14</span>
+							<date class="date-pub" title="2012-09-30T22:30:00+08:00" datetime="2012-09-30T22:30:00+08:00" pubdate>
+							<span class="month"><abbr>September</abbr></span>
+							<span class="day">30</span>
 							<span class="year">2012 @ </span>
-                            <span class="time">11:34 </span>
+                            <span class="time">22:30 </span>
 							</date>
 						</p>
 						<ul class="list-category list-linear">
@@ -108,11 +156,15 @@ http://www.w3.org/TR/html4/strict.dtd">
 
   
      
-    	<li><a href="/tags.html#solarized-ref">solarized <span>1</span></a></li>
+    	<li><a href="/tags.html#arch-ref">arch <span>2</span></a></li>
      
-    	<li><a href="/tags.html#colorscheme-ref">colorscheme <span>1</span></a></li>
+    	<li><a href="/tags.html#linux-ref">linux <span>3</span></a></li>
      
-    	<li><a href="/tags.html#vim-ref">vim <span>2</span></a></li>
+    	<li><a href="/tags.html#radeon-ref">radeon <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#ati-ref">ati <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#installation-ref">installation <span>1</span></a></li>
     
   
 
@@ -158,13 +210,9 @@ http://www.w3.org/TR/html4/strict.dtd">
 					<nav class="pagination">
 						<ul>
 							
-							<li class="prev"><a class="internal" rel="prev"  href="/2012/07/05/notes-online" title="View 我的技术笔记上线啦!">&laquo; 我的技术笔记上线啦!</a></li>
+							<li class="prev"><a class="internal" rel="prev"  href="/2012/09/23/forgive-this-world" title="View 原谅世界，原谅自己">&laquo; 原谅世界，原谅自己</a></li>
 							
 							
-							<li class="pipe"> | </li>
-							
-							
-							<li class="next"><a class="internal" rel="next"  href="/2012/07/24/canada-dream" title="View 加拿大之梦">加拿大之梦 &raquo;</a></li>
 							
 						</ul>
 					</nav>

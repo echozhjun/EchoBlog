@@ -4,13 +4,89 @@
  <title>Mind on Mind</title>
  <link href="http://yangzetian.github.com/atom.xml" rel="self"/>
  <link href="http://yangzetian.github.com"/>
- <updated>2012-09-24T12:15:15+08:00</updated>
+ <updated>2012-09-30T22:38:55+08:00</updated>
  <id>http://yangzetian.github.com</id>
  <author>
    <name>Zetian Yang</name>
    <email>zetain.yang@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Arch Linux 折腾后记：双屏显示器</title>
+   <link href="http://yangzetian.github.com/2012/09/30/arch-notes-again"/>
+   <updated>2012-09-30T22:30:00+08:00</updated>
+   <id>hhttp://yangzetian.github.com/2012/09/30/arch-notes-again</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code &gt; span.kw { color: #007020; font-weight: bold; }
+code &gt; span.dt { color: #902000; }
+code &gt; span.dv { color: #40a070; }
+code &gt; span.bn { color: #40a070; }
+code &gt; span.fl { color: #40a070; }
+code &gt; span.ch { color: #4070a0; }
+code &gt; span.st { color: #4070a0; }
+code &gt; span.co { color: #60a0b0; font-style: italic; }
+code &gt; span.ot { color: #007020; }
+code &gt; span.al { color: #ff0000; font-weight: bold; }
+code &gt; span.fu { color: #06287e; }
+code &gt; span.er { color: #ff0000; font-weight: bold; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;几天前，实验室来了一批新显示器，这样，我的显示空间在原先的 593mm x 371mm 基础上又增加了 376mm x 301mm。按理说，这是一件好事，因为可以在新增的小号显示器上做一些隐秘的事情。只是 Linux 总会抓住一切可能的机会考验你一把，这种幸福的烦恼更是不容错过了。&lt;/p&gt;
+&lt;p&gt;整个风波的始终如下：&lt;/p&gt;
+&lt;p&gt;新机器的 ATI 显卡配置了两个输出端口，一个为 DisplayPort， 一个为 DVI。而现有的两台显示器，一个有 HDMI 输入口，另一个有 VGA 输入口。这样，利用一条 DisplayPort 转 HDMI 的转接线及一个 DVI 转 VGA 转接口，两台显示器便应该可以正常工作了。可实际情况是，接受 DisplayPort 输出的大屏显示器工作得很好，而 DVI 的那个却不停地闪屏。&lt;/p&gt;
+&lt;p&gt;因为双屏在安装了 ATI 私有驱动 Catalyst 的 Windows 下可以正常工作，所以觉得在 Arch 下安好 Catalyst 驱动应该就能解决问题。根据官方的 &lt;a href=&quot;https://wiki.archlinux.org/index.php/ATI_Catalyst&quot;&gt;Wiki&lt;/a&gt; ，摸索出来的驱动过程安装如下。&lt;/p&gt;
+&lt;ol style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;添加非官方 Catalyst 源。将下面的几行添加至 &lt;code&gt;/etc/pacman.conf&lt;/code&gt; 里面位于 [core] 和 [extra] 之前。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;[catalyst]
+Server = http://catalyst.apocalypsus.net/repo/catalyst/&lt;span class=&quot;ot&quot;&gt;$arch&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;2&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;更新整个系统。这一步非常重要！不然后面编译驱动模块时会很麻烦。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;pacman -Syu&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;3&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;安装 catalyst 相关软件包。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;pacman -S catalyst-generator catalyst-util lib32-catalyst-utils&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;4&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;编译内核模块。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;catalyst_build_module&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;5&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;这个时候千万不能重启系统，还需生成初 Xorg 的配置文件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;aticonfig --initial or aticonfig --initial=dual-head&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;6&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;修改内核启动参数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;sourceCode bash&quot;&gt;&lt;code class=&quot;sourceCode bash&quot;&gt;/etc/default/grub
+-----------------
+&lt;span class=&quot;ot&quot;&gt;GRUB_CMDLINE_LINUX=&lt;/span&gt;&lt;span class=&quot;st&quot;&gt;&amp;quot;nomodeset&amp;quot;&lt;/span&gt;
+grub-mkconfig -o /boot/grub/grub.cfg&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;7&quot; style=&quot;list-style-type: decimal&quot;&gt;
+&lt;li&gt;重启吧，剩下的交给 amdcccle 来处理。最后需要注意的就是 amdcccle 生成的 Xorg.conf 文件放在 /etc/X11 里，最好将其重命名为 20-monitor.conf 后放置 /etc/X11/Xorg.conf.d/ 中。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;配置完后，双屏果然可以正常显示。就这样，我打开 xscreenvasor，痛痛快快地游泳去了。结果游了一小时回来后，就发现悲剧了。屏幕僵在了一个画面上，鼠标键盘全无反应，最后只好硬关机，重启，看着那台新 Optiplex 受此委屈，真让人心疼啊。&lt;/p&gt;
+&lt;p&gt;上网查了查，发现是 Xorg 挂了，据传是 ATI Catalyst 固有的一个问题。试了一个解决方案，发现还是会死机。最后忍无可忍，下狠心删了 Catalyst 重新安装开源驱动，决定再难也要跨过 Xorg.conf 配置这一关。&lt;/p&gt;
+&lt;p&gt;查了一些 Xorg 的设置资料，但不管是利用 Xorg.conf 还是 xrandr，都没法解决闪屏的问题。期间试了无数屏幕刷新率，均于事无补。实在没办法，另找一个显示器插上，发现还是会闪屏。之前一直觉得问题出在 Xorg 的配置，最后突然想到，会不会是两个接口出了问题。上网一搜，果然有人提到说 DisplayPort 接口加 DVI 转 VGA 接口会导致 VGA 显示器闪屏，而这个问题也没有什么好的解决方案。卸下转接头，直接用 DVI 接口接 DVI 显示器后，屏幕立刻就不闪了。之后只要在 .xinitrc 中加入以下命令就能顺利双屏啦：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;xrandr --output DVI-0 --auto --pos 0x0 --output DisplayPort-0 --auto --right-of DVI-0&lt;/code&gt;&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
  
  <entry>
    <title>原谅世界，原谅自己</title>
@@ -575,7 +651,7 @@ yaourt -S dropbox dropbox-cli dropbox-nautilus&lt;/code&gt;&lt;/pre&gt;
   &lt;title&gt;&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;p&gt;经过几天的酝酿，我采用 &lt;a href=&quot;http://sphinx.pocco.org&quot;&gt;Sphinx&lt;/a&gt; 搭建的 Wiki 式技术&lt;a href=&quot;http://yangzetian.github.com/Yang-Tech-Notes&quot;&gt;笔记&lt;/a&gt;终于上线了 :-)&lt;/p&gt;
+&lt;p&gt;经过几天的酝酿，我采用 &lt;a href=&quot;http://sphinx.pocoo.org&quot;&gt;Sphinx&lt;/a&gt; 搭建的 Wiki 式技术&lt;a href=&quot;http://yangzetian.github.com/Yang-Tech-Notes&quot;&gt;笔记&lt;/a&gt;终于上线了 :-)&lt;/p&gt;
 &lt;p&gt;很久之前就看到&lt;a href=&quot;http://wiki.ktmud.com/index.html&quot;&gt;迟丘&lt;/a&gt;用&lt;a href=&quot;http://code.google.com/p/vimwiki&quot;&gt;Vimwiki&lt;/a&gt;编写的页面十分漂亮，当时就开始琢磨着想自己哪天也建一个类似的 Wiki 平台。后来又从 &lt;a href=&quot;http://beiyuu.com&quot;&gt;BeiYuu&lt;/a&gt; 的一篇&lt;a href=&quot;http://beiyuu.com/why-blog&quot;&gt;文章&lt;/a&gt;中体会到 Wiki 与博客的差别。按那篇文章的观点，我写博客的初衷（记录自己在使用 linux 过程中遇到的问题和收获）或许采用 Wiki 的形式更加适合。&lt;/p&gt;
 &lt;p&gt;当然，现在这个博客早不是一个技术笔记了，而且正与技术渐行渐远。但归根结底来说我还是要靠技术混饭吃的，而技术又需要点点滴滴的持久积累。因此该技术笔记便顺利成章地出现了。它将记录与 linux, python, scientific computing, vim 等技术相关的内容，主要涉及各种工具、技术的配置与使用方法。这些往往属于比较零散的知识点，而那些对相关技术的总结性文章则将继续发表在博客中。&lt;/p&gt;
 &lt;p&gt;Wiki 其实有很多方便快捷的搭建方法，比如新兴的 &lt;a href=&quot;http://www.tryscribble.com&quot;&gt;Scribble&lt;/a&gt;，将建 Wiki 变得和用记事本一样简单直接，而且相当美观。但在衡量了易用性与自由性之后，我最终选择了 Sphinx 作为自己的 Wiki 引擎，这里要十分感谢 &lt;a href=&quot;http://deep.tw&quot;&gt;Daniel Lin&lt;/a&gt; 的启发！&lt;/p&gt;
