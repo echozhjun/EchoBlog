@@ -11,6 +11,7 @@ http://yangzetian.github.com/index.html
 http://yangzetian.github.com/blog.html
 http://yangzetian.github.com/intro.html
 
+http://yangzetian.github.com/2012/12/01/talk-talk-talk
 http://yangzetian.github.com/2012/10/31/how-you-get-unstuck
 http://yangzetian.github.com/2012/09/30/arch-notes-again
 http://yangzetian.github.com/2012/09/23/forgive-this-world
