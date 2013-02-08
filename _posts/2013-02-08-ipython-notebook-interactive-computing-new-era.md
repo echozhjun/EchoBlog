@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "IPython Notebook: 交互计算新时代"
-date: 2013-02-08 02:26
+date: 2013-02-08 10:05
 category: Python
 tags: [interactive computing, ipython, notebook]
 ---
