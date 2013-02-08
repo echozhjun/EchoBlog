@@ -971,3 +971,34 @@ pre {
 .span8 {
     width: 470px;
 }
+
+.caption {
+    text-align: center;
+}
+
+
+/* for table of contents */
+
+.toc {
+    margin-bottom: 1.625em;
+}
+
+.toc a:link {
+    color: #99CC99;
+}
+
+.toc a:visited {
+    color: #99CC99;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 0;
+}
+
+
+.toc li ul {
+    padding-left: 25px;
+}
