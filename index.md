@@ -14,9 +14,9 @@ I'm Zetian Yang , a
 * Piscean with curious mind
 * Novel fanatic
 
-I love beautiful things,
+My dream is to make a living by thinking,
 
-My dream is to create them.
+That's why I am doing science.
 
 ---------------
 
