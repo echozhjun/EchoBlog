@@ -89,7 +89,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>希望将详细计算过程及结果与他人共享，以便与他人讨论数据分析步骤或让他人重复你的结果。</li>
 <li>希望在本地的台式机或笔记本上对远程服务器中的数据进行分析，却不想将数据拷贝至本地。</li>
 </ul>
-<p>传统的交互计算平台一般都以命令行的方式与数据分析者交互，即用户每输入一条语句，计算平台返回相应的结果。虽然它们在用户体验方面做了许多努力，诸如自动命令补全，弹出帮助文档，命令历史记录等，但在上文提到的这些情景下，它们就显得有些力不从心。 <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">IPython Notebook</a> 的出世，正弥补了传统计算平台的不足，为上述情景提供了快捷直观的解决方案。</p>
+<p>传统的交互计算平台一般都以命令行的方式与数据分析者交互，即用户每输入一条语句，计算平台返回相应的结果。 虽然它们在用户体验方面做了许多努力，诸如自动命令补全，弹出帮助文档，命令历史记录等，但在上文提到的这些情景下，它们就显得有些力不从心。 <a href="http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html">IPython Notebook</a> 的出世，正弥补了传统计算平台的不足，为上述情景提供了快捷直观的解决方案。</p>
 <p>IPython Notebook 是一种新兴的交互式数据分析与记录工具，它定义了一种全新的计算文件格式，其中包含了代码，代码说明以及每一步的计算输出(数值或图片等)，也就是说这一个文件完整记录了计算过程中的所有相关信息。此外，该文件还可以嵌入网络视频，图片，\(LaTeX\) 公式等众多副文本格式，实为交互计算，记录思维，传播思想的好帮手。</p>
 <div class=toc>
 <ul>
@@ -130,9 +130,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 
 
 <h2 id="简介">简介</h2>
-<p>IPython Notebook 既是一个交互计算平台，又是一个记录计算过程的「笔记本」。它由服务端和客户端两部分组成，其中服务端负责代码的解释与计算，而客户端负责与用户进行交互。服务端可以运行在本机也可以运行在远程服务器，包含负责运算的 IPython kernel (与 <a href="http://ipython.org/ipython-doc/dev/interactive/qtconsole.html">QT Console</a> 的 kernel 相同) 以及一个 HTTP/S 服务器 (<a href="http://www.tornadoweb.org/">Tornado</a>)。而客户端则是一个指向服务端地址的浏览器页面，负责接受用户的输入并负责渲染输出。</p>
+<p>IPython Notebook 既是一个交互计算平台，又是一个记录计算过程的「笔记本」。它由服务端和客户端两部分组成，其中服务端负责代码的解释与计算，而客户端负责与用户进行交互。 服务端可以运行在本机也可以运行在远程服务器，包含负责运算的 IPython kernel (与 <a href="http://ipython.org/ipython-doc/dev/interactive/qtconsole.html">QT Console</a> 的 kernel 相同) 以及一个 HTTP/S 服务器 (<a href="http://www.tornadoweb.org/">Tornado</a>)。 而客户端则是一个指向服务端地址的浏览器页面，负责接受用户的输入并负责渲染输出。</p>
 <p>千万不要小看了这个页面，首先，它几乎涵括了 QT Console 具有的全部交互式功能，如代码高亮，自动补全，实时帮助，内嵌显示绘图结果等；其次，计算过程及结果可以方便地保存为多种格式，如默认的 JSON 格式，Python 脚本以及 PDF 等；此外，借助 <a href="http://wowubuntu.com/markdown/basic.html">Markdown</a> 及 <a href="http://www.mathjax.org">MathJax</a>，用户可以在计算过程中插入详尽细致的描述，甚至以描述为主，计算为辅，从而将它当作科技类文章写作的工具。</p>
-<p>正是由于 IPython Notebook 的灵活易用，方便传播等特点，它现已被用于可重复数据分析，课程教学，博客写作等众多领域。当然它还可以应用在更多更广的现实场景中，那些就等着你来探索了。下文就将介绍如何安装及使用 IPyhton Notebook，并以实例来介绍它的强大特性。</p>
+<p>正是由于 IPython Notebook 的灵活易用，方便传播等特点，它现已被用于可重复数据分析，课程教学，博客写作等众多领域。 当然它还可以应用在更多更广的现实场景中，那些就等着你来探索了。 下文就将介绍如何安装及使用 IPyhton Notebook，并以实例来介绍它的强大特性。</p>
 <h2 id="安装-notebook">安装 Notebook</h2>
 <p>可以采取以下三种安装方案：</p>
 <ul>
@@ -140,7 +140,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>采用系统的包管理程序安装。</li>
 <li>从源代码编译安装。</li>
 </ul>
-<p>推荐选用某个 Python 发行套件，比如 <a href="https://www.enthought.com/">Enthough Python Distribution (EPD)</a> 或 <a href="https://code.google.com/p/pythonxy/">Python(x,y)</a>。这些发行套件中都包含了常用的 Python 科学计算库，如 Numpy，Scipy，IPython，Matplotlib，Pandas 等，而且都是一键安装，非常方便快捷，省去了从源码安装的众多烦恼。下面介绍在 Linux 下安装 EPD。</p>
+<p>推荐选用某个 Python 发行套件，比如 <a href="https://www.enthought.com/">Enthough Python Distribution (EPD)</a> 或 <a href="https://code.google.com/p/pythonxy/">Python(x,y)</a>。 这些发行套件中都包含了常用的 Python 科学计算库，如 Numpy，Scipy，IPython，Matplotlib，Pandas 等，而且都是一键安装，非常方便快捷，省去了从源码安装的众多烦恼。下面介绍在 Linux 下安装 EPD。</p>
 <p>从 EPD <a href="http://www.enthought.com/products/getepd.php">网站</a>下载免费版或学术版<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup>，之后运行下载好的文件：</p>
 <pre><code>bash ped-7.3.2-rh5-x86_64.sh -p /path/to/your/install_dir</code></pre>
 <p>一路回车即可。</p>
@@ -149,7 +149,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 export PATH</code></pre>
 <p>如果不想安装套件，可以用系统自带的管理程序单独安装 IPython，比如在 Arch 下：</p>
 <pre><code>pacman -S ipython</code></pre>
-<p>除以上两种方法，还可以选择从源代码安装，但此方案比较复杂，需要考虑 IPython 的复杂依赖关系，如 Numpy，Scipy，Qt 等。这条方案需慎重选择，因为光是 Numpy，Scipy 的安装就会让人焦头烂额<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup>。</p>
+<p>除以上两种方法，还可以选择从源代码安装，但此方案比较复杂，需要考虑 IPython 的复杂依赖关系，如 Numpy，Scipy，Qt 等。 这条方案需慎重选择，因为光是 Numpy，Scipy 的安装就会让人焦头烂额<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup>。</p>
 <h2 id="使用-notebook">使用 Notebook</h2>
 <p>根据 IPython Notebook 服务端所在位置，可分为本地运行和远程运行两种情景。</p>
 <h3 id="本地运行">本地运行</h3>
@@ -159,13 +159,13 @@ export PATH</code></pre>
 <pre><code>ipython notebook --pylab</code></pre>
 <p>如果想将 Matplotlib 生成的图片潜入网页内显示，则使用：</p>
 <pre><code>ipython notebook --pylab inline</code></pre>
-<p>上面的命令会在本机开启 IPython Notebook 服务端，并在系统默认浏览器内打开一个指向服务端的页面，该页面显示了所有保存的 Notebook。如需新建 Notebook，可以点击 <code>New Notebook</code> 按钮，或着将本地的文件直接拖入空白处，其中该文件即可以是编写好的 Python 程序文件 (.py)，也可以是之前运行过的 Notebook 文件 (.ipynb)。</p>
-<p>在新打开的 Notebook 页面中，就可以进行各项交互式计算任务。Notebook 由一个个的执行单元组成，每个单元可以是一段 Python 代码，也可以是一段描述性文本，这些文本可以使用 Markdown 语法，也可以插入 \(LaTeX\) 表达式，或者直接使用 HTML。在单元上可以方便地进行删除，复制，粘贴，剪切，插入，分割，合并等操作。</p>
+<p>上面的命令会在本机开启 IPython Notebook 服务端，并在系统默认浏览器内打开一个指向服务端的页面，该页面显示了所有保存的 Notebook。 如需新建 Notebook，可以点击 <code>New Notebook</code> 按钮，或着将本地的文件直接拖入空白处，其中该文件即可以是编写好的 Python 程序文件 (.py)，也可以是之前运行过的 Notebook 文件 (.ipynb)。</p>
+<p>在新打开的 Notebook 页面中，就可以进行各项交互式计算任务。Notebook 由一个个的执行单元组成，每个单元可以是一段 Python 代码，也可以是一段描述性文本，这些文本可以使用 Markdown 语法，也可以插入 \(LaTeX\) 表达式，或者直接使用 HTML。 在单元上可以方便地进行删除，复制，粘贴，剪切，插入，分割，合并等操作。</p>
 <p>单元需要被运行才能产生实际的运算，其中代码单元内的语句被输入服务端内的 kernerl 进行运算，并从 kernel 内获得输出结果显示在单元内，文本单元则通过 Markdown 渲染器渲染成相应的网页格式展现 (如图1)。</p>
 <div class="figure">
 <img src="/assets/images/ipynb.png" alt="图1: 一段 Notebook 的运行结果" /><p class="caption">图1: 一段 Notebook 的运行结果</p>
 </div>
-<p>在进行了一系列计算操作之后，会希望将当前的工作保存，这时可以选择 <code>Save</code> 或者 <code>Download</code>，它们都可以按 .ipynb 或 .py 格式保存 Notebook。其中 <code>Save</code> 默认为 .ipynb 格式，如果希望将其改为 Python 可执行的 .py 格式, 可以在启动时加入 <code>--script</code> 后缀：</p>
+<p>在进行了一系列计算操作之后，会希望将当前的工作保存，这时可以选择 <code>Save</code> 或者 <code>Download</code>，它们都可以按 .ipynb 或 .py 格式保存 Notebook。 其中 <code>Save</code> 默认为 .ipynb 格式，如果希望将其改为 Python 可执行的 .py 格式, 可以在启动时加入 <code>--script</code> 后缀：</p>
 <pre><code>ipython notebook --script</code></pre>
 <p><code>Save</code> 和 <code>Download</code> 的不同在于 <code>Save</code> 将文件存储在服务端所在的存储位置，而 <code>Download</code> 则是存储在浏览器所在的存储位置。因此，当服务端运行在远程服务器上时，如果希望将 Notebook 存至本地，应使用 <code>Download</code>。</p>
 <p>此外，还可以按网页或者 PDF 格式将当前的计算过程保存，缺陷是按这种方式进行保存下来的 Notebook 无法重新被载入运行。保存方法为点击 <code>Print View</code>，这里会打开一个当前 Notebook 的纯网页版本，这时可以将其又键另存为网页保存，或者打印成 PDF 文件。</p>
@@ -238,11 +238,11 @@ c.Notebook.App.port = <span class="dv">9999</span>   <span class="co">#可设为
 					<div class="meta">
 						<p class="date-publish">
 							Published: 
-							<date class="date-pub" title="2013-02-08T02:26:00+08:00" datetime="2013-02-08T02:26:00+08:00" pubdate>
+							<date class="date-pub" title="2013-02-08T10:05:00+08:00" datetime="2013-02-08T10:05:00+08:00" pubdate>
 							<span class="month"><abbr>February</abbr></span>
 							<span class="day">08</span>
 							<span class="year">2013 @ </span>
-                            <span class="time">02:26 </span>
+                            <span class="time">10:05 </span>
 							</date>
 						</p>
 						<ul class="list-category list-linear">
@@ -295,7 +295,7 @@ c.Notebook.App.port = <span class="dv">9999</span>   <span class="co">#可设为
 
   <div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_developer = 1;
+    
     var disqus_shortname = 'yangzetian'; // required: replace example with your forum shortname
     
     /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -322,6 +322,10 @@ c.Notebook.App.port = <span class="dv">9999</span>   <span class="co">#可设为
 							<li class="prev"><a class="internal" rel="prev"  href="/2012/12/30/girls-are-right" title="View 女孩们没错">&laquo; 女孩们没错</a></li>
 							
 							
+							<li class="pipe"> | </li>
+							
+							
+							<li class="next"><a class="internal" rel="next"  href="/2013/03/26/the-first-of-python-year" title="View 蛇年初记">蛇年初记 &raquo;</a></li>
 							
 						</ul>
 					</nav>

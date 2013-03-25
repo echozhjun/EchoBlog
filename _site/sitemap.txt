@@ -11,6 +11,7 @@ http://yangzetian.github.com/index.html
 http://yangzetian.github.com/blog.html
 http://yangzetian.github.com/intro.html
 
+http://yangzetian.github.com/2013/03/26/the-first-of-python-year
 http://yangzetian.github.com/2013/02/08/ipython-notebook-interactive-computing-new-era
 http://yangzetian.github.com/2012/12/30/girls-are-right
 http://yangzetian.github.com/2012/12/01/talk-talk-talk
