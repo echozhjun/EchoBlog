@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "
+http://www.w3.org/TR/html4/strict.dtd">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Redis 超时问题总结 | There can be miracles when you believe!</title>
+	<meta name="author" content="echozhjun">
+	<link href='/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
+</head>
+<body>
+
+<div id="page" class="hentry">
+	<header class="the-header">
+		<div class="unit-head">
+			<div class="unit-inner unit-head-inner">
+				<p class="logo"><a href="/">There can be miracles when you believe!</a></p>
+				<p class="logo"><a href="/">蜗牛 一步一步往上爬</a></p>
+				<nav class="nav-global">
+					<ul>
+						<li class="homepage"><a href="/blog.html">文章</a></li>
+						<li class="category"><a href="/categories.html">类目</a></li>
+			<!--			<li class="tag"><a href="/tags.html">tags</a></li>  -->
+                        <!--<li class="links"><a href="/links.html">links</a></li>-->
+                      <li class="about"><a href="/intro.html">About</a></li>
+					</ul>
+				</nav>
+			</div><!-- unit-inner -->
+		</div><!-- unit-head -->
+	</header>
+	<div class="body" role="main">
+		<div class="unit-body">
+			<div class="unit-inner unit-body-inner">
+				<div class="entry-content">
+					
+<article class="unit-article layout-post">
+	<div class="unit-inner unit-article-inner">
+		<div class="content">
+			<header>
+				<div class="unit-head">
+					<div class="unit-inner unit-head-inner">
+						<h1 class="h2 entry-title">Redis 超时问题总结</h1>
+					</div><!-- unit-inner -->
+				</div><!-- unit-head -->
+			</header>
+
+			<div class="bd">
+				<div class="entry-content">
+					<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h3 id="网络延迟">网络延迟</h3>
+<p>redis是基于TCP/IP协议进行通信的，任何的网络不稳定都可能造成超时。所以要尽量减少和redis的交互次数，减少网络来往次数来减少有网络本身带来的延迟。</p>
+<h3 id="redis的单线程处理方式">Redis的单线程处理方式</h3>
+<p>Redis使用单线程来处理所有命令，也就是说所有命令是按顺序进行的。但是redis不会阻塞系统调用，比如socket的系统调用，redis分别实现了linux存在的三种io模式：epoll、poll和select。注：redis在bgsave和AOF rewrite的时候会fork出子进程来处理，以及在redis2.4版本之后，redis会使用多线程来处理和IO相关的慢操作，但是保持单线程处理所有命令的模式仍然不变。因此redis不适合在单核的机器上跑。</p>
+<h3 id="慢命令">慢命令</h3>
+<p>因为redis的单线程处理方式，所以一个命令如果慢了的话，其他的命令就只能等待这个命令结束才能继续了，虽然redis大部分命令都会非常快，但是也有少数命令是会比较耗时的，比如：sort，union一个大的set，就会非常的耗时。所以一定要尽量避免慢命令的使用。</p>
+<h3 id="fork子进程">Fork子进程</h3>
+<p>Fork子进程在linux下是一个相当消耗的操作，尤其是需要做虚拟内存到物理内存的映射运算会消耗大量的时间和CPU，主要是因为在linux下内存按页分配，默认大小每页4k，这样的话为一个24G大小的redis实例fork一个子进程需要主动分配24G/4k * 8 = 48M的空间。解决办法是使用大页管理的内存分配，这个在最新的linux 2.6.12以后已经支持。如果使用老版本的linux也可以通过给系统打补丁来实现。</p>
+<h3 id="系统使用swap">系统使用SWAP</h3>
+<p>如果系统还运行了其他应用，消耗了较大内存，导致系统使用了swap分区，会导致redis超时。</p>
+</body>
+</html>
+					<div class="meta">
+						<p class="date-publish">
+							Published: 
+							<date class="date-pub" title="2013-03-03T11:15:00+08:00" datetime="2013-03-03T11:15:00+08:00" pubdate>
+							<span class="month"><abbr>March</abbr></span>
+							<span class="day">03</span>
+							<span class="year">2013 @ </span>
+                            <span class="time">11:15 </span>
+							</date>
+						</p>
+						<ul class="list-category list-linear">
+							<li class="list-head">category: </li>
+							
+							
+
+
+  
+     
+    	<li><a href="/categories.html#Tech-ref">
+    		Tech <span>3</span>
+    	</a></li>
+    
+  
+
+
+						</ul>
+						<ul class="list-tag list-linear">
+							<li class="list-head">tags: </li>
+							
+							
+
+
+  
+     
+    	<li><a href="/tags.html#Redis-ref">Redis <span>1</span></a></li>
+    
+  
+
+
+
+						</ul>
+					</div><!-- meta -->
+				</div><!-- entry-content -->
+				<div class="misc-content">
+					<div class="social">
+						<ul class="list-linear">
+							<li><div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="echozhjun" data-lang="en">Tweet</a></div></li>
+							<li><div class="twitter-follow"><a href="https://twitter.com/echozhjun" class="twitter-follow-button" data-show-count="false" data-lang="en"></a></div></li>
+						</ul>
+					</div>
+					
+					
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'echozhjun'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+				</div><!-- misc-content -->
+				
+			</div><!-- bd -->
+			<footer class="unit-foot">
+				<div class="unit-inner unit-foot-inner">
+					<nav class="pagination">
+						<ul>
+							
+							<li class="prev"><a class="internal" rel="prev"  href="/2013/02/03/say-hello-to-github-pages" title="View 我的第一篇日志">&laquo; 我的第一篇日志</a></li>
+							
+							
+							<li class="pipe"> | </li>
+							
+							
+							<li class="next"><a class="internal" rel="next"  href="/2013/04/03/permission-system-1" title="View 权限系统设计与实现1-基本理解">权限系统设计与实现1-基本理解 &raquo;</a></li>
+							
+						</ul>
+					</nav>
+					<p class="gotop">
+						<a href="#page">Back to Top</a>
+					</p>
+				</div>
+			</footer>
+
+		</div><!-- content -->
+	</div><!-- unit-inner -->
+</article>
+
+
+				</div>
+			</div><!-- unit-inner -->
+		</div><!-- unit-body -->
+	</div><!-- body -->
+</div><!-- page -->
+<script>
+/*! A fix for the iOS orientationchange zoom bug.Script by @scottjehl, rebound by @wilto. MIT License.*/
+(function(j){var i=j.document;if(!i.querySelectorAll){return}var l=i.querySelectorAll("meta[name=viewport]")[0],a=l&&l.getAttribute("content"),h=a+", maximum-scale=1.0",d=a+", maximum-scale=10.0",g=true,c=j.orientation,k=0;if(!l){return}function f(){l.setAttribute("content",d);g=true}function b(){l.setAttribute("content",h);g=false}function e(m){c=Math.abs(j.orientation);k=Math.abs(m.gamma);if(k>8&&c===0){if(g){b()}}else{if(!g){f()}}}j.addEventListener("orientationchange",f,false);j.addEventListener("deviceorientation",e,false)})(this);
+</script>
+
+  
+
+</body>
+</html>
+

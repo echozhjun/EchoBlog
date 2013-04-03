@@ -12,7 +12,8 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : echo's little blog
+title : There can be miracles when you believe!
+subtitle: 蜗牛 一步一步往上爬
 author :
   name : echozhjun 
   email : echozhjun@gmail.com
@@ -97,13 +98,13 @@ JB :
   # Set 'provider' to false to turn analytics off globally.
   #        
   analytics :
-    provider : google 
+    provider : false 
     google : 
-        tracking_id : 'UA-30928812-1'
+        tracking_id : 'UA-12700722-3'
     getclicky :
       site_id : 
     mixpanel :
-        token : '_MIXPANEL_TOKEN_'
+        token : '_trackPageview'
 
   # Settings for sharing helper. 
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.

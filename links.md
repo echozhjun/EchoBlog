@@ -6,10 +6,6 @@ title: "Links"
 
 # Friends
 
-* [FYZ](http://puff.sinaapp.com/page/1)
-* [Matrix Plus](http://sealhuang.sinaapp.com)
-* [Shi Shui](http://bohan1112.blogbus.com/)
-* [Xie-Yu](http://xie-yu.github.com)
 
 # Culture
 

@@ -10,8 +10,6 @@ http://www.w3.org/TR/html4/strict.dtd">
 	<title>{{ page.title }} | {{ site.title }}</title>
 	<meta name="author" content="{{ site.author.name }}">
 	<link href='{{ ASSET_PATH }}/css/style.css' rel="stylesheet" media="all">
-	<link href="http://feeds.feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ page.title }}" type="application/atom+xml">
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 </head>
 <body>
 
@@ -20,13 +18,14 @@ http://www.w3.org/TR/html4/strict.dtd">
 		<div class="unit-head">
 			<div class="unit-inner unit-head-inner">
 				<p class="logo"><a href="{{ HOME_PATH }}">{{ site.title }}</a></p>
+				<p class="logo"><a href="{{ HOME_PATH }}">{{ site.subtitle }}</a></p>
 				<nav class="nav-global">
 					<ul>
-						<li class="homepage"><a href="{{ BASE_PATH }}/blog.html">blog</a></li>
-						<li class="category"><a href="{{ BASE_PATH }}/categories.html">cats</a></li>
+						<li class="homepage"><a href="{{ BASE_PATH }}/blog.html">文章</a></li>
+						<li class="category"><a href="{{ BASE_PATH }}/categories.html">类目</a></li>
 			<!--			<li class="tag"><a href="{{ BASE_PATH }}/tags.html">tags</a></li>  -->
                         <!--<li class="links"><a href="{{ BASE_PATH }}/links.html">links</a></li>-->
-                      <li class="about"><a href="{{ BASE_PATH }}/intro.html">intro</a></li>
+                      <li class="about"><a href="{{ BASE_PATH }}/intro.html">About</a></li>
 					</ul>
 				</nav>
 			</div><!-- unit-inner -->

@@ -10,4 +10,7 @@ http://echozhjun.github.com/pages.html
 http://echozhjun.github.com/sitemap.txt
 http://echozhjun.github.com/tags.html
 
-http://echozhjun.github.com/2013/04/03/say-hello-to-github-pages
+http://echozhjun.github.com/2013/04/03/permission-system-2
+http://echozhjun.github.com/2013/04/03/permission-system-1
+http://echozhjun.github.com/2013/03/03/redis-timeout
+http://echozhjun.github.com/2013/02/03/say-hello-to-github-pages

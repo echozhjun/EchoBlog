@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>echo's little blog</title>
+ <title>There can be miracles when you believe!</title>
  <link href="http://echozhjun.github.com/atom.xml" rel="self"/>
  <link href="http://echozhjun.github.com"/>
- <updated>2013-04-03T11:33:42+08:00</updated>
+ <updated>2013-04-03T16:19:44+08:00</updated>
  <id>http://echozhjun.github.com</id>
  <author>
    <name>echozhjun</name>
@@ -13,10 +13,10 @@
 
  
  <entry>
-   <title>第一篇日志</title>
-   <link href="http://echozhjun.github.com/2013/04/03/say-hello-to-github-pages"/>
-   <updated>2013-04-03T11:15:00+08:00</updated>
-   <id>hhttp://echozhjun.github.com/2013/04/03/say-hello-to-github-pages</id>
+   <title>权限系统设计与实现2-RBAC的新概念：基于资源的访问控制</title>
+   <link href="http://echozhjun.github.com/2013/04/03/permission-system-2"/>
+   <updated>2013-04-03T16:05:00+08:00</updated>
+   <id>hhttp://echozhjun.github.com/2013/04/03/permission-system-2</id>
    <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
 &lt;head&gt;
@@ -27,7 +27,156 @@
   &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;p&gt;今天开始在github写点东西，感谢github提供这么好的平台。&lt;/p&gt;
+&lt;p&gt;本文介绍了基于角色的访问控制RBAC来管理权限策略的不足，以及如何用更好的方式来实现权限系统。&lt;/p&gt;
+&lt;h3 id=&quot;什么是角色&quot;&gt;什么是角色？&lt;/h3&gt;
+&lt;p&gt;当我们说到一个系统的权限时，大部分人很自然的就联想到了角色的概念。角色被赋予某个名字代表了一系列行为或者责任。这些行为或者责任表示你能做什么或者不能做什么。角色通常和用户关联起来，也可以这么说，用户能做角色规定的允许的操作。例如，如果一个用户登录一个系统，他的账号被赋予了‘项目经理’角色，那就表示他能做一个项目经理能做的任何事-列出应用列表，添加或删除某个项目成员，生成项目报表等等。&lt;/p&gt;
+&lt;p&gt;从这个意义上讲，角色代表行为：角色规定了你在系统能做的操作。&lt;/p&gt;
+&lt;h3 id=&quot;基于角色的访问控制&quot;&gt;基于角色的访问控制&lt;/h3&gt;
+&lt;p&gt;角色代表行为，开发一个软件时，开发人员很自然的就会用角色来控制用户对系统功能和数据的访问。没错，大部分人把这个方法叫做基于角色的访问控制，或者简称RBAC（”are-back：Role-Based Access Control”）。&lt;/p&gt;
+&lt;p&gt;其实，真正实现和执行访问控制有两种主要的方式：显式访问控制和隐式访问控制。很大一部分的软件应用现在都是用的隐式访问控制。而我认为显式的访问更适合当今的软件系统。&lt;/p&gt;
+&lt;h3 id=&quot;隐式访问控制&quot;&gt;隐式访问控制&lt;/h3&gt;
+&lt;p&gt;正如前面说的，角色代表了行为和责任。那么我们怎么知道行为和责任如何和角色关联上的呢？&lt;/p&gt;
+&lt;p&gt;答案是，大部分系统你并不知道一个角色表示什么，你肯定很清楚-一个拥有‘管理员’角色的用户可以锁定别人的账户或者可以对系统进行某些配置，一个被授予‘消费者’角色的用户可以将想买的东西放入购物车。但是大多数时候并没有准确的定义来表示这些权限。&lt;/p&gt;
+&lt;p&gt;举个‘项目经理’角色的例子。‘项目经理’只是一个字符串而已-没有任何程序能够找出用户被授予这个角色能做A、B和C。开发人员却往往只是用角色的这个名字来做权限判断。例如，判断一个用户是否有查看项目报表的权限，你可能会写这样的代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Listing 1. Example Implicit Role-Based Access Control security check:
+if (user.hasRole(&amp;quot;Project Manager&amp;quot;) ) {
+    //show the project report button
+} else {
+    //don&amp;#39;t show the button
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这段代码中，判断是否显示一个按钮完全根据‘项目经理’四个字。但是请注意，代码并没有明确的表示“项目经理角色可以查看项目报表”，没有任何人在软件中定义了这个规则-他只是隐式的表达了拥有‘项目经理’角色的用户可以查看项目报表，所以开发人员就通过if/else语句来实现这个假定。&lt;/p&gt;
+&lt;h3 id=&quot;脆弱的权限策略&quot;&gt;脆弱的权限策略&lt;/h3&gt;
+&lt;p&gt;像上面那样实现权限访问控制是非常脆弱的，一旦权限需求稍做修改，这个控制就会带来系统错误、失败或者带来开发人员的效率低下。&lt;/p&gt;
+&lt;p&gt;为了演示，我们假定开发团队接到了需求方的新意见“对了，我们还需要一个‘部门经理’的角色，也能够查看项目报表”。然后开发人员需要修改代码来完成这样的需求：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Listing 2. Example Modified Implicit Role-Based Access Control security check:
+if (user.hasRole(&amp;quot;Project Manager&amp;quot;) || user.hasRole(&amp;quot;Department Manager&amp;quot;) ) {
+    //show the project report button
+} else {
+    //don&amp;#39;t show the button
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后开发人员需要更新单元测试，重新部署系统，解决任何可能存在的bug，重新安排产品的发布-所有的一切，只因为一点小小的权限需求。&lt;/p&gt;
+&lt;p&gt;如果需求方之后又需要添加另外一个角色来查看项目报表呢？或者之后需求方又想不想某个角色来查看报表了？能否让程序支持动态的创建或者删除角色？这样用户就可以自己来配置角色了？&lt;/p&gt;
+&lt;p&gt;任何一种场景，使用传统的隐式基于角色的访问控制方式都不能满足需要了。如果权限策略改变了，有没有可能不需要修改代码，有没有可能只有当系统数据模型改变时才有需要修改代码？&lt;/p&gt;
+&lt;h3 id=&quot;显式访问控制更好的方式&quot;&gt;显式访问控制：更好的方式&lt;/h3&gt;
+&lt;p&gt;我们看到了，采用隐式的访问控制方式系统的可扩展性非常的差。如果权限策略更改不用导致代码的重构，而是可以在运行时动态的改变权限策略那该多好。这对权限系统本身也是有好处的，如果你发现权限策略有错误，你也可以很快的通过配置来修复。&lt;/p&gt;
+&lt;p&gt;如何来实现呢？通过显示的访问控制就能实现。那么究竟什么是显示的访问控制呢？&lt;/p&gt;
+&lt;p&gt;当你看着上面的隐式访问控制的判断代码，他们到底是要去控制什么？到底什么实质性的动作被执行了？&lt;/p&gt;
+&lt;p&gt;基本上，这些判断试图去保护某些资源（项目报表）或者对这些资源进行某些操作（例如查看报表）。当你回到这最基本的一层，你其实可以用一种更加细粒度的（弹性的）方式来描述这些权限策略。&lt;/p&gt;
+&lt;p&gt;例如，我们可以基于资源的方式修改上面的代码来达到相同的效果：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Listing 3. Example Explicit Access Control security check:
+if (user.isPermitted(&amp;quot;projectReport:view:12345&amp;quot;)) {
+    //show the project report button
+} else {
+    //don&amp;#39;t show the button
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这个例子更加明确的描述了什么操作是被允许的。这里用冒号分隔的语法并不重要-只是举个例子。重要的是，我们知道了“如果一个用户被允许查看id为12345的项目报表，那么才显示项目报表按钮”。也就是说，我们显示的定义了某个用户在某个资源上能进行什么操作。&lt;/p&gt;
+&lt;h3 id=&quot;为什么更好&quot;&gt;为什么更好？&lt;/h3&gt;
+&lt;p&gt;最后一个例子有一个微妙但是很重要的区别：代码是基于被保护的主体，而不是谁拥有什么权力。虽然是很简单的（可能也是很明显的）概念，但这会给系统开发和部署带来重要的影响：&lt;/p&gt;
+&lt;p&gt;减少代码重构： 基于应用的功能来编写代码，那么我们应该基于应用最关心的核心资源来做权限控制。通过这种方法，软件开发者根据应用的功能来做权限控制-而不是用隐式的RBAC。&lt;/p&gt;
+&lt;p&gt;资源和操作是直观的：被保护的资源是什么以及可以在资源上做什么操作是一种思考问题更加自然的方式。面向对象编程以及基于REST的通信模型也更加证实了这一点。&lt;/p&gt;
+&lt;p&gt;灵活的权限模型：刚才的代码并没有指定某个用户、用户组以及角色会怎样来操作一个资源。这种方式能支持任何的权限模型。例如，权限可以直接赋予某个用户；也可以赋予某个角色，角色再关联用户；也可以赋予和角色类似的组的概念。所有的可能都可以在你的应用中自定义的实现。&lt;/p&gt;
+&lt;p&gt;外部管理权限策略：由于程序代码只反映了资源和操作之间的关系，并没有关联用户，组和角色，这些关联关系完全可以用另外的代码、一个专门的工具或者一个管理控制台来实现。这意味着开发人员没必要花时间来考虑权限策略的变更，这些完全可以交给运营人员甚至用户自己来控制。&lt;/p&gt;
+&lt;p&gt;热修改：因为判断权限的代码不是依赖操作被如何关联上的（例如，组、角色和用户都可以关联上），你可以在系统运行的同时来修改权限策略。没有必要像隐式的RBAC那样，由于权限策略的修改而不得不修改代码。&lt;/p&gt;
+&lt;h3 id=&quot;rbac的新概念基于资源的访问控制&quot;&gt;RBAC的新概念：基于资源的访问控制&lt;/h3&gt;
+&lt;p&gt;除了上面列到的好处，我还要重申显示定义可以带来更加灵活的权限模型。&lt;/p&gt;
+&lt;p&gt;如果你想保留或者模拟传统的基于角色的访问控制，你可以将权限（操作）直接授予一个角色。这样的话，只要你使用显示的RBAC策略来代替传统的隐式策略，你仍然可以使用基于角色的访问控制策略。&lt;/p&gt;
+&lt;p&gt;但是我想问问-为什么不放弃角色？只要允许我们可以将权限（操作）直接赋予用户、赋予组或者赋予其他任何事物。&lt;/p&gt;
+&lt;p&gt;既然显示的基于资源的访问控制可以带来这么多好处，RBAC或许可以有一个新的概念：基于资源的访问控制（Resource-Based Access Control）。只是一个想法……&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>权限系统设计与实现1-基本理解</title>
+   <link href="http://echozhjun.github.com/2013/04/03/permission-system-1"/>
+   <updated>2013-04-03T15:31:00+08:00</updated>
+   <id>hhttp://echozhjun.github.com/2013/04/03/permission-system-1</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;本文简单介绍权限系统设计中涉及到的基本概念：Subject、Operation和Resource，以及实现一个通用权限系统的基本思路。&lt;/p&gt;
+&lt;p&gt;在系统中发生的事情，可以总结为某个主体（Subject）在某个资源（Resource）下做了某个操作（Operation），如下图所示： &lt;img src=&quot;/assets/images/p.png&quot; alt=&quot;permisstion&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;所谓的权限系统，就是在这个过程中加入一些限制条件，只有满足了相应的条件才能进行下一步操作。 根据限制条件的粒度不同，我们可以把权限判断分为三层：认证（Authentication）、授权（Authoration）和详细控制（DetailControl）。&lt;/p&gt;
+&lt;p&gt;1,Authentication:最粗粒度的控制，不管要进行何种操作，首先必须知道当前操作的Subject是谁。反应到系统中就是登陆的过程，只有登陆的用户才能使用某些功能。判断函数这样就可以了：boolean isAllowed(subject);&lt;/p&gt;
+&lt;p&gt;2,Authoration:稍微复杂的控制，Subject只能进行被允许的Operation，需要了解Operation的细节，只要被允许的Operation，就不管是针对何种Resource，都可以进行操作。判断函数：boolean isAllowed(subject,operation);&lt;/p&gt;
+&lt;p&gt;3,DetailControl:较复杂的控制，Subject在被允许的Operation基础上，只能在特定的Resource上进行操作，需要了解Resource的细节。判断函数为：boolean isAllowed(subject,operation,resource);&lt;/p&gt;
+&lt;p&gt;最简单的情况，权限数据是一张二维矩阵。&lt;/p&gt;
+&lt;p&gt;OperationA:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ResourceA   ResourceB
+SubjectA    1   0
+SubjectB    0   1 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当有多个Operation时，权限数据也可以相应叠加。&lt;/p&gt;
+&lt;p&gt;OperationA,OperationB:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ResourceA   ResourceB
+SubjectA    10  01
+SubjectB    01  10 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果Subject和Resource特别多，权限矩阵数据就会急剧膨胀，数据量是M*N。&lt;/p&gt;
+&lt;p&gt;因此我们引入角色Role的概念，将矩阵分解：&lt;/p&gt;
+&lt;p&gt;OperationA,OperationB:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ResourceA   ResourceB
+RoleA   10  01
+RoleB   01  10&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中RoleA和RoleB分别包括了多个Subject。数据量变为了M&lt;em&gt;R+R&lt;/em&gt;N。如果R的数量远小于Subject和Resource，则实现简化。这就是经典的RBAC：基于角色的访问控制（Role based access control）。这样做还有一个额外的好处就是在还没有任何用户的时候，系统仍然可以表达部分权限信息。可以说角色在权限系统中是Subject的代理。&lt;/p&gt;
+&lt;p&gt;权限控制可以看作一个filter模式的应用, 这也符合AOP思想的应用条件。理论上我们只需要在所有需要做权限控制的地方加上isAllowed(subject,operation,resource);函数判断就可以了，不过具体实现的时候仍然会遇到一些细节上的问题，关键在于很难在细粒度上决定权限控制的规则，比如是否需要考虑权限规则的扩展性，Subject是否设置类型、等级区分（比如你希望VIP用户可以直接拥有低级权限），Operation之间是相互独立（独立的话就会带来一个量的问题，上面的矩阵就会等比例增长）还是继承关系（组织成一个树形结构），Resource是否需要增加过滤、分级或者其他附属属性。而在和程序的结合的时候，AOP虽然使得我们可以扩展任何函数，但这种扩展依赖于Cutpoint所能取得的信息，因此会非常依赖函数的良好设计，比如所有函数都传入Operation和Resource所需要的信息。&lt;/p&gt;
+&lt;p&gt;很多时候，将Subject、Operation、Resource分解为非常复杂的结构效果未必理想，很多时候只是个管理模式的问题，应该尽量通过重新设计权限空间（既进行局部化设计，在一系列权限验证后进入权限空间，在其中进行操作就不需要任何验证了）的结构来加以规避。不过在一些非常复杂的权限控制环境下，也许简单的描述信息确实很难有效的表达权限策略，此时尝试一下规则引擎可能比在权限系统中强行塞入越来越多的约束要好的多。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Redis 超时问题总结</title>
+   <link href="http://echozhjun.github.com/2013/03/03/redis-timeout"/>
+   <updated>2013-03-03T11:15:00+08:00</updated>
+   <id>hhttp://echozhjun.github.com/2013/03/03/redis-timeout</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3 id=&quot;网络延迟&quot;&gt;网络延迟&lt;/h3&gt;
+&lt;p&gt;redis是基于TCP/IP协议进行通信的，任何的网络不稳定都可能造成超时。所以要尽量减少和redis的交互次数，减少网络来往次数来减少有网络本身带来的延迟。&lt;/p&gt;
+&lt;h3 id=&quot;redis的单线程处理方式&quot;&gt;Redis的单线程处理方式&lt;/h3&gt;
+&lt;p&gt;Redis使用单线程来处理所有命令，也就是说所有命令是按顺序进行的。但是redis不会阻塞系统调用，比如socket的系统调用，redis分别实现了linux存在的三种io模式：epoll、poll和select。注：redis在bgsave和AOF rewrite的时候会fork出子进程来处理，以及在redis2.4版本之后，redis会使用多线程来处理和IO相关的慢操作，但是保持单线程处理所有命令的模式仍然不变。因此redis不适合在单核的机器上跑。&lt;/p&gt;
+&lt;h3 id=&quot;慢命令&quot;&gt;慢命令&lt;/h3&gt;
+&lt;p&gt;因为redis的单线程处理方式，所以一个命令如果慢了的话，其他的命令就只能等待这个命令结束才能继续了，虽然redis大部分命令都会非常快，但是也有少数命令是会比较耗时的，比如：sort，union一个大的set，就会非常的耗时。所以一定要尽量避免慢命令的使用。&lt;/p&gt;
+&lt;h3 id=&quot;fork子进程&quot;&gt;Fork子进程&lt;/h3&gt;
+&lt;p&gt;Fork子进程在linux下是一个相当消耗的操作，尤其是需要做虚拟内存到物理内存的映射运算会消耗大量的时间和CPU，主要是因为在linux下内存按页分配，默认大小每页4k，这样的话为一个24G大小的redis实例fork一个子进程需要主动分配24G/4k * 8 = 48M的空间。解决办法是使用大页管理的内存分配，这个在最新的linux 2.6.12以后已经支持。如果使用老版本的linux也可以通过给系统打补丁来实现。&lt;/p&gt;
+&lt;h3 id=&quot;系统使用swap&quot;&gt;系统使用SWAP&lt;/h3&gt;
+&lt;p&gt;如果系统还运行了其他应用，消耗了较大内存，导致系统使用了swap分区，会导致redis超时。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>我的第一篇日志</title>
+   <link href="http://echozhjun.github.com/2013/02/03/say-hello-to-github-pages"/>
+   <updated>2013-02-03T11:15:00+08:00</updated>
+   <id>hhttp://echozhjun.github.com/2013/02/03/say-hello-to-github-pages</id>
+   <content type="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot; /&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;开始在github pages写点东西，所谓好记性不如烂笔头，同时也锻炼自己的写作能力。&lt;/p&gt;
+&lt;p&gt;在这个自媒体泛滥的时代，人人都可以成为媒体人。每天无论多少，总会遇到各种各样的事情，当自己有些想法的时候，不要只是想想就让它过去了，把它记下来，汇总起来，不管是对产品的看法，还是自己的灵光一现，还是遇到问题的解决办法。写作的过程也是思考的过程，锻炼自己的思维能力。&lt;/p&gt;
+&lt;p&gt;努力成为一个有自己思想的思考者。&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</content>
  </entry>
